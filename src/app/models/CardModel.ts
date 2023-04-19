@@ -1,14 +1,14 @@
 import { Tag } from "./TagModel";
 
 export class Card {
-  logo?: string;
   internalID: number;
+  logo?: string;
   standard: boolean | undefined;
   name: string | undefined;
   publisher: string | undefined;
   costs?: number;
   price?: number;
-  timeperiod: string | undefined = 'monthly' || 'anually';
+  timeperiod?: string = 'permanent';
   tags?: Tag;
   productname: string | undefined;
   externalID?: number;
@@ -21,7 +21,7 @@ export class Card {
     publisher?: string,
     costs?: number,
     price?: number,
-    timeperiod?: string,
+    timeperiod? :string,
     tags?: Tag,
     productname?: string,
     externalID?: number
@@ -33,10 +33,14 @@ export class Card {
     this.publisher = publisher;
     this.costs = costs;
     this.price = price;
-    this.timeperiod = timeperiod;
+    this.timeperiod = timeperiod
     this.tags = tags;
     this.productname = productname;
     this.externalID = externalID;
+
+    if (timeperiod == null) {
+      this.timeperiod = 'permanent';
+    }
   }
 }
 
