@@ -8,7 +8,8 @@ import { ProductDataService } from './services/product-data.service';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.productDataService.getAllProducts());
+    console.log(this.productDataService.getAllData());
+    console.log(this.productDataService.getSingleData(1234));
   }
   title = 'OneCatalog';
 
