@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="header">
+        <img src="{{CardData.logo}}">
+
+    </div>
+    <div class="standard" *ngIf="CardData.standard">Approved</div>
+    <div class="standardNot" *ngIf="!CardData.standard">Not Approved</div>
+    <div class="body">
+        <div class="main">
+            <div class="left">
+                <h4>{{CardData.productName}}</h4>
+                <h5>{{CardData.edition}}</h5>
+                <h6>by {{CardData.publisher}}</h6>
+            </div>
+            <div class="right">
+                <h4>{{CardData.costs}} $</h4>
+                <h4>{{CardData.timeperiod}}</h4>
+            </div>
+        </div>
+        <br>
+        <div class="buttonContainer">
+            <button mat-raised-button color="primary">request</button>
+            <button mat-button color="primary">See more..</button>
+        </div>
+        <br>
+        <div class="line"></div>
+        <br>
+        <div class="TagContainer">
+            <div *ngFor="let i of CardData.tags | slice:0:2">
+                <app-tags [content] = "i"></app-tags>
+            </div>
+            <button mat-button color="primary">...</button>
+        </div>
+    </div>
+</div>

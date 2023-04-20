@@ -8,9 +8,9 @@ import { ProductDataService } from './services/product-data.service';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.productDataService.getAllData());
-    console.log(this.productDataService.getSingleData(1234));
   }
+
+  cardData = this.productDataService.getAllData()
   title = 'OneCatalog';
 
   constructor(private productDataService: ProductDataService){}

@@ -1,4 +1,5 @@
-import { Tag } from './TagModel';
+import { Tag } from "./TagModel";
+
 export class Product {
     internalID: number;
     businessReason: string;
@@ -11,7 +12,7 @@ export class Product {
     costs: number;
     price: number;
     timeperiod: string | undefined;
-    tags: Tag;
+    tags: string[];
     logo: string;
     requirements: string[];
     location: string;
@@ -30,7 +31,7 @@ export class Product {
         costs: number,
         price: number,
         timeperiod: string | undefined,
-        tags: Tag,
+        tags: string[],
         logo: string,
         requirements: string[],
         location: string,
@@ -55,5 +56,7 @@ export class Product {
             this.linkToWebsite = linkToWebsite;
             this.externalID = externalID;
             this.prereqireties = prereqireties;
+
+            timeperiod == null ? this.timeperiod = 'permanent' : this.timeperiod = timeperiod;
         }
 }
