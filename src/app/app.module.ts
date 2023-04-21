@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { TagsComponent } from './objects/tags/tags.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { TestComponent } from './sites/test/test.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TestComponent } from './sites/test/test.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    MatIconModule
   ],
   providers: [Products],
   bootstrap: [AppComponent]
