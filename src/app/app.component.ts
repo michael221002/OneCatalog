@@ -10,10 +10,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  cardData = this.productDataService.getAllData()
-  title = 'OneCatalog';
-
-  constructor(private productDataService: ProductDataService){}
-
 
 }

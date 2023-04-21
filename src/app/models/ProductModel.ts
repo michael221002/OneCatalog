@@ -1,5 +1,3 @@
-import { Tag } from "./TagModel";
-
 export class Product {
     internalID: number;
     businessReason: string;
@@ -12,13 +10,17 @@ export class Product {
     costs: number;
     price: number;
     timeperiod: string | undefined;
-    tags: string[];
     logo: string;
     requirements: string[];
     location: string;
     linkToWebsite: string;
     externalID: number;
     prereqireties: string[];
+    functionality: string;
+    departement: string;
+    role: string;
+    category: string;
+    tags: string[];
 
     constructor(internalID: number,
         businessReason: string,
@@ -31,13 +33,17 @@ export class Product {
         costs: number,
         price: number,
         timeperiod: string | undefined,
-        tags: string[],
         logo: string,
         requirements: string[],
         location: string,
         linkToWebsite: string,
         externalID: number,
-        prereqireties: string[],){
+        prereqireties: string[],
+        functionality: string,
+        departement: string,
+        role: string,
+        category: string,
+        tags: string[],){
             this.internalID = internalID;
             this.businessReason = businessReason;
             this.productName = productName;
@@ -49,13 +55,17 @@ export class Product {
             this.costs = costs;
             this.price = price;
             this.timeperiod = timeperiod; //here
-            this.tags = tags;
             this.logo = logo;
             this.requirements = requirements;
             this.location = location;
             this.linkToWebsite = linkToWebsite;
             this.externalID = externalID;
             this.prereqireties = prereqireties;
+            this.functionality = functionality;
+            this.departement = departement;
+            this.role = category;
+            this.category = category;
+            this.tags = tags;
 
             timeperiod == null ? this.timeperiod = 'permanent' : this.timeperiod = timeperiod;
         }

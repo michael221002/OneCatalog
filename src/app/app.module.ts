@@ -13,13 +13,15 @@ import { ProductCardComponent } from './objects/product-card/product-card.compon
 import { MatButtonModule } from '@angular/material/button';
 import { TagsComponent } from './objects/tags/tags.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { TestComponent } from './sites/test/test.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductCardComponent,
-    TagsComponent
+    TagsComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

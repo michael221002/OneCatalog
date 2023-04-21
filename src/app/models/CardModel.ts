@@ -1,5 +1,3 @@
-import { Tag } from "./TagModel";
-
 export class Card {
   internalID: number;
   logo: string;
@@ -8,9 +6,11 @@ export class Card {
   costs: number;
   price: number;
   timeperiod: string | undefined;
-  tags: Tag;
   productName: string;
   externalID: number;
+  tags: string[];
+  category: string;
+  edition: string;
 
   constructor(
     internalID: number,
@@ -20,9 +20,11 @@ export class Card {
     costs: number,
     price: number,
     timeperiod:string | undefined,
-    tags: Tag,
     productName: string,
-    externalID: number
+    externalID: number,
+    tags: string[],
+    category: string,
+    edition: string
   ) {
     this.internalID = internalID;
     this.logo = logo;
@@ -30,11 +32,12 @@ export class Card {
     this.publisher = publisher;
     this.costs = costs;
     this.price = price;
-    this.tags = tags;
     this.productName = productName;
     this.externalID = externalID;
-
-    timeperiod = null ?  this.timeperiod = 'permanent' : this.timeperiod = timeperiod;
+    this.timeperiod = timeperiod;
+    this.tags = tags;
+    this.category = category;
+    this.edition = edition;
   }
 }
 

@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TagsComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.content)
   }
   @Input() content!: string;
   

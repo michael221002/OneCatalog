@@ -1,4 +1,4 @@
-import { Product } from '../models/ProductsModel';
+import { Product } from '../models/ProductModel';
 
 
 interface Tag {
@@ -23,21 +23,28 @@ export class Products {
             0,
             0,
             undefined,
-            [
-                'BIT',
-                'Dev',
-                'Software Engineer',
-                "Webdeveleopment",
-            ],
             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png",
             ["SWOmie", "Developer"],
             "germany",
             "https://code.visualstudio.com/",
             12345,
-            ["node js", "windows"]
+            ["node js", "windows"],
+            'Softwaredeveleopmenttool',
+            'BIT',
+            'Software Engineer',
+            'Codeeditor',
+            [
+                'BIT',
+                'CIT',
+                'Microsoft',
+                'VS Code',
+                'Code editor',
+                'Visual Studio Code',
+                'Visual Studio Code kostenlos'
+            ]
         ),
         new Product(
-            1234,
+            4321,
             "With Visual Studio here we work on the SWO Website and Pyracloud",
             "Visual Studio Code",
             "Microsoft Inc.",
@@ -47,20 +54,27 @@ export class Products {
             false,
             0,
             0,
-            undefined,
-            [
-                'Dev',
-                'BIT',
-                'Software Engineer',
-                "Webdeveleopment",
-            ],
+            'monthly',
             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png",
             ["SWOmie", "Developer"],
             "germany",
             "https://code.visualstudio.com/",
             12345,
-            ["node js", "windows"]
-        )
+            ["node js", "windows"],
+            'Softwaredeveleopmenttool',
+            'BIT',
+            'Software Engineer',
+            'Codeeditor',
+            [
+                'BIT',
+                'CIT',
+                'Microsoft',
+                'VS Code',
+                'Code editor',
+                'Visual Studio Code',
+                'Visual Studio Code kostenlos'
+            ]
+        ),
     ];
 
 }
