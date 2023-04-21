@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Card } from '../models/CardModel';
 import { Products } from '../data/data'
 import { Product } from '../models/ProductModel';
@@ -40,7 +40,10 @@ export class ProductDataService {
   getSingleProductCard(id: number) {
     //this funtion is important fir filter and search
   }
+
+  testProduct: Product = this.products.Products[0];
   
   constructor(private products: Products) {
+    products.Products.push(this.testProduct)
   }
 }

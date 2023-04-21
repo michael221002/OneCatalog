@@ -43,7 +43,7 @@
 
     .standard {
         width: 100%;
-        background-color: darkgreen;
+        background-color: rgb(34, 156, 34);
         border-bottom-right-radius: 7px;
         border-bottom-left-radius: 7px;
         display: flex;
@@ -60,27 +60,34 @@
         justify-content: center;
     }
     .body {
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
         height: auto;
-        width: auto;
+        width: 85%;
         display: flex;
         flex-direction: column;
         padding: 15px;
 
         .main {
+            gap:5px;
             display: flex;
             .left {
-                width: 70%;
+                width: 100%;
             }
     
             .right {
-                width: 30%;
+                width: auto;
                 text-align: right;
                 
             }
         }
 
         h4 {
-            color:white;
+            background: #D8C4FF;
+            background: linear-gradient(to right, #f7f7f7 0%, #d4c8fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
             margin: 0;
         }
 

@@ -9,8 +9,9 @@
         <div class="main">
             <div class="left">
                 <h4>{{CardData.productName}}</h4>
-                <h5>{{CardData.edition}}</h5>
                 <h6>by {{CardData.publisher}}</h6>
+                <h5>· {{CardData.edition}}</h5>
+                <h5>· {{CardData.category}}</h5>
             </div>
             <div class="right">
                 <h4>{{CardData.costs}} $</h4>
@@ -29,7 +30,7 @@
             <div *ngFor="let i of CardData.tags | slice:0:2">
                 <app-tags [content] = "i"></app-tags>
             </div>
-            <button mat-button color="primary">...</button>
+            <button mat-button color="primary"><span style="color:white">...</span></button>
         </div>
     </div>
 </div>
