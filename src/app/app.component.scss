@@ -1,5 +1,9 @@
-.CatalogContainer {
+
+.layout {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+}
+.routerContainer{
+    width: auto; 
+    height:100vh;
+    overflow-y: scroll;
 }

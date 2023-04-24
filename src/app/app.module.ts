@@ -15,6 +15,7 @@ import { TagsComponent } from './objects/tags/tags.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { TestComponent } from './sites/test/test.component';
 import { MatIconModule } from '@angular/material/icon';
+import { SidebarComponent } from './objects/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     ProductCardComponent,
     TagsComponent,
-    TestComponent
+    TestComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
