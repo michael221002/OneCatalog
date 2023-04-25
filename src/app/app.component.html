@@ -1,8 +1,418 @@
+<div class="topbar" [ngClass]="{'nav': true, 'scroll': isScrolled}">
+    <img src="/assets/logo.png">
+    <div class="content">
+        <button mat-raised-button color="primary" (click)="scrollToSection('intro')">Intro</button>
+        <button mat-raised-button color="primary" (click)="scrollToSection('structure')">Structure</button>
+        <button mat-raised-button color="primary" (click)="scrollToSection('material')">Angular Material</button>
+        <button mat-raised-button color="primary" (click)="scrollToSection('architecture')">Architecture</button>
+        <button mat-raised-button color="primary" (click)="scrollToSection('forms')">Forms</button>
+        <button mat-raised-button color="primary" (click)="scrollToSection('dependency-injection')">Structure</button>
+        <button mat-raised-button color="primary" (click)="scrollToSection('requests')">Requests</button>
+    </div>
+</div>
 
-<div class="layout">
-    <app-sidebar></app-sidebar>
 
-    <div class="routerContainer">
-        <router-outlet></router-outlet>
+<div class="IntroSection"id="intro">
+    <div class="cover">
+        <span class="title">
+            Tutorial
+        </span>
+    </div>
+    <br>
+    <div class="IntroText">
+        <h1>
+            Hallo Ihr Lieben, ich habe mal ein Tutorial vorbereitet, speziell für unser Projekt
+            aber auch mit ein paar allgemeinen Infos. Hier habe ich mal versucht alles rein zu packen was
+            ich was für das Projekt wichtig ist und was für euch ganz interessant sein könnte.
+        </h1>
+    </div>
+</div>
+
+<br>
+
+<div class="main">
+    <div class="content">
+        <div class="StructureSection" id="structure">
+            <div class="box">
+                <div class="ThemeSection">
+                    <h1>
+                        <span class="circle"></span> Angular Material
+                    </h1>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>What is Angular Material and how we ca install it</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>How we can use the Material Buttons</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>How we can use the Material Icons and style theme</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>How we can use the Material Tabs</pre> 
+                </div>
+                <div class="ThemeSection">
+                    <h1>
+                        <span class="circle"></span> Architecture
+                    </h1>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Whats are Models and why we use them</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>What are Services and why we use them</pre>
+                </div>
+                <div class="ThemeSection">
+                    <h1>
+                        <span class="circle"></span> Forms
+                    </h1>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Build a simple Form</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Build a dynamical Form based on Models</pre>
+                </div>
+                <div class="ThemeSection">
+                    <h1>
+                        <span class="circle"></span> Dependecy Injection
+                    </h1>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Object Orientated Programming</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>How it works in Angular</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Injection between more Components</pre> 
+                </div>
+                <div class="ThemeSection">
+                    <h1>
+                        <span class="circle"></span> Requests
+                    </h1>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Important Knoledge to Understand</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>How to open a Request</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>How to implement Models</pre> 
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="line"></div>
+        <br>
+
+
+<!--=====================================================================MATERIAL===============================================================================================-->
+        <div class="capSection" id="material">
+            <h1>Angular Material</h1>
+            <br>
+            <h3>
+                Angular Material ist ein UI-Framework für Angular-Anwendungen, das eine Sammlung von vorgefertigten Material Design-Komponenten und -Stilen bereitstellt. Es bietet eine große Auswahl an Komponenten wie Buttons, Formulare, Dialoge, Navigationsleisten, Tabellen und vieles mehr.
+
+                Angular Material verwendet das Material Design-Konzept von Google, das eine klare und intuitive Benutzeroberfläche fördert und die Benutzerfreundlichkeit verbessert. Die Komponenten sind responsive und passen sich automatisch an verschiedene Bildschirmgrößen an.
+                
+                Angular Material ist vollständig in Angular integriert und bietet eine einfache Möglichkeit, benutzerdefinierte Designs und Stile zu erstellen. Es bietet auch eine schnelle und effiziente Entwicklung durch eine einheitliche API und automatische Generierung von CSS-Klassen.
+                
+                Das Framework wird durch die offizielle Angular-Entwicklergemeinschaft betrieben und ist auf npm (Node Package Manager) verfügbar. Es kann einfach in ein Angular-Projekt integriert werden, indem man es installiert und die benötigten Module importiert.
+            </h3>
+            <br>
+            <h2>How to Install Angular Material</h2>
+            <h3>
+                Wir können Angular Material installieren indem wir folgenden Befehl
+                in einem bestehenden Angular Projekt ausführen.
+            </h3>
+            <div class="codebox" id="installAngularMaterial">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[0]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <h2>How to use Angular Material Buttons</h2>
+            <h3>
+                Wir können Angular Material Buttons in dem wir sie wie folge implementieren<br>
+                Zuerst müssen wir die MatButtonKomponente importieren. Dazu navigieren wir zur
+                app.module.ts und importieren das Modul. Anschließend sagen wir Angular, dass es diese Modul in jeder Komponente zur
+                Verfügung stellen soll.
+            </h3>
+            <div class="codebox" id="installAngularMaterial">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[1]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[2]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <img src="./assets/importMatButton.png">
+            <br>
+            <h3>
+                Mit dem folgenden Befehl können die Buttons nun angewenden werden
+            </h3>
+            <div class="codebox" id="materialButtons">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[3]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <h3>
+                Im folgenden werden alle möglichen Buttons aufgelistet
+            </h3>
+            <br>
+            <section>
+                <div class="example-label">"mat-button"</div>
+                <div class="example-button-row">
+                  <button mat-button>Basic</button>
+                  <button mat-button color="primary">Primary</button>
+                  <button mat-button color="accent">Accent</button>
+                  <button mat-button color="warn">Warn</button>
+                  <button mat-button disabled>Disabled</button>
+                  <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+                </div>
+            </section>
+            <section>
+                <div class="example-label">"mat-raised-button"</div>
+                <div class="example-button-row">
+                  <button mat-raised-button>Basic</button>
+                  <button mat-raised-button color="primary">Primary</button>
+                  <button mat-raised-button color="accent">Accent</button>
+                  <button mat-raised-button color="warn">Warn</button>
+                  <button mat-raised-button disabled>Disabled</button>
+                  <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+                </div>
+            </section>
+            <section>
+              <div class="example-label">"mat-raised-button"</div>
+              <div class="example-button-row">
+                <button mat-stroked-button>Basic</button>
+                <button mat-stroked-button color="primary">Primary</button>
+                <button mat-stroked-button color="accent">Accent</button>
+                <button mat-stroked-button color="warn">Warn</button>
+                <button mat-stroked-button disabled>Disabled</button>
+                <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+              </div>
+            </section>
+            <section>
+              <div class="example-label">"mat-flat-button"</div>
+              <div class="example-button-row">
+                <button mat-flat-button>Basic</button>
+                <button mat-flat-button color="primary">Primary</button>
+                <button mat-flat-button color="accent">Accent</button>
+                <button mat-flat-button color="warn">Warn</button>
+                <button mat-flat-button disabled>Disabled</button>
+                <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+              </div>
+            </section>
+            <br>
+            <h2>How to use Angular Material Icons</h2>
+            <br>
+            <h3>
+                Wir können Angular Material Icons in dem wir sie wie folge implementieren<br>
+                Zuerst müssen wir die MatIconKomponente importieren. Dazu navigieren wir zur
+                app.module.ts und importieren das Modul. Anschließend sagen wir Angular, dass es diese Modul in jeder Komponente zur
+                Verfügung stellen soll.
+            </h3>
+            <div class="codebox" id="materialIcons">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[4]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[5]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <img src="./assets/importMatIcon.png">
+            <br>
+            <h3>
+                Mit dem folgenden Befehl können die Icons nun angewenden werden
+            </h3>
+            <div class="codebox">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[6]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <h3>
+                Im folgenden werden einige möglichen Buttons aufgelistet und des weiteren mit Buttons versehen der Befehl mit einem Button sieht folgender Maßen aus.
+            </h3>
+            <div class="codebox">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[7]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <section>
+                <div class="example-label">Icon</div>
+                <div class="example-button-row">
+                  <div class="example-flex-container">
+                    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                      <mat-icon>home</mat-icon>
+                    </button>
+                    <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                      <mat-icon>menu</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                      <mat-icon>favorite</mat-icon>
+                    </button>
+                    <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
+                      <mat-icon>open_in_new</mat-icon>
+                    </button>
+                  </div>
+                </div>
+            </section>
+            <br>
+            <h3>
+                Eine Liste aller Icons ist hier <a href="https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/">hier</a> zu finden.<br>
+                Um Icon zu designen ist der einfachste Schritt dies unter ein root Element zu setzen, von welchem die Eigenschaften eine höhere Pio haben. 
+                Dies zeigt das folgende Codesnippet.
+            </h3>
+            <div class="codebox">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[8]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <h2>
+                How we can use the Material Tabs
+            </h2>
+            <br>
+            <h3>In Angular Material sind Tabs ein UI-Element, mit dem Benutzer zwischen verschiedenen Inhalten navigieren können. Ein Tab-Element besteht normalerweise aus einer Reihe von Tabs, die horizontal oder vertikal angeordnet sein können, und einem Bereich, in dem der Inhalt des ausgewählten Tabs angezeigt wird.
+                <br>
+                <br>
+                Jeder Tab ist normalerweise mit einer Bezeichnung oder einem Symbol versehen, um den Inhalt zu kennzeichnen, und kann auch eine Badge-Nummer enthalten, um anzuzeigen, ob neue Inhalte verfügbar sind. Wenn der Benutzer auf einen Tab klickt, wird der zugehörige Inhalt in einem separaten Bereich angezeigt.
+                <br>
+                <br>
+                Angular Material stellt eine Reihe von Komponenten bereit, um Tab-Elemente einfach zu erstellen, wie mat-tab-group, mat-tab-nav-bar, mat-tab-link und mat-tab-content. Diese Komponenten können verwendet werden, um Tabs in verschiedenen Formen und Größen zu erstellen und an die spezifischen Anforderungen der Anwendung anzupassen.
+                <br>
+                <br>
+                Tabs eignen sich besonders gut für Anwendungen mit vielen Inhalten, bei denen der Benutzer zwischen verschiedenen Bereichen navigieren muss, ohne die Seite zu verlassen oder neu zu laden. Sie können auch nützlich sein, um Inhalte in übersichtliche Kategorien zu unterteilen und den Benutzern die Navigation durch die Anwendung zu erleichtern.</h3>
+            <h3>Der folgende Code Snippet implementiert uns auch wieder hier das Modul</h3>
+            <div class="codebox" id="materialIcons">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[9]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[10]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <img src="./assets/importMatTab.png">
+            <br>
+            <h3>Jetzt können wir das Tabmodul werwenden indem wir den folgenden Code benutzen (Als Beispiel mit 3 Tabs)</h3>
+            <div class="codebox" id="materialTabs">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[11][0]}}<br>
+                        {{snippets[11][1]}}<br>
+                        {{snippets[11][2]}}<br>
+                        {{snippets[11][3]}}<br>
+                        {{snippets[11][4]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <h3>Das Ergebnis sieht so aus</h3>
+            <mat-tab-group>
+                <mat-tab label="First"> Content 1 </mat-tab>
+                <mat-tab label="Second"> Content 2 </mat-tab>
+                <mat-tab label="Third"> Content 3 </mat-tab>
+            </mat-tab-group>
+            <h3>jetzt passen wir die Farben und den Style noch an etwas sowie bringen etwas mehr Content ins Spiel und erhalten mit folgenden Code folgendes Ergebnis</h3>
+            <img src="./assets/designTabs.png">
+            <br>
+            <mat-tab-group style="color:white; background-color: rgb(41, 26, 54);" [backgroundColor]="'primary'">
+                <mat-tab label="First">
+                    <p style="margin:20px;"> 
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no 
+                        sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                </mat-tab>
+                <mat-tab label="Second">
+                    <p style="margin:20px;"> 
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no 
+                        sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                </mat-tab>
+                <mat-tab label="Third">
+                    <p style="margin:20px;"> 
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no 
+                        sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+        <br>
+        <div class="line"></div>
+        <br>
+
+
+<!--=====================================================================Architecture===============================================================================================-->
+        <div class="capSection" id="architecture">
+            <h1>Architecture</h1>
+
+
+
+        </div>
+    </div>
+    <div class="toc">
+        <h3>Codesnippets</h3>
+        <h4>Angular Material</h4>
+        <h5 (click)="scrollToSection('installAngularMaterial')">Install Angular Material</h5>
+        <h5 (click)="scrollToSection('materialButtons')">Implement Angular Material Buttons</h5>
+        <h5 (click)="scrollToSection('materialIcons')">Implement Angular Material Icons</h5>
+        <h5 (click)="scrollToSection('materialTabs')">Implement Angular Material Tabs</h5>
+        <h4>Architecture</h4>
+        <h5>Whats are Models and why we use them</h5>
+        <h5>What are Services and why we use them</h5>
+        <h4>Forms</h4>
+        <h5>Build a simple Form</h5>
+        <h5>Build a dynamical Form based on Models</h5>
+        <h4>Dependecy Injection</h4>
+        <h5>Object Orientated Programming</h5>
+        <h5>How it works in Angular</h5>
+        <h5>Injection between more Components</h5>
+        <h4>Requests</h4>
+        <h5>Important Knoledge to Understand</h5>
+        <h5>How to open a Request</h5>
+        <h5>How to implement Models</h5>
     </div>
 </div>

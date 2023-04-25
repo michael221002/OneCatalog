@@ -1,9 +1,267 @@
-
-.layout {
+.topbar {
+    height: 60px;
+    width:100%;
+    background: rgb(19,19,19);
+    background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(26, 26, 26) 100%);
+    -webkit-box-shadow: 0px 0px 11px 5px #000000; 
+    box-shadow: 0px 0px 11px 5px #000000;
     display: flex;
+    padding:20px;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    transition: all 0.3s ease;
+    z-index: 999;
+
+    img {
+        height: 95%;
+        width: auto;
+        justify-self: flex-start;
+        left: 10px;
+        position:absolute;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:20px;
+    }
 }
-.routerContainer{
-    width: auto; 
-    height:100vh;
-    overflow-y: scroll;
+
+.topbar.scroll {
+    padding: 0px;
 }
+
+.IntroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .cover {
+        margin-top:60px;
+        background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+        background-position: center;
+        background-repeat: none;
+        background-size: cover;
+        width: 100%;
+        height: calc(100vh - 40px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        -webkit-box-shadow: 0px 0px 11px 5px #000000; 
+        box-shadow: 0px 0px 11px 5px #000000;
+
+        span {
+            color: white;
+            font-size: 5rem;
+            font-family: Arial;
+        }
+    }
+
+    .IntroText {
+        width:auto;
+        height: auto;
+        padding: 50px 280px 50px 280px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h1 {
+            font-size: 1.8rem;
+            color:white;
+            padding-bottom: 100px;
+            border-bottom: #85007e solid ;
+            border-radius: 20px;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    width:auto;
+    height: 850px;
+    padding:20px;
+    gap:20px;
+    justify-content: center;
+    .content {
+        overflow-y: scroll;
+        padding: 20px;
+        width:55%;
+        .StructureSection {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .box {
+                width: auto;
+                border-radius: 10px;
+                padding: 40px;
+
+                color:white;
+                border: 1px solid #e900dd56;
+
+                .ThemeSection {
+                    h1 {
+
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        .circle {
+                            display: inline-block;
+                            width: 15px; /* Durchmesser des Kreises */
+                            height: 15px;
+                            border-radius: 50%; /* erstellt einen Kreis */
+                            background-color: white; /* Hintergrundfarbe des Kreises */
+                        }
+                    }
+
+                    pre {
+                        tab-size: 8;
+                        font-size: 1.3rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        .circle {
+                            display: inline-block;
+                            width: 10px; /* Durchmesser des Kreises */
+                            height: 10px;
+                            border-radius: 50%; /* erstellt einen Kreis */
+                            background-color: white; /* Hintergrundfarbe des Kreises */
+                        }
+                        .tab {
+                            display: inline-block;
+                            width: 50px; /* Durchmesser des Kreises */
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .capSection {
+            display:flex;
+            flex-direction: column;
+            h1,h2,h3 {
+                color: white;
+            }
+
+            img {
+                width: 70%;
+                height:auto;
+            }
+        }
+    }
+    
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+
+      ::-webkit-scrollbar-track {
+        background: #50004c;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #85007e;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .toc {
+        width: auto;
+        height: auto;
+        color:white;
+        padding:20px;
+        h4 {
+            color:#ffbbfc;
+        }
+        h3, h4, h5 {
+            margin:7px;
+        }
+
+        h5 {
+            cursor: pointer;
+            transition: color .1s linear; 
+        }
+        h5:hover {
+            color: #85007e;
+        }
+    }
+}
+
+.line {
+    width:100%;
+    height:3px;
+    background-color: #85007e;
+    border-radius: 50px;
+}
+
+.codebox {
+    width: auto;
+    height: auto;
+    background: rgb(19,19,19);
+    background: linear-gradient(45deg, rgba(19,19,19,1) 0%, rgba(15,15,15,1) 100%);
+    padding: 20px 40px 20px 40px;
+    border-radius: 20px;
+    border: solid white 1px;
+    gap:5px;
+    .codeLine {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    h2 {
+        color:white;
+        margin:0px;
+    }
+}
+
+
+section {
+    display: table;
+    background-color: white;
+    padding:20px;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+
+  @media only screen and (max-width: 1373px) {
+    .topbar {
+        height: auto;
+
+        .content {
+            flex-wrap: wrap;
+        }
+    }
+  }

@@ -13,9 +13,10 @@ import { ProductCardComponent } from './objects/product-card/product-card.compon
 import { MatButtonModule } from '@angular/material/button';
 import { TagsComponent } from './objects/tags/tags.component';
 import { MatChipsModule } from '@angular/material/chips';
-import { TestComponent } from './sites/test/test.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SidebarComponent } from './objects/sidebar/sidebar.component';
+
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -23,7 +24,6 @@ import { SidebarComponent } from './objects/sidebar/sidebar.component';
     AppComponent,
     ProductCardComponent,
     TagsComponent,
-    TestComponent,
     SidebarComponent
   ],
   imports: [
@@ -32,7 +32,8 @@ import { SidebarComponent } from './objects/sidebar/sidebar.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [Products],
   bootstrap: [AppComponent]
