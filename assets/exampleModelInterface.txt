@@ -1,0 +1,32 @@
+interface Car {
+  make: string;
+  model: string;
+  year?: number;
+  color!: string;
+  features: {
+    powerWindows: boolean;
+    sunroof: boolean;
+  };
+}
+
+interface RequiredCar {
+  make: string;
+  model: string;
+  year: number;
+  color: string;
+  features: {
+    powerWindows: boolean;
+    sunroof: boolean;
+  };
+}
+
+interface PartialCar {
+  make?: string;
+  model?: string;
+  year?: number;
+  color?: string;
+  features?: {
+    powerWindows?: boolean;
+    sunroof?: boolean;
+  };
+}
