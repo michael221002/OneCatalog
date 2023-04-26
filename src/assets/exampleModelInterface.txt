@@ -30,3 +30,14 @@ interface PartialCar {
     sunroof?: boolean;
   };
 }
+
+myCar: Car = {
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'blue',
+    features: {
+      powerWindows: true,
+      sunroof: false,
+    },
+};
