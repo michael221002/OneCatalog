@@ -9,3 +9,5 @@ class Person {
     this.age = age;
   }
 }
+
+Mitarbeiter = new Person('Franz', 'Harald', 22);
