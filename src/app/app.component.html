@@ -5,8 +5,8 @@
         <button mat-raised-button color="primary" (click)="scrollToSection('structure')">Structure</button>
         <button mat-raised-button color="primary" (click)="scrollToSection('material')">Angular Material</button>
         <button mat-raised-button color="primary" (click)="scrollToSection('architecture')">Architecture</button>
+        <button mat-raised-button color="primary" (click)="scrollToSection('angular')">Angularconcepts</button>
         <button mat-raised-button color="primary" (click)="scrollToSection('forms')">Forms</button>
-        <button mat-raised-button color="primary" (click)="scrollToSection('dependency-injection')">Structure</button>
         <button mat-raised-button color="primary" (click)="scrollToSection('requests')">Requests</button>
     </div>
 </div>
@@ -32,6 +32,7 @@
 
 <div class="main">
     <div class="content">
+
         <div class="StructureSection" id="structure">
             <div class="box">
                 <div class="ThemeSection">
@@ -47,8 +48,19 @@
                     <h1>
                         <span class="circle"></span> Architecture
                     </h1>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Objectorientation generell</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Objectorientation in Typescript</pre>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>Whats are Models and why we use them</pre>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>What are Services and why we use them</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Why we didn't want all in one file</pre>
+                </div>
+                <div class="ThemeSection">
+                    <h1>
+                        <span class="circle"></span> Concepts in Angular
+                    </h1>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Object Orientated Programming in Angular</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Services in Angular</pre>
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>Dependency-Injection in Angular</pre> 
                 </div>
                 <div class="ThemeSection">
                     <h1>
@@ -56,14 +68,6 @@
                     </h1>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>Build a simple Form</pre>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>Build a dynamical Form based on Models</pre>
-                </div>
-                <div class="ThemeSection">
-                    <h1>
-                        <span class="circle"></span> Dependecy Injection
-                    </h1>
-                    <pre class="under"><span class="tab"></span><span class="circle"></span>Object Orientated Programming</pre>
-                    <pre class="under"><span class="tab"></span><span class="circle"></span>How it works in Angular</pre>
-                    <pre class="under"><span class="tab"></span><span class="circle"></span>Injection between more Components</pre> 
                 </div>
                 <div class="ThemeSection">
                     <h1>
@@ -115,34 +119,19 @@
                 app.module.ts und importieren das Modul. Anschließend sagen wir Angular, dass es diese Modul in jeder Komponente zur
                 Verfügung stellen soll.
             </h3>
-            <div class="codebox" id="installAngularMaterial">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[1]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[2]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
             <br>
-            <img src="./assets/importMatButton.png">
+            <ace-editor [(text)]="importMatButton" id="materialButtons"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <h3>
                 Mit dem folgenden Befehl können die Buttons nun angewenden werden
             </h3>
-            <div class="codebox" id="materialButtons">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[3]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
+            <ace-editor [(text)]="snippets[3]"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <h3>
                 Im folgenden werden alle möglichen Buttons aufgelistet
@@ -201,46 +190,27 @@
                 app.module.ts und importieren das Modul. Anschließend sagen wir Angular, dass es diese Modul in jeder Komponente zur
                 Verfügung stellen soll.
             </h3>
-            <div class="codebox" id="materialIcons">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[4]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[5]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
             <br>
-            <img src="./assets/importMatIcon.png">
+            <ace-editor [(text)]="importMatIcon"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <h3>
                 Mit dem folgenden Befehl können die Icons nun angewenden werden
             </h3>
-            <div class="codebox">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[6]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
+            <ace-editor [(text)]="snippets[6]" id="materialIcons"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <h3>
                 Im folgenden werden einige möglichen Buttons aufgelistet und des weiteren mit Buttons versehen der Befehl mit einem Button sieht folgender Maßen aus.
             </h3>
-            <div class="codebox">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[7]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
+            <ace-editor [(text)]="snippets[7]"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <section>
                 <div class="example-label">Icon</div>
@@ -270,14 +240,10 @@
                 Um Icon zu designen ist der einfachste Schritt dies unter ein root Element zu setzen, von welchem die Eigenschaften eine höhere Pio haben. 
                 Dies zeigt das folgende Codesnippet.
             </h3>
-            <div class="codebox">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[8]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
+            <ace-editor [(text)]="snippets[8]"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <h2>
                 How we can use the Material Tabs
@@ -294,36 +260,17 @@
                 <br>
                 Tabs eignen sich besonders gut für Anwendungen mit vielen Inhalten, bei denen der Benutzer zwischen verschiedenen Bereichen navigieren muss, ohne die Seite zu verlassen oder neu zu laden. Sie können auch nützlich sein, um Inhalte in übersichtliche Kategorien zu unterteilen und den Benutzern die Navigation durch die Anwendung zu erleichtern.</h3>
             <h3>Der folgende Code Snippet implementiert uns auch wieder hier das Modul</h3>
-            <div class="codebox" id="materialIcons">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[9]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[10]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
             <br>
-            <img src="./assets/importMatTab.png">
+            <ace-editor [(text)]="importMatTab"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <h3>Jetzt können wir das Tabmodul werwenden indem wir den folgenden Code benutzen (Als Beispiel mit 3 Tabs)</h3>
-            <div class="codebox" id="materialTabs">
-                <div class="codeLine">
-                    <h2>
-                        {{snippets[11][0]}}<br>
-                        {{snippets[11][1]}}<br>
-                        {{snippets[11][2]}}<br>
-                        {{snippets[11][3]}}<br>
-                        {{snippets[11][4]}}
-                    </h2>
-                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
-                </div>
-            </div>
+            <ace-editor [(text)]="snippets[11]"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <h3>Das Ergebnis sieht so aus</h3>
             <mat-tab-group>
@@ -332,7 +279,10 @@
                 <mat-tab label="Third"> Content 3 </mat-tab>
             </mat-tab-group>
             <h3>jetzt passen wir die Farben und den Style noch an etwas sowie bringen etwas mehr Content ins Spiel und erhalten mit folgenden Code folgendes Ergebnis</h3>
-            <img src="./assets/designTabs.png">
+            <ace-editor [(text)]="designTabs" id="materialTabs"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
             <br>
             <mat-tab-group style="color:white; background-color: rgb(41, 26, 54);" [backgroundColor]="'primary'">
                 <mat-tab label="First">
@@ -385,13 +335,158 @@
         <br>
 
 
-<!--=====================================================================Architecture===============================================================================================-->
+<!--===================================================================Architecture=============================================================================================-->
         <div class="capSection" id="architecture">
             <h1>Architecture</h1>
 
+            <h3>
+                Softwarearchitektur beschreibt die Struktur und Organisation einer Softwareanwendung auf einer abstrakten Ebene. Es geht dabei um die Gestaltung des Gesamtsystems und die Aufteilung in einzelne Komponenten oder Module sowie die Interaktion zwischen diesen Komponenten.
+                <br><br>
+                Ziel der Softwarearchitektur ist es, eine stabile, flexible und erweiterbare Software zu entwickeln, die den Anforderungen des Kunden entspricht und dennoch einfach zu warten und zu erweitern ist. Eine gute Architektur kann auch dazu beitragen, dass das System effizient und sicher läuft und leicht skalierbar ist.
+                <br><br>
+                Eine wichtige Rolle bei der Gestaltung der Softwarearchitektur spielt die Wahl der geeigneten Architekturmuster, wie z.B. Schichtenarchitektur, MVC (Model-View-Controller) oder Microservices-Architektur. Jedes Muster hat seine eigenen Vor- und Nachteile, je nach den Anforderungen und Zielen des Projekts.
+                <br><br>
+                Ein gutes Beispiel für die Bedeutung der Softwarearchitektur ist eine Webanwendung. Die Architektur der Webanwendung könnte beispielsweise aus einem Frontend, einem Backend und einer Datenbank bestehen. Die Architektur könnte als Schichtenarchitektur organisiert werden, bei der das Frontend, das Backend und die Datenbank als separate Schichten angesehen werden, die miteinander interagieren, um die gewünschten Funktionen bereitzustellen.
+            </h3>
+            <br>
+            <h3>So könnte ein Beispiel in Typescript aussehen</h3>
+            <ace-editor [(text)]="exampleArchitecture"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
 
-
+            <h3>
+                In diesem Beispiel gibt es eine Datenzugriffsschicht, eine Geschäftslogikschicht und eine Präsentationsschicht. Jede Schicht hat eine spezifische Aufgabe und interagiert nur mit den Schichten darüber und darunter, um die gewünschte Funktionalität bereitzustellen.
+            </h3>
+            <br>
+            <h3>
+                Eine gute Softwarearchitektur ist wichtig, um komplexe Anwendungen zu strukturieren und zu organisieren. Eine solide Architektur sorgt dafür, dass eine Anwendung skalierbar, wartbar und erweiterbar ist. Eine Architektur beschreibt also, wie eine Anwendung aufgebaut ist und wie die verschiedenen Komponenten miteinander interagieren.
+                <br><br>
+                Die objektorientierte Programmierung ist eine Herangehensweise an die Entwicklung von Anwendungen, die auf der Verwendung von Objekten basiert. Objekte sind in sich geschlossene Einheiten, die Daten und Funktionalitäten miteinander verbinden. Durch die Verwendung von Objekten kann eine Anwendung modular strukturiert werden, was zu einer besseren Wartbarkeit und Erweiterbarkeit führt.
+                <br><br>
+                Daher ist es sinnvoll, die Prinzipien der objektorientierten Programmierung in der Softwarearchitektur zu nutzen. Durch die Verwendung von Objekten als Bausteine der Architektur kann eine Anwendung leichter verständlich und einfacher zu warten sein. Eine gut gestaltete objektorientierte Architektur kann auch dazu beitragen, die Wiederverwendbarkeit von Code zu erhöhen und die Entwicklung von Anwendungen zu beschleunigen.
+                <br><br>
+                Insgesamt ermöglicht die objektorientierte Programmierung in Verbindung mit einer guten Architektur eine saubere, effektive und nachhaltige Entwicklung von Softwareanwendungen.
+            </h3>
+            <h2>Objektorientiertes Programmieren</h2>
+            <h3>
+                Die objektorientierte Programmierung (OOP) ist ein Programmierparadigma, das sich auf die Modellierung von Problemen durch die Erstellung von Objekten konzentriert. Ein Objekt besteht aus Daten (Eigenschaften) und Verhalten (Methoden), die in einer einzigen Einheit zusammengefasst sind.
+                <br><br>
+                Ein Beispiel aus der Realität wäre ein Auto. Ein Auto besteht aus verschiedenen Teilen wie Motor, Rädern, Karosserie, usw., die alle miteinander interagieren, um das Auto zu bilden. Jedes Teil hat seine eigenen Eigenschaften und Verhaltensweisen. Der Motor hat eine Leistung, kann sich drehen und Gas geben. Die Räder können sich drehen und das Auto vorwärts bewegen. Die Karosserie hat eine Farbe und Form. Diese Teile können als Objekte modelliert werden, die miteinander interagieren, um das Auto als Ganzes zu bilden.
+            </h3>
+            <h3>Hier ist ein Codebeispiel in TypeScript, das das Konzept der OOP veranschaulicht:</h3>
+            <ace-editor [(text)]="exampleClass" id="implClass"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                In diesem Beispiel haben wir eine Klasse Person definiert, die Eigenschaften wie name und age hat und eine Methode sayHello definiert, die einen Text ausgibt. Wir erstellen dann eine Instanz der Klasse Person mit dem Namen person1, indem wir den Konstruktor aufrufen und Werte für name und age übergeben. Schließlich rufen wir die Methode sayHello auf, um den Text auszugeben.
+            </h3>
+            <h2>Services</h2>
+            <h3>
+                In der Softwareentwicklung sind Services Komponenten, die bestimmte Funktionen bereitstellen, die in der gesamten Anwendung wiederverwendet werden können. Ein Service ist also eine Klasse mit einer bestimmten Funktionalität, die unabhängig von Komponenten und Modulen der Anwendung ist und als Singleton fungiert.
+                <br><br>
+                Es gibt mehrere Gründe, warum Services in der Softwareentwicklung verwendet werden sollten:
+                <br><br>
+                • Code-Wiederverwendbarkeit: Ein Service kann in verschiedenen Komponenten und Modulen der Anwendung verwendet werden, um die Funktionalität, die er bereitstellt, zu nutzen.
+                <br><br>
+                • Single Source of Truth: Ein Service fungiert als einzige Quelle der Wahrheit für bestimmte Daten oder Funktionen, so dass alle Komponenten und Module dieselben Informationen und Funktionen verwenden und manipulieren.
+                <br><br>
+                • Separation of Concerns: Services ermöglichen eine klare Trennung von Zustandsverwaltung und Logik von der Benutzeroberfläche. Dadurch kann die Anwendung einfacher getestet und gewartet werden.
+                <br><br>
+                • Dependency Injection: Services können durch Dependency Injection in die Komponenten und Module der Anwendung eingefügt werden, was die Flexibilität und Erweiterbarkeit der Anwendung erhöht.
+                <br><br>
+                Insgesamt bieten Services eine Möglichkeit, um eine klar strukturierte und wiederverwendbare Anwendung zu erstellen, die leicht zu testen und zu warten ist.
+            </h3>
+            <h2>Models</h2>
+            <h3>
+                In der Softwareentwicklung bezieht sich der Begriff "Model" in der Regel auf eine Darstellung von Daten, die verwendet wird, um Daten zu speichern, zu manipulieren und zu präsentieren. Ein Model kann als eine Art Bauplan betrachtet werden, der beschreibt, wie Daten in der Anwendung organisiert werden sollen.
+                <br><br>
+                Modelle können in verschiedenen Bereichen der Softwareentwicklung eingesetzt werden, wie z. B. in der Datenbank-Modellierung, bei der Daten in einer relationalen Datenbank organisiert werden, oder in der UI-Entwicklung, bei der das Model die Darstellung von Daten auf der Benutzeroberfläche steuert.
+                <br><br>
+                Ein Model enthält normalerweise alle notwendigen Daten und Informationen, um die damit verbundenen Prozesse zu steuern und zu verwalten. Es kann auch Methoden oder Funktionen enthalten, um diese Daten zu validieren, zu transformieren oder zu manipulieren.
+                <br><br>
+                Die Verwendung von Models in der Softwareentwicklung hat mehrere Vorteile. Zum einen können Modelle helfen, die Code-Qualität zu verbessern und die Wartbarkeit zu erleichtern, indem sie eine klare und konsistente Struktur für die Datenorganisation bereitstellen. Außerdem können Modelle dazu beitragen, die Code-Wiederverwendbarkeit zu verbessern, da sie als Blaupause für die Verwendung in verschiedenen Teilen der Anwendung dienen können.
+                <br><br>
+                Darüber hinaus können Models auch dazu beitragen, die Code-Leistung und die Benutzerfreundlichkeit zu verbessern, indem sie die Datenorganisation und -manipulation optimieren. Wenn die Daten gut organisiert sind, kann die Anwendung schneller auf sie zugreifen und sie schneller verarbeiten. Wenn die Benutzer Daten leicht finden und bearbeiten können, verbessert sich auch die Benutzerfreundlichkeit der Anwendung.
+                <br><br>
+                Zusammenfassend lässt sich sagen, dass die Verwendung von Models eine wichtige Rolle in der Softwareentwicklung spielt, da sie helfen, Daten effektiv zu organisieren, Codequalität und Wartbarkeit zu verbessern, Code-Wiederverwendbarkeit zu ermöglichen und die Code-Leistung und Benutzerfreundlichkeit zu verbessern.
+            </h3>
+            <h3>Hier sind zwei Beispiel-Models in TypeScript, einmal als Klasse und einmal als Interface, sowie Erklärungen zu den Unterschieden und Kennzeichnungen:</h3>
+            <ace-editor [(text)]="exampleModelClass" id="implModClass"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>Erklärung: Die Person-Klasse definiert ein Modell für eine Person mit den Eigenschaften firstName, lastName und age. Der Konstruktor der Klasse erwartet die Werte für diese Eigenschaften als Parameter und weist sie dann den entsprechenden Instanzvariablen zu.</h3>
+            <h3>
+                Der Konstruktor einer Klasse ist eine spezielle Methode, die beim Erstellen einer neuen Instanz dieser Klasse aufgerufen wird. Der Konstruktor hat den gleichen Namen wie die Klasse und wird verwendet, um die Instanz der Klasse zu initialisieren und den Anfangszustand der Instanz festzulegen.
+                <br>
+                In TypeScript wird der Konstruktor durch das Schlüsselwort "constructor" definiert. Der Konstruktor kann Parameter entgegennehmen, die verwendet werden, um die Eigenschaften der Klasse zu initialisieren. Innerhalb des Konstruktors können auch weitere Methoden der Klasse aufgerufen werden.
+            </h3>
+            <ace-editor [(text)]="exampleModelInterface" id="implModInterface"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Erklärung: Das Car-Interface definiert ein Modell für ein Auto mit den Eigenschaften make, model, year, color und features. Das !-Symbol bei der Eigenschaft color kennzeichnet sie als Required-Property, während das ?-Symbol bei der Eigenschaft year sie als optional markiert. Das RequiredCar-Interface kennzeichnet alle Eigenschaften als Required, während das PartialCar-Interface alle Eigenschaften als optional kennzeichnet.
+            </h3>
+            <h2>Klassen und Interfaces im Vergleich</h2>
+            <h3>
+                Klassen und Interfaces haben einige Unterschiede:
+                <br><br>
+                • Klassen können einen Konstruktor und Methoden enthalten, während Interfaces nur Eigenschaften und Methodensignaturen definieren.<br>
+                • Klassen erzeugen bei der Instanziierung eine konkrete Objektinstanz, während Interfaces nur als Verträge für Typen und Strukturen dienen.<br>
+                • Klassen können vererbt werden, während Interfaces erweitert werden können.<br>
+                • Klassen können Implementierungen von Interfaces enthalten.
+                <br><br>
+                Klassen bieten in der Regel mehr Flexibilität, da sie mehr Funktionen und Verhaltensweisen bieten, während Interfaces eher für die Definition von Datenstrukturen und Typen verwendet werden. Die Wahl zwischen einer Klasse und einem Interface hängt also von den Anforderungen des Programms ab.
+            </h3>
+            <h3>Damit wir Klassen und Interfaces auf mehrere Dateien auslagern können und in anderen Dateien importieren können benutzen wir das Export Statement</h3>
+            <ace-editor [(text)]="export" id="exp"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h2>Aber warum auslagern?</h2>
+            <h3>
+                Das Auslagern von Services, Funktionen, Klassen, Models und anderen Teilen des Codes in separate Dateien hat mehrere Vorteile:
+                <br><br>
+                • Wiederverwendbarkeit: Wenn ein Teil des Codes in einer separaten Datei gespeichert wird, kann er leicht in anderen Teilen des Projekts wiederverwendet werden, ohne dass man ihn erneut schreiben muss. Das spart Zeit und reduziert die Fehleranfälligkeit.
+                <br><br>
+                • Lesbarkeit: Durch das Auslagern des Codes in separate Dateien wird der Code insgesamt lesbarer. Wenn alle Funktionen, Klassen und Models in einer Datei gespeichert werden, wird der Code schnell unübersichtlich und schwieriger zu lesen und zu verstehen.
+                <br><br>
+                • Modularität: Durch das Auslagern des Codes in separate Dateien wird der Code modularer. Jede Datei kann eine spezifische Aufgabe erfüllen und unabhängig von anderen Dateien sein. Dies erleichtert das Debugging, die Wartung und die Erweiterung des Codes.
+                <br><br>
+                • Teamarbeit: Das Auslagern des Codes in separate Dateien erleichtert die Zusammenarbeit zwischen verschiedenen Entwicklern im Team. Jeder Entwickler kann an einer separaten Datei arbeiten, ohne dass er den Code anderer Entwickler beeinflusst oder beeinflusst wird.
+                <br><br>
+                Insgesamt hilft das Auslagern von Code in separate Dateien dabei, den Code lesbarer, wartbarer, erweiterbarer und wiederverwendbarer zu machen, was letztendlich zu einer höheren Qualität und Effizienz des Projekts führt.
+            </h3>
         </div>
+
+        <br>
+        <div class="line"></div>
+        <br>
+
+
+<!--=====================================================================Concepts================================================================================================-->
+        <div class="capSection" id="angular">
+            <h1>Concepts in Angular</h1>
+        </div>
+
+        <br>
+        <div class="line"></div>
+        <br>
+
+<!--=======================================================================Forms=================================================================================================-->
+        <div class="capSection" id="forms">
+            <h1>Forms in Angular</h1>
+        </div>
+
+
     </div>
     <div class="toc">
         <h3>Codesnippets</h3>
@@ -401,15 +496,17 @@
         <h5 (click)="scrollToSection('materialIcons')">Implement Angular Material Icons</h5>
         <h5 (click)="scrollToSection('materialTabs')">Implement Angular Material Tabs</h5>
         <h4>Architecture</h4>
-        <h5>Whats are Models and why we use them</h5>
-        <h5>What are Services and why we use them</h5>
-        <h4>Forms</h4>
-        <h5>Build a simple Form</h5>
-        <h5>Build a dynamical Form based on Models</h5>
-        <h4>Dependecy Injection</h4>
+        <h5 (click)="scrollToSection('implClass')">Implement Classes</h5>
+        <h5 (click)="scrollToSection('implModClass')">Implement Models throught CLasses</h5>
+        <h5 (click)="scrollToSection('implModInterface')">Implement Models throught Interfaces</h5>
+        <h5 (click)="scrollToSection('exp')">Export Classes and Interfaces</h5>
+        <h4>Concepts in Angular</h4>
         <h5>Object Orientated Programming</h5>
         <h5>How it works in Angular</h5>
         <h5>Injection between more Components</h5>
+        <h4>Forms</h4>
+        <h5>Build a simple Form</h5>
+        <h5>Build a dynamical Form based on Models</h5>
         <h4>Requests</h4>
         <h5>Important Knoledge to Understand</h5>
         <h5>How to open a Request</h5>

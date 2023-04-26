@@ -7,13 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { MatButtonModule } from '@angular/material/button';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-
-import { MatTabsModule } from '@angular/material/tabs';
-import { AceEditorModule } from 'ng2-ace-editor';
-
-import { HttpClientModule } from '@angular/common/http';
+import { MatTabsModule } from '@angular/material/tabs'; //<---------------------------------here
 
 
 @NgModule({
@@ -24,12 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatChipsModule,
+    MatButtonModule
     MatIconModule,
-    MatTabsModule,
-    AceEditorModule,
-    HttpClientModule
+    MatTabsModule //<---------------------------------here
   ],
   providers: [],
   bootstrap: [AppComponent]
