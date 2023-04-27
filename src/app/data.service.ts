@@ -13,7 +13,10 @@ export class DataService {
 
   setZahl(inp:number){
     this.Zahl += inp;
+    console.log(this.Zahl)
   }
 
-  constructor() { }
+  constructor() {
+    this.Zahl = 1;
+  }
 }

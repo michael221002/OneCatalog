@@ -16,6 +16,7 @@ import { AceEditorModule } from 'ng2-ace-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from './button/button.component';
 import { OutputComponent } from './output/output.component';
+import { DataService } from './data.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { OutputComponent } from './output/output.component';
     AceEditorModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
