@@ -8,6 +8,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
 
   editorOptions = {
     enableBasicAutocompletion: true,
@@ -41,7 +44,9 @@ export class AppComponent implements OnInit {
     "   <mat-tab label='First'> Content 1 </mat-tab>\n"+
     "   <mat-tab label='Second'> Content 2 </mat-tab>\n"+
     "   <mat-tab label='Third'> Content 3 </mat-tab>\n"+
-    "</mat-tab-group>\n"
+    "</mat-tab-group>\n",
+    "ng gernate component [ServiceName]",
+    "ng g c [ServiceName]"
   ]
 
   importMatButton: any;
@@ -53,6 +58,7 @@ export class AppComponent implements OnInit {
   exampleModelClass: any;
   exampleModelInterface: any;
   export: any = 'export class [ClassName]\nexport interface [InterfaceName]\nimport [ClassName] from "./[Verzeichnis]/"';
+  exampleService: any;
 
   ngOnInit() {
     this.http.get('./assets/importMatButton.txt', { responseType: 'text' }).subscribe((data: any) => {
@@ -78,6 +84,9 @@ export class AppComponent implements OnInit {
     });
     this.http.get('./assets/exampleModelInterface.txt', { responseType: 'text' }).subscribe((data: any) => {
       this.exampleModelInterface = data;
+    });
+    this.http.get('./assets/exampleService.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.exampleService = data;
     });
   }
 

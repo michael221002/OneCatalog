@@ -475,6 +475,93 @@
 <!--=====================================================================Concepts================================================================================================-->
         <div class="capSection" id="angular">
             <h1>Concepts in Angular</h1>
+            <h3>
+                Angular ist ein umfassendes Framework zur Entwicklung von Webanwendungen. Es basiert auf dem Model-View-Controller (MVC) oder Model-View-ViewModel (MVVM) Architekturmuster und nutzt eine Vielzahl von Konzepten, um Entwicklern zu helfen, effektive und wartbare Anwendungen zu erstellen. Hier sind einige der grundlegenden Konzepte in Angular:
+                <br><br>
+                • Komponenten: Komponenten sind die grundlegenden Bausteine von Angular-Anwendungen. Sie sind abgekapselte Einheiten, die aus einer View (Ansicht), einem Template (Vorlage) und einem Controller (Klasse) bestehen. Komponenten repräsentieren Teile der Benutzeroberfläche einer Anwendung.
+                <br>
+                • Templates: Templates definieren das Aussehen der Benutzeroberfläche einer Angular-Anwendung. Sie sind in der Regel in HTML geschrieben und können Angular-spezifische Syntax verwenden, um Daten anzuzeigen und Ereignisse zu behandeln.
+                <br>
+                • Direktiven: Direktiven erweitern die Funktionalität von HTML und ermöglichen es Entwicklern, eigene HTML-Elemente zu erstellen. Sie können auch verwendet werden, um die Verhaltensweise von vorhandenen HTML-Elementen zu ändern.
+                <br>
+                • Services: Services sind Klassen, die in der Regel zum Teilen von Daten und Funktionen zwischen verschiedenen Komponenten verwendet werden. Sie können auch externe Datenquellen wie APIs oder Datenbanken aufrufen.
+                <br>
+                • Dependency Injection: Dependency Injection ist ein Konzept, das es Entwicklern ermöglicht, Abhängigkeiten zwischen verschiedenen Komponenten in einer Angular-Anwendung zu verwalten. Es erleichtert das Testen und die Wiederverwendbarkeit von Code.
+                <br>
+                • Pipes: Pipes sind Funktionen, die verwendet werden, um Daten in der Benutzeroberfläche zu transformieren. Sie können verwendet werden, um Daten zu filtern, zu sortieren oder umzuwandeln.
+                <br>
+                • Module: Module sind Container für verschiedene Teile einer Angular-Anwendung. Sie werden verwendet, um Komponenten, Dienste und Direktiven zu organisieren und zu gruppieren.
+                <br>
+                • sRouter: Der Router ist ein Modul, das für die Navigation in einer Angular-Anwendung verantwortlich ist. Er ermöglicht es Benutzern, zwischen verschiedenen Ansichten der Anwendung zu navigieren.
+                <br><br>
+                Diese Konzepte sind nur ein Teil von dem, was Angular ausmacht, aber sie bilden die Grundlage für die Entwicklung von Angular-Anwendungen. Durch das Verständnis dieser Konzepte können Entwickler effektiver mit dem Framework arbeiten und bessere Anwendungen erstellen.
+            </h3>
+
+            <h2>
+                Object Orientated Programming in Angular
+            </h2>
+            <h3>
+                In Angular, Objektorientierung (OO) wird durch die Verwendung von TypeScript, einer typisierten Sprache, die auf JavaScript aufbaut, erreicht. TypeScript ermöglicht die Definition von Klassen, die wiederum zur Erstellung von Objekten verwendet werden können.
+                <br><br>
+                Angular selbst nutzt die Objektorientierung, um die verschiedenen Komponenten der Anwendung in abgekapselte Einheiten zu organisieren. Jede Komponente wird als Klasse implementiert, die Eigenschaften und Methoden enthält, um das Verhalten der Komponente zu definieren. Dadurch wird die Komponente unabhängig und kann leicht wiederverwendet werden.
+                <br><br>
+                Ein weiterer Aspekt der Objektorientierung in Angular ist die Vererbung. In Angular kann man eine Komponente von einer anderen Komponente erben und die Eigenschaften und Methoden der übergeordneten Komponente erweitern oder überschreiben. Dies ermöglicht es Entwicklern, eine Basis-Komponente zu erstellen, die gemeinsame Funktionalitäten enthält, und dann spezifische Komponenten zu erstellen, die von der Basis-Komponente erben.
+                <br><br>
+                Zusammenfassend kann gesagt werden, dass Objektorientierung in Angular durch die Verwendung von TypeScript und Klassen ermöglicht wird. Die Verwendung von Klassen und Vererbung ermöglicht es, Komponenten in abgekapselte Einheiten zu organisieren und wiederzuverwenden, was zur Entwicklung von robusten und skalierbaren Anwendungen beiträgt.
+            </h3>
+            <h2>Services in Angular</h2>
+            <h3>
+                In Angular sind Services Klassen, die in der Regel zur gemeinsamen Verwendung von Daten und Funktionen zwischen verschiedenen Komponenten verwendet werden. Sie sind eine Möglichkeit, Funktionen und Daten von einer Komponente zu isolieren und sie anderen Komponenten zur Verfügung zu stellen.
+                <br>
+                Services können Daten von externen Quellen wie Server-APIs oder anderen Diensten abrufen und diese Daten an andere Komponenten weitergeben. Sie können auch dazu verwendet werden, gemeinsame Funktionen bereitzustellen, die von mehreren Komponenten verwendet werden.
+            </h3>
+            <h3>Um einen Service zu erstellen schreiben wir</h3>
+            <div class="codebox" id="installAngularMaterial">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[12]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[13]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+            </div>
+            <br>
+            <h3>So könnte zum Beispiel ein Service für eine API Abfrage sein</h3>
+            <ace-editor [(text)]="exampleService"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <h2>Dependency Injection</h2>
+
+            <h3>
+                Dependency Injection (DI) ist ein Entwurfsmuster, das in Angular und anderen Frameworks und Sprachen weit verbreitet ist. Es ermöglicht die zentrale Verwaltung von Abhängigkeiten zwischen verschiedenen Komponenten einer Anwendung.
+                <br>
+                In Angular bedeutet Dependency Injection, dass eine Abhängigkeit von einer Komponente an eine andere Komponente weitergegeben wird, ohne dass die zweite Komponente sich darum kümmern muss, wie sie diese Abhängigkeit initialisiert. Stattdessen wird die Abhängigkeit automatisch von Angular verwaltet und bereitgestellt.
+                <br>
+                Um Dependency Injection in Angular zu implementieren, wird normalerweise ein Provider bereitgestellt, der die Abhängigkeit bereitstellt. Der Provider kann eine Klasse, eine Factory-Funktion oder ein Literalobjekt sein.
+            </h3>
+
+            <img src="https://angular.io/generated/images/guide/architecture/injector-injects.png">
+            <br>
+            <h3>
+                In Angular wird ein sogenanntes "Dependency Injection" (DI) System verwendet, bei dem Komponenten und Services als "Providers" registriert werden können. Wenn eine Komponente oder ein Service als Provider registriert wird, erstellt Angular eine einzige Instanz dieses Providers und teilt diese Instanz dann allen Komponenten und Services mit, die diesen Provider benötigen.
+                <br>
+                Dies bedeutet, dass unabhängig davon, wie oft Sie denselben Provider in verschiedenen Komponenten oder Services injizieren, nur eine einzige Instanz dieses Providers erstellt wird. Dies kann dazu beitragen, den Speicherverbrauch zu reduzieren und die Leistung zu verbessern, da nur eine Instanz des Providers verwaltet werden muss.
+                <br>
+                Allerdings gibt es auch die Möglichkeit, einen Provider als "singleton" oder "per component" zu registrieren. Wenn ein Provider als singleton registriert wird, gibt es nur eine Instanz des Providers im gesamten Anwendungskontext. Wenn er als "per component" registriert wird, gibt es eine separate Instanz des Providers für jede Komponente, die ihn benötigt.
+            </h3>
+            <h3>schauen wir uns ein Beispiel an</h3>
+            <h3>
+                Wir benötigen zwei Komponenten und einen Service. 
+                Die beiden Komponenten sind dabei Abhängig vom Service. Hier findet Dependency Injection statt. In einer Komponente haben wir zwei Buttons welche 
+                eine Variable in der Serviceklasse verändert. Die andere komponente abhängig von dieser Variable und gibt den Wert zurück. Das folgende Chema verdeutlicht dies.
+            </h3>
+
         </div>
 
         <br>
@@ -486,6 +573,14 @@
             <h1>Forms in Angular</h1>
         </div>
 
+        <br>
+        <div class="line"></div>
+        <br>
+
+<!--=======================================================================Forms=================================================================================================-->
+        <div class="capSection" id="requests">
+            <h1>Requests Angular</h1>
+        </div>
 
     </div>
     <div class="toc">
