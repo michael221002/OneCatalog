@@ -1,21 +1,41 @@
-import { Component, HostListener, OnInit, ElementRef, Output  } from '@angular/core';
+import { Component, HostListener, OnInit, ElementRef, ChangeDetectionStrategy  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DataService } from './data.service';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
 
+
+  yPosition: number = 0;
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.yPosition = window.pageYOffset;
+    this.isScrolled = window.pageYOffset > 0;
+    if (this.yPosition > 1200 ) {
+      this.toc = 'position: fixed; top: 156px; right:271px;';
+    } else {
+      this.toc = 'position: static;';
+    }
+  }
+
+  toc="position: static;";
+
+  constructor (private elementRef: ElementRef, private http: HttpClient, private testService: DataService) {
+  }
+
+
+
   editorOptions = {
-    enableBasicAutocompletion: true,
-    enableSnippets: true,
-    enableLiveAutocompletion: true,
     fontSize: '15px',
     highlightActiveLine: true,
     highlightSelectedWord: true,
@@ -25,7 +45,7 @@ export class AppComponent implements OnInit {
     showLineNumbers: true,
     useWorker: false,
     minLines: '1', 
-    maxLines: '50'
+    maxLines: '60'
   };
 
   snippets:any[] = [
@@ -46,7 +66,10 @@ export class AppComponent implements OnInit {
     "   <mat-tab label='Third'> Content 3 </mat-tab>\n"+
     "</mat-tab-group>\n",
     "ng gernate component [ServiceName]",
-    "ng g c [ServiceName]"
+    "ng g c [ServiceName]",
+    'ng g c button',
+    'ng g c output',
+    'ng g s data'
   ]
 
   importMatButton: any;
@@ -59,6 +82,15 @@ export class AppComponent implements OnInit {
   exampleModelInterface: any;
   export: any = 'export class [ClassName]\nexport interface [InterfaceName]\nimport [ClassName] from "./[Verzeichnis]/"';
   exampleService: any;
+  dataService:any;
+  buttonTs: any;
+  outputTs: any;
+  FormModule: any;
+  FormTs: any;
+  formHtml: any;
+  dynamicFormModel: any;
+  dynamicFormTs: any;
+  dynamicFormHtml: any;
 
   ngOnInit() {
     this.http.get('./assets/importMatButton.txt', { responseType: 'text' }).subscribe((data: any) => {
@@ -88,17 +120,39 @@ export class AppComponent implements OnInit {
     this.http.get('./assets/exampleService.txt', { responseType: 'text' }).subscribe((data: any) => {
       this.exampleService = data;
     });
+    this.http.get('./assets/dataService.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.dataService = data;
+    });
+    this.http.get('./assets/buttonTs.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.buttonTs = data;
+    });
+    this.http.get('./assets/outputTs.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.outputTs = data;
+    });
+    this.http.get('./assets/form/appModuleForm.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.FormModule = data;
+    });
+    this.http.get('./assets/form/formTs.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.FormTs = data;
+    });
+    this.http.get('./assets/form/formHtml.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.formHtml = data;
+    });
+    this.http.get('./assets/dynamicForm/model.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.dynamicFormModel = data;
+    });
+    this.http.get('./assets/dynamicForm/ts.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.dynamicFormTs = data;
+    });
+    this.http.get('./assets/dynamicForm/html.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.dynamicFormHtml = data;
+    });
   }
 
   isScrolled = false;
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = window.pageYOffset > 0;
-  }
-
-  constructor (private elementRef: ElementRef, private http: HttpClient) {
-
+  getVar(): string {
+    return this.testService.Zahl.toString()
   }
 
   scrollToSection(sec:string) {

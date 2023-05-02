@@ -1,3 +1,4 @@
+//output.component.ts
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
@@ -19,3 +20,8 @@ export class OutputComponent implements OnInit {
   ngOnInit() {
   }
 }
+
+//output.component.html
+<div>
+    <p style="height:auto; margin: 0;">Zahl: {{ getmyVariableZahl() }}</p>
+</div>

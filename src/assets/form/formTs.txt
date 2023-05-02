@@ -1,0 +1,41 @@
+//Importieren der notwendigen Bibliotheken
+import { JsonPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
+})
+export class FormComponent {
+  //erstellen der Datenstruktur unseres Formulars
+  profileForm = new FormGroup({
+    firstName: new FormControl('', Validators.required), //festlegen das firstName ausgefüllt werden muss
+    lastName: new FormControl('', Validators.required), //festlegen das lastName ausgefüllt werden muss
+    //eine weitere Formgroup in der unserer profileForm für die Adressse
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('')
+    })
+  });
+
+  //unsere Funktion für das abschicken des Formulars
+  onSubmit(){
+    this.input = new JsonPipe().transform(this.profileForm.value); //wandelt den Inhalt des Formulars in eine JSON um
+  }
+
+  //unsere Funktion um das Formular zu updaten und Werte im nachinein zu ergänzen
+  updateProfile() {
+    this.profileForm.patchValue({
+      firstName: 'Nancy',
+      address: {
+        street: '123 Drew Street'
+      }
+    });
+  }
+
+  input!:string; //Ausgabevariable mit ! um Typescript zu sagen das diese später noch definiert wird.
+}

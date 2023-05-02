@@ -1,0 +1,59 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { profile } from './profile';
+import { JsonPipe } from '@angular/common';
+
+@Component({
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.scss']
+})
+export class DynamicFormComponent implements OnInit {
+  //wie deklarieren die benötigten Variablen
+  fields: string[] = []; //Das benötigen wir als temporäre Speicherung der einzelen Felder, welche sich im Model befinden
+  model = new profile(); //hier erzeugen wir ein  Objekt aus unserer Model Klasse an welchem sich unsere Form orierentieren soll
+  profileForm!: FormGroup; //Das wird unsere spätere Formstruktur
+
+  getFormControlsFields() {
+    const formGroupFields: Record<string, any> = {}; //Das ist eine Konstante welche im späteren Verlauf ein Objekt aus der Klasse Control wird, sprich ein einzelnes Keyworld
+    for (const field of Object.keys(this.model)) { //Wir gehen nun in einer For Schleife jedes Element unseres Objekt durch
+       if(field == 'firstName' || field == 'lastName') { 
+          formGroupFields[field] = new FormControl("", Validators.required); //Heißt das Element first - oder lastName wollen wir es als required definieren
+        } else {
+          formGroupFields[field] = new FormControl(""); //andernfalls erzeugt er uns ein normales FormControl Objekt
+        }
+        this.fields.push(field); // haben wir unser FormControl Objekt fertig injiziert fügen wir es unseren temporären fields hinzu
+    }
+    return formGroupFields; // im gesamtergebnis geben wir die ganze Liste zurück
+  }
+
+  buildForm() {
+    
+    const formGroupFields = this.getFormControlsFields(); //hier erhalten wir die Liste
+    this.profileForm = new FormGroup(formGroupFields); //welche wir jetzt nur noch unserer Form hinzufügen müssen
+  }
+
+  ngOnInit() {
+    this.buildForm(); //im init Prozess führen wir die Funktion aus um unsere Form zu erzeugen
+  }
+
+  //An dieser stelle funktioniert die dynamische Form dann gleich wie unsere Simple Form
+  onSubmit(){
+    this.input = new JsonPipe().transform(this.profileForm.value);
+  }
+  updateProfile() {
+    this.profileForm.patchValue({
+      firstName: 'Max',
+      lastName: 'Mustermann'
+    });
+  }
+
+  //Eine extra Funktion ist die Clear Funkton, in welcher wir alle Felder durchgehen und diese löschen
+  clear(){
+    for (const controlName of Object.keys(this.profileForm.controls)) {
+      this.profileForm.controls[controlName].setValue('');
+    }
+  }
+
+  input!:string;
+}

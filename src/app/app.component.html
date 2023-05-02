@@ -77,6 +77,11 @@
                     <pre class="under"><span class="tab"></span><span class="circle"></span>How to open a Request</pre>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>How to implement Models</pre> 
                 </div>
+                <div class="ThemeSection">
+                    <h1>
+                        <span class="circle"></span> Tests
+                    </h1>
+                </div>
             </div>
         </div>
         <br>
@@ -516,7 +521,7 @@
                 Services können Daten von externen Quellen wie Server-APIs oder anderen Diensten abrufen und diese Daten an andere Komponenten weitergeben. Sie können auch dazu verwendet werden, gemeinsame Funktionen bereitzustellen, die von mehreren Komponenten verwendet werden.
             </h3>
             <h3>Um einen Service zu erstellen schreiben wir</h3>
-            <div class="codebox" id="installAngularMaterial">
+            <div class="codebox" id="generateComponent">
                 <div class="codeLine">
                     <h2>
                         {{snippets[12]}}
@@ -563,11 +568,79 @@
             </h3>
             <img src="./assets/cheme.png">
 
+
+            
             <br>
-            <div style="display: flex; gap: 5px; width: 100%;background-color: white; height: auto;">
-                <app-button></app-button>
-                <app-output></app-output>
+            <h3>Wir beginnen damit uns die zwei Komponenten und einen Service zu erstellen</h3>
+            <div class="codebox" id="installAngularMaterial">
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[14]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[15]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
+                <div class="codeLine">
+                    <h2>
+                        {{snippets[16]}}
+                    </h2>
+                    <button mat-raised-button><span style="color:black"><mat-icon color="">content_copy</mat-icon></span></button>
+                </div>
             </div>
+            <br>
+            <h3>Als nächstes schreiben wir in den Service eine Variable welche unsere Zahl speichert und eine Funktion welche aufgerufen werden kann um die Variable zu ändern</h3>
+            <br>
+            <ace-editor [(text)]="dataService" id="DepInj"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>Um die Variable in dem Service jetzt zu verändern initialiseren wir in unserer Buttonkomponente den dataservice und erzeugen ein Objekt aus diesem.
+                zusätzlich schreiben wir eine Funktion welche bei einem Button Click die Funktion im Service aufruft. Interessant zu wissen ist auch das wir einfach die Zahl direkt ändern
+                können indem wir auf die Variable im Service direkt zugreifen.
+            </h3>
+            <ace-editor [(text)]="buttonTs"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <h3>Zu guter letzt fehlt noch die Komponente um die Variable aus dem Datenservice auszulesen. Erinnern wir uns zurück an das Konzept in Angular für die Objektorientierung
+                Angular erstellt ausschließlich eine Instanz einer Klasse. Das heißt also wenn wir auch hier wieder in den Konstruktor unserer Komponente das Objekt initialiseren
+                greifen wir auf die selbe Instanz wie die Instanz der ButtonKomponente zu und genau das ist Dependency Injection. Deswegen erstellen wir für dependency Injections
+                auf herkümliche Art und Weise wie es in Typescript der Fall ist (obj = new class()). Wir lesen die Variable aus undgeben sie in einem p tag aus.
+                Der Code für die OutputKomponente sieht folgender Maßen aus
+            </h3>
+            <ace-editor [(text)]="outputTs"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>Noch unten dran gehangen ist das html Dokument der Komponente bitte beachten. Ganz wichtig ist nicht zu vergessen das wir in unserer html Komponente
+                einen String der Variable Zahl brauchen. Wir wandeln also in der Funktion, welche uns den Wert zurückgibt diesen in einen String um damit wir ihn ausgeben können.
+            </h3>
+            <h3>
+                Noch einmal zur Zusammenfassung. In dem Datenservice speichern wir unsere Variable und haben eine Funktion um die Variable zu verändern. In der Buttonkomponente
+                initialiseren wir ein Objekt aus der Klasse dataService sprich unserem Service und können auf die Variablen in diesem Objekt zugreifen und verändern diese um + und -1.
+                Die Outputkomponente initialisert ebenfalls ein Objekt aus der Serviceklasse und zu beachten ist hier das Angular lediglich ein Objekt einer Klasse erzeugt und wir somit
+                das sekbe Objekt sowhol in der Button als auch in der Outputkomponente benutzen. In der Outputkomponente haben wir eine Funktion, welche uns einen String der Variable Zahl
+                in unserem Service zurück gibt und anschließend ausgibt. Das Ergebnis sieht folgender Maßen aus. Irritieren mag das Design sein und es wirke als eine Komponente aber
+                technisch gesehen benutzen wir zwei Komponenten und einen Service.
+            </h3>
+            <div style="display: flex; gap: 5px; width: auto;background-color: white; height: auto; justify-content: space-between; align-items: center; padding:20px">
+                <p>ButtonKomponente</p>
+                <p>DataService</p>
+                <p>Outputkomponente</p>
+            </div>
+            <div style="display: flex; gap: 5px; width: 100%;background-color: white; height: auto; justify-content: space-between; align-items: center;">
+                <app-button></app-button>
+                <p style="margin:0;">Zahl: {{getVar()}}</p>
+                <app-output style="width:15%"></app-output>
+            </div>
+            <br>
 
         </div>
 
@@ -578,6 +651,119 @@
 <!--=======================================================================Forms=================================================================================================-->
         <div class="capSection" id="forms">
             <h1>Forms in Angular</h1>
+            <h3>
+                Angular Forms ist eine Funktionalität von Angular, mit der Sie Formulare in Ihrer Anwendung erstellen, validieren und verarbeiten können. Es ist ein wichtiger Teil der Datenbindung in Angular, mit dem Benutzerdaten aus Formularen erfassen und speichern können.
+                <br>
+                Angular Forms bietet eine Vielzahl von Funktionen, darunter:
+                <br><br>        
+                • Bidirektionale Datenbindung: Die Daten in einem Formular werden automatisch mit dem Modell synchronisiert, das das Formular steuert. Wenn ein Benutzer eine Eingabe macht, wird das Modell automatisch aktualisiert und umgekehrt.
+                <br>
+                • Validierung: Sie können benutzerdefinierte Validierungsregeln für Formulare definieren, um sicherzustellen, dass Benutzer korrekte Daten eingeben. Sie können auch Standardvalidierungsregeln verwenden, die in Angular Forms integriert sind.
+                <br>    
+                • Steuerung der Formularinteraktionen: Sie können das Verhalten von Formularen steuern, z.B. was passiert, wenn ein Benutzer auf eine Schaltfläche klickt oder eine Eingabe macht.
+                <br>
+                • Erstellen von Template-getriebenen Formularen oder Modell-getriebenen Formularen: Sie können entweder Formulare erstellen, die auf Vorlagen basieren oder Formulare, die auf dem Modell basieren.
+                <br><br>
+                Angular Forms bietet auch eine Vielzahl von Funktionen für komplexe Formulare, z.B. Formulargruppen, verschachtelte Formulare, dynamische Formulare und reaktive Formulare. Mit diesen Funktionen können Sie Formulare erstellen, die auf die Anforderungen Ihrer Anwendung zugeschnitten sind.
+            </h3>
+            <h2>Simple Form</h2>
+            <h3>Mit simplem Forms sind ein festes Format gemeint, was in Typescript festgelegt wird und 
+                in der Componennt Html abgebildet wird. Bevor wir jedoch die Form bauen können müssen wir noch einige
+                Module ins Appmodule importieren, wir befinden uns ja zusätzlich noch in Angular Material.
+                Für die Angular Material Designs importieren wir das MatFormFieldModule und das MatImportModule.
+                Außerdem benötigen wir noch das ReactiveFormsModule von Angular. Damit sieht unsere app.module.ts dann
+                wie folgt aus.
+            </h3>
+            <ace-editor [(text)]="FormModule"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Beginnend mit unserer Component.ts bauen wir das Konstrukt für unsere Form. Außerdem
+                fügen wir zwei Funktionen hinzu, zum einen jene, welche uns den Inhalt ausgibt wenn man das
+                Formular abschickt und zum anderen eine Funktion welche uns den Inhalt der Form teilweise ausfüllt.
+                Das ist praktisch wenn man später Daten in einer Datenbank bearbeiten will. Wichtig ist zu beachten,
+                dass bei der Ausgabe der Daten in der Submit Funktion wir diese in ein JSON Format bringen wollen,
+                um die Daten später in einer Request an die API schicken zu können. Mit der Klasse Json Pipe die wir 
+                uns importieren, erzeugen wir ein nues JSON-Objekt aus den Daten des Formulars. In unserer Component.ts
+                benötigen wir außerdem noch die Bibliotheken FormGroup, FormControl und Validators. Für weitere
+                Erklärungen folgen sie den Komentaren im Code.
+            </h3>
+            <ace-editor [(text)]="FormTs"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Als nächsten benötigen wir noch unsere Darstellung unserer in Typescript definierter profileForm.
+                Wir erstellen ein Formular und binden diese durch Angulars Data und Eventbinding sowohl an unsere
+                Formgroup als auch an die submit Funktion. Die einzelnen Elemente für die Eingaben designen wir durch 
+                Angular Material und binden jedes einzelne Element an ein Objekt in unserer Formgroup.
+                Außerdem fügen wir noch zwei Ausgaben ein, zum einen jene, über die Rechtmäßigkeit des Formulars und
+                jene über der Ausgabe unseres Inthaltes.
+            </h3>
+            <ace-editor [(text)]="formHtml"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Das Ergebnis sieht folgender Maßen aus.
+            </h3>
+            <app-form></app-form>
+            <br>
+            <h2>Dynamic Forms</h2>
+            <h3>
+                Wie ihr bemerkt hat ist dies jedoch alles in einer festen
+                Struktur und muss genau im Code deklariert werden. Wenn wir uns in unserem Projekt jedoch 
+                an die Request zurück erinnern um eine Lizenz zu beantragen, sehen die Requests jedes mal anders aus.
+                Da wir ja in unseren Daten festlegen was alles für eine Lizenz vorhanden sein muss um diese zu beantragen,
+                muss unsere Applikation selbstäntig, basierend auf diesen Daten ein Formular erzeugen und genau Dazu
+                benötigen wir dynamik, also basierend auf Datenquellen einen Algorythmus der ein Formular erzeugt.
+                An dieser Stelle verweise ich auch auf die <a href="https://angular.io/guide/dynamic-form">Angular Dokumentation</a>, ich schneide das Thema nur sehr
+                simpel an, in production sollte man sich dann aber an die Dokumentation halten, dort wir das Thema ausführlicher und genauer erleutert.
+            </h3>
+            <h3>
+                Wir beginnen damit uns unser Model zu erstellen. Es handelt sich dabei um ein Model für ein Benutzerprofil. Einfacher Weise lassen wir an der Stelle alle
+                Elemente optional.
+            </h3>
+            <ace-editor [(text)]="dynamicFormModel"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Als nächstes erstellen wir das Script dazu. Am wichtigsten ist an der Stelle unser Formbuilder. Einfacher Weise schreiben wir diesen selber um zu verstehen was
+                Dynamik bedeutet, es gibt direkt einen Formbuilder von Angular, dieser ist etwas komplexer und ausführlich in der Dokumentation erklärt. Für näheres Verständnis
+                gibt es wieder Kommentare.
+            </h3>
+            <ace-editor [(text)]="dynamicFormTs"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Als letzte erstellen wir noch unsere html und gehen in einer ngFor-Schleife unsere Formgroup durch und geben die Inhalt mit den Angular Material Modulen aus
+            </h3>
+            <ace-editor [(text)]="dynamicFormHtml"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Das Ergebnis sieht dann folgender Maßen aus.
+            </h3> 
+            <app-dynamic-form></app-dynamic-form>
+            <br>
+            <h3>
+                Es ist sehr einfach gehalten, in dem Moment wo wir die Schleife durchgehen und die einzelnen Elemente aus dem
+                Model auslesen und als neues Controlobjekt defnieren können wir noch viele weitere Regeln wie für Namen hinzufügen. Genau so ist es nicht schön einfach den Namen 
+                des Elements auch für das Label zu nehmen auch hier könnte man extra Regeln einbauen. Der Grund warum wir das jetzt alles gemacht haben ist,
+                dass unsere Daten die wir bekommen und die darin enthaltenen Requirements oft unterschiedlich sein werden. Damit wir dann nicht für jeden einzelnen Fall ein extra Formular 
+                bauen, muss man dynamisch arbeiten.
+            </h3>
+            
         </div>
 
         <br>
@@ -587,31 +773,35 @@
 <!--=======================================================================Forms=================================================================================================-->
         <div class="capSection" id="requests">
             <h1>Requests Angular</h1>
+            <h3>
+                Eine Request (deutsch: Anfrage) ist ein Begriff aus der Informatik und bezieht sich im Allgemeinen auf eine Aufforderung von einem Client an einen Server, um eine bestimmte Aktion durchzuführen oder eine bestimmte Ressource bereitzustellen. Requests sind in der Regel Teil von Client-Server-Kommunikationen und können verschiedene Formen annehmen, je nach Protokoll und Anwendungsfall. Beispielsweise können HTTP-Requests verwendet werden, um Webseiten oder Ressourcen von einem Webserver abzurufen, während SQL-Requests verwendet werden können, um Daten aus einer Datenbank abzufragen oder zu manipulieren. Eine Request besteht normalerweise aus einer Kopfzeile (Header) und einem optionalen Nachrichten- oder Datenkörper. Der Header enthält Metadaten über die Anfrage, wie beispielsweise den verwendeten HTTP-Verb (GET, POST, PUT, DELETE usw.), den URI (Uniform Resource Identifier) und verschiedene andere Informationen, die vom Server verwendet werden können, um die Anfrage zu verarbeiten. Der Nachrichten- oder Datenkörper enthält die eigentlichen Daten, die mit der Anfrage gesendet werden, wie beispielsweise Formulardaten oder JSON-Payloads.
+            </h3>
+            <img src="./assets/request.jpg">
         </div>
 
     </div>
     <div class="toc">
-        <h3>Codesnippets</h3>
-        <h4>Angular Material</h4>
-        <h5 (click)="scrollToSection('installAngularMaterial')">Install Angular Material</h5>
-        <h5 (click)="scrollToSection('materialButtons')">Implement Angular Material Buttons</h5>
-        <h5 (click)="scrollToSection('materialIcons')">Implement Angular Material Icons</h5>
-        <h5 (click)="scrollToSection('materialTabs')">Implement Angular Material Tabs</h5>
-        <h4>Architecture</h4>
-        <h5 (click)="scrollToSection('implClass')">Implement Classes</h5>
-        <h5 (click)="scrollToSection('implModClass')">Implement Models throught CLasses</h5>
-        <h5 (click)="scrollToSection('implModInterface')">Implement Models throught Interfaces</h5>
-        <h5 (click)="scrollToSection('exp')">Export Classes and Interfaces</h5>
-        <h4>Concepts in Angular</h4>
-        <h5>Object Orientated Programming</h5>
-        <h5>How it works in Angular</h5>
-        <h5>Injection between more Components</h5>
-        <h4>Forms</h4>
-        <h5>Build a simple Form</h5>
-        <h5>Build a dynamical Form based on Models</h5>
-        <h4>Requests</h4>
-        <h5>Important Knoledge to Understand</h5>
-        <h5>How to open a Request</h5>
-        <h5>How to implement Models</h5>
+        <div class="contentToc" [style]="toc">
+            <h3>Codesnippets</h3>
+            <h4>Angular Material</h4>
+            <h5 (click)="scrollToSection('installAngularMaterial')">Install Angular Material</h5>
+            <h5 (click)="scrollToSection('materialButtons')">Implement Angular Material Buttons</h5>
+            <h5 (click)="scrollToSection('materialIcons')">Implement Angular Material Icons</h5>
+            <h5 (click)="scrollToSection('materialTabs')">Implement Angular Material Tabs</h5>
+            <h4>Architecture</h4>
+            <h5 (click)="scrollToSection('implClass')">Implement Classes</h5>
+            <h5 (click)="scrollToSection('implModClass')">Implement Models throught CLasses</h5>
+            <h5 (click)="scrollToSection('implModInterface')">Implement Models throught Interfaces</h5>
+            <h5 (click)="scrollToSection('exp')">Export Classes and Interfaces</h5>
+            <h4>Concepts in Angular</h4>
+            <h5 (click)="scrollToSection('DepInj')">Implement Dependency Injections</h5>
+            <h4>Forms</h4>
+            <h5>Build a simple Form</h5>
+            <h5>Build a dynamical Form based on Models</h5>
+            <h4>Requests</h4>
+            <h5>Important Knoledge to Understand</h5>
+            <h5>How to open a Request</h5>
+            <h5>How to implement Models</h5>
+        </div>
     </div>
 </div>

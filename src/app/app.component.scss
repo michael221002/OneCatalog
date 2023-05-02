@@ -1,4 +1,5 @@
 .topbar {
+    top: 0;
     height: 60px;
     width:100%;
     background: rgb(19,19,19);
@@ -82,12 +83,10 @@
 .main {
     display: flex;
     width:auto;
-    height: 850px;
     padding:20px;
     gap:20px;
     justify-content: center;
     .content {
-        overflow-y: scroll;
         padding: 20px;
         width:55%;
         .StructureSection {
@@ -172,23 +171,26 @@
     }
 
     .toc {
-        width: auto;
-        height: auto;
+        width: 15%;
+        height: 100%;
         color:white;
-        padding:20px;
-        h4 {
-            color:#ffbbfc;
-        }
-        h3, h4, h5 {
-            margin:7px;
-        }
+        .contentToc {
+            padding:20px;
+            border-left: #85007e 2px solid;
+            h4 {
+                color:#ffbbfc;
+            }
+            h3, h4, h5 {
+                margin:7px;
+            }
 
-        h5 {
-            cursor: pointer;
-            transition: color .1s linear; 
-        }
-        h5:hover {
-            color: #85007e;
+            h5 {
+                cursor: pointer;
+                transition: color .1s linear; 
+            }
+            h5:hover {
+                color: #85007e;
+            }
         }
     }
 }
