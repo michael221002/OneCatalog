@@ -40,11 +40,7 @@ export class ProductDataService {
   getSingleProductCard(id: number) {
     //this funtion is important fir filter and search
   }
-
-  testProduct: Product = this.products.Products[0];
   
   constructor(private products: Products) {
-    for (let i = 0; i<10; i++)
-    products.Products.push(this.testProduct)
   }
 }

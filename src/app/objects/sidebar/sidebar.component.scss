@@ -34,9 +34,9 @@
         .menu {
             display: flex;
             flex-direction: column;
-            gap:20px;
             width: 80%;
             align-self: center;
+            gap:5px;
 
             .button {
                 align-self: center;
@@ -45,15 +45,13 @@
                 align-items: center;
                 gap: 20px;
                 width:80%;
-                transition: color .2s linear;
-                transition: border .1s linear;
-                transition: background-color .1s linear;
-                transition: transform .07s linear;
+                transition: all .07s linear;
                 justify-content: space-between;
                 cursor: pointer;
                 user-select: none;
                 border: solid 1px rgba(255, 255, 255, 0);
-                padding:10px;
+                padding:5px;
+                margin: 5px;
                 border-radius: 10px;
                 h1 {
                     margin: 0px;
@@ -70,9 +68,10 @@
             }
 
             .button:active {
-                transform: scale(.9);
                 border: solid 1px rgba(255, 255, 255, 0.315);
                 background-color: rgb(87, 0, 124);
+                padding:10px;
+                margin:0px;
             }
         }
 
