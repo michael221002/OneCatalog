@@ -774,9 +774,81 @@
         <div class="capSection" id="requests">
             <h1>Requests Angular</h1>
             <h3>
-                Eine Request (deutsch: Anfrage) ist ein Begriff aus der Informatik und bezieht sich im Allgemeinen auf eine Aufforderung von einem Client an einen Server, um eine bestimmte Aktion durchzuführen oder eine bestimmte Ressource bereitzustellen. Requests sind in der Regel Teil von Client-Server-Kommunikationen und können verschiedene Formen annehmen, je nach Protokoll und Anwendungsfall. Beispielsweise können HTTP-Requests verwendet werden, um Webseiten oder Ressourcen von einem Webserver abzurufen, während SQL-Requests verwendet werden können, um Daten aus einer Datenbank abzufragen oder zu manipulieren. Eine Request besteht normalerweise aus einer Kopfzeile (Header) und einem optionalen Nachrichten- oder Datenkörper. Der Header enthält Metadaten über die Anfrage, wie beispielsweise den verwendeten HTTP-Verb (GET, POST, PUT, DELETE usw.), den URI (Uniform Resource Identifier) und verschiedene andere Informationen, die vom Server verwendet werden können, um die Anfrage zu verarbeiten. Der Nachrichten- oder Datenkörper enthält die eigentlichen Daten, die mit der Anfrage gesendet werden, wie beispielsweise Formulardaten oder JSON-Payloads.
+                Eine Request (deutsch: Anfrage) ist ein Begriff aus der Informatik und bezieht sich im Allgemeinen auf eine Aufforderung von einem Client an einen Server, 
+                um eine bestimmte Aktion durchzuführen oder eine bestimmte Ressource bereitzustellen. Requests sind in der Regel Teil von Client-Server-Kommunikationen 
+                und können verschiedene Formen annehmen, je nach Protokoll und Anwendungsfall. Beispielsweise können HTTP-Requests verwendet werden, 
+                um Webseiten oder Ressourcen von einem Webserver abzurufen, während SQL-Requests verwendet werden können, u
+                m Daten aus einer Datenbank abzufragen oder zu manipulieren. Eine Request besteht normalerweise aus einer Kopfzeile (Header) und einem optionalen 
+                Nachrichten- oder Datenkörper. Der Header enthält Metadaten über die Anfrage, wie beispielsweise den verwendeten HTTP-Verb (GET, POST, PUT, DELETE usw.), 
+                den URI (Uniform Resource Identifier) und verschiedene andere Informationen, die vom Server verwendet werden können, um die Anfrage zu verarbeiten. 
+                Der Nachrichten- oder Datenkörper enthält die eigentlichen Daten, die mit der Anfrage gesendet werden, wie beispielsweise Formulardaten oder JSON-Payloads.
             </h3>
             <img src="./assets/request.jpg">
+            <br>
+            <h3>
+                Damit eine Applikation wie unsere zum Beispiel oder generell unter anderem Webapplikationen nicht direkt Zugriff auf Datenbanken hat, dienen heute API's als
+                Schnittstelle. Eine API (Application Programming Interface) ist eine Schnittstelle, die es verschiedenen Software-Anwendungen ermöglicht, miteinander zu kommunizieren und Daten auszutauschen. Sie definiert Regeln, Protokolle und Werkzeuge für den Datenaustausch zwischen verschiedenen Anwendungen, die in der Regel auf unterschiedlichen Plattformen oder Programmiersprachen laufen.
+                Eine API ermöglicht es Entwicklern, auf vordefinierte Funktionalitäten und Daten zugreifen, ohne dabei detailliertes Wissen über die zugrundeliegende Implementierung zu haben. Dadurch können Entwickler Zeit sparen und sich auf die Entwicklung ihrer eigenen Anwendungen konzentrieren, ohne sich um die zugrunde liegende Technologie kümmern zu müssen.
+                APIs sind heute in vielen Anwendungsbereichen zu finden, von der Integration von sozialen Netzwerken in mobile Anwendungen bis hin zur Steuerung von IoT-Geräten (Internet of Things).
+                <br>
+                Eine REST-API (Representational State Transfer Application Programming Interface) ist eine Art von API, die auf dem REST-Prinzip basiert. REST ist ein Architekturstil für verteilte Systeme, der auf HTTP-Protokoll aufbaut und als Grundlage für den Datenaustausch zwischen Servern und Clients dient.
+
+                Eine REST-API ermöglicht es den Entwicklern, über HTTP-Methoden (wie GET, POST, PUT, DELETE) auf Ressourcen (z.B. Datenbanktabellen, Dateien, etc.) zuzugreifen und diese zu manipulieren. Die Daten werden dabei meist in einem standardisierten Format wie JSON oder XML übertragen
+            </h3>
+            <img src="./assets/rest.png">
+            <h3>
+                Wir stellen also die Anfrage an eine API und erhalten Daten zurück. Um das zu machen benötigen wir ein Ziel, die Art der Request und die Daten wenn wir eine POST,
+                PUT, DELETE Methode benutzen. Wir machen das am Beispiel der Graph API welche uns Auskunft über unsere AD gibt. 
+            </h3>
+            <h3>
+                Die Graph API ist eine API, die von Facebook entwickelt wurde und es Entwicklern ermöglicht, auf die Daten und Funktionen von Facebook zuzugreifen. Die Graph API ist benannt nach der Idee, dass alle Daten auf Facebook als "Graph" organisiert sind, wobei jeder Knoten des Graphen eine Entität (z.B. eine Person, eine Seite oder ein Ereignis) und jede Kante eine Beziehung zwischen diesen Entitäten darstellt.
+
+                Die Graph API ist REST-basiert und kann über HTTP-Anfragen abgerufen werden. Sie unterstützt eine Vielzahl von Datenformaten wie JSON, XML und RSS. Entwickler können die Graph API nutzen, um auf öffentliche Daten auf Facebook zuzugreifen oder um Zugriff auf geschützte Daten zu erhalten, wenn der Nutzer der Anwendung die entsprechenden Berechtigungen erteilt hat.
+
+                Die Graph API bietet eine Vielzahl von Funktionen, darunter das Lesen und Schreiben von Beiträgen, das Abrufen von Nutzerprofilen und Seiteninformationen, das Verwalten von Anzeigen und das Verwalten von Gruppen. Durch die Nutzung der Graph API können Entwickler Anwendungen erstellen, die in die Facebook-Plattform integriert sind und eine nahtlose Erfahrung für Nutzer bieten.
+            </h3>
+            <h3>
+                In diesem Kapitel bauen wir uns zwar auch selber die Requests aber ich verweise auch gerne auf den <a href="https://developer.microsoft.com/en-us/graph/graph-explorer">Explorer</a> von Microsoft.
+                Dieser listet alle in der API bestehenden Endpunkt auf und zeigt, wie eine Request dafür aussehen könnte.
+            </h3>
+            <h3>
+                Zuerst müssen wir uns ein Objekt aus der http-Modul-Klasse von Angular initialisieren.
+            </h3>
+            <h3>
+                Bevor wir Anfragen an die API stellen können, benötigen wir einen Access Token den wir bekommen wenn wir uns idendifizieren.
+                An dieser Stelle würde der Single Sign on stattfinden. Duch diesen erhalten wir dann auch den Token den wir für unsere App brauchen damit wir 
+                Anfragen an die API stellen können.
+            </h3>
+            <h3>
+                Codeflow:
+            </h3>
+            <img src="https://learn.microsoft.com/en-us/azure/active-directory/develop/media/tutorial-v2-javascript-auth-code/diagram-01-auth-code-flow.png">
+            <br>
+            <h3>
+                Jedoch können wir das im Moment nicht machen, da unsere App zuerst im Azure Portal registriert werden müsste.
+                Damit uns trotzdem Requests einmal näher anschauen können und ich schlecht eine API schreiben kann die irgendwo gehostet wird, besworgen wir uns den Token über
+                den Graph API Explorer auf dem ihr auch die Endpunkte festlegen könnt. Über den <a href="https://developer.microsoft.com/en-us/graph/graph-explorer">Link</a> gelangt
+                ihr zum Explorer. Meldet euch bitte dort an und führt die erste Request aus "my profile".
+            </h3>
+            
+            <br>
+            <div class="requestSection">
+                <h1>GET-Request</h1>
+                <form>
+                    <button mat-raised-button type="button" (click)="GetRequest()">Get</button>
+                    <p>{{GetRes | json}}</p>
+                </form>
+            </div>
+            <br>
+            <!--<div class="requestSection">
+                <h1>GET-Request</h1>
+                <form>
+                    <mat-form-field style="width: 100%;">
+                        <mat-label for="field"></mat-label>
+                        <input matInput id="" type="text" formControlName="">
+                    </mat-form-field>
+                </form>
+            </div>-->
         </div>
 
     </div>

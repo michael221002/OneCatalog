@@ -1,6 +1,9 @@
 import { Component, HostListener, OnInit, ElementRef, ChangeDetectionStrategy  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from './data.service';
+import { GraphProfil } from './models/profile';
+import { RequestService } from './request.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -30,7 +33,7 @@ export class AppComponent implements OnInit {
 
   toc="position: static;";
 
-  constructor (private elementRef: ElementRef, private http: HttpClient, private testService: DataService) {
+  constructor (private elementRef: ElementRef, private http: HttpClient, private testService: DataService, private requestService: RequestService) {
   }
 
 
@@ -150,6 +153,16 @@ export class AppComponent implements OnInit {
   }
 
   isScrolled = false;
+
+  
+
+  GetRes:any;
+  GetRequest(){
+    this.GetRes = this.requestService.Get().subscribe( data => {
+      this.GetRes = data;
+      console.log(data)
+    });
+  }
 
   getVar(): string {
     return this.testService.Zahl.toString()
