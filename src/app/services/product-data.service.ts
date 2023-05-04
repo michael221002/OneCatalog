@@ -10,8 +10,8 @@ export class ProductDataService {
 
   //Hier werden Funktion zur Datenverarbeiung definiert
   transformToCard(data: Product): Card {
-    const { internalID,logo,standard,publisher,costs,price,timeperiod,productName,externalID,tags,category, edition } = data;
-    return { internalID,logo,standard,publisher,costs,price,timeperiod,productName,externalID,tags,category, edition }
+    const { index,logo,standard,publisher,costs,price,timeperiod,name,tags,category, edition } = data;
+    return { index,logo,standard,publisher,costs,price,timeperiod,name,tags,category, edition }
   }
 
 
@@ -29,7 +29,7 @@ export class ProductDataService {
 
   getSingleProductDetail(id: number):Product | string{
     for (let i = 0; i < this.products.Products.length; i++) {
-      if ( this.products.Products[i].internalID == id ) {
+      if ( this.products.Products[i].index == id ) {
         return this.products.Products[i]
       }
     }

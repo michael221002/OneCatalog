@@ -1,39 +1,36 @@
 export class Card {
-  internalID: number;
+  index: number;
   logo: string;
   standard: boolean;
   publisher: string;
   costs: number;
   price: number;
   timeperiod: string | undefined;
-  productName: string;
-  externalID: number;
+  name: string;
   tags: string[];
   category: string;
   edition: string;
 
   constructor(
-    internalID: number,
+    index: number,
     logo: string,
     standard: boolean,
     publisher: string,
     costs: number,
     price: number,
     timeperiod:string | undefined,
-    productName: string,
-    externalID: number,
+    name: string,
     tags: string[],
     category: string,
     edition: string
   ) {
-    this.internalID = internalID;
+    this.index = index;
     this.logo = logo;
     this.standard = standard;
     this.publisher = publisher;
     this.costs = costs;
     this.price = price;
-    this.productName = productName;
-    this.externalID = externalID;
+    this.name = name;
     this.timeperiod = timeperiod;
     this.tags = tags;
     this.category = category;

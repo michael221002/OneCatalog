@@ -1,5 +1,5 @@
 export class Product {
-    internalID: number;
+    index: number;
     businessReason: string;
     productName: string;
     publisher: string;
@@ -21,8 +21,10 @@ export class Product {
     role: string;
     category: string;
     tags: string[];
+    name: string;
+    descripton: string;
 
-    constructor(internalID: number,
+    constructor(index: number,
         businessReason: string,
         productName: string,
         publisher: string,
@@ -43,8 +45,10 @@ export class Product {
         departement: string,
         role: string,
         category: string,
-        tags: string[],){
-            this.internalID = internalID;
+        tags: string[],
+        name: string,
+        description: string){
+            this.index = index;
             this.businessReason = businessReason;
             this.productName = productName;
             this.publisher = publisher;
@@ -63,9 +67,11 @@ export class Product {
             this.prereqireties = prereqireties;
             this.functionality = functionality;
             this.departement = departement;
-            this.role = category;
+            this.role = role;
             this.category = category;
             this.tags = tags;
+            this.name = name;
+            this.descripton = description
 
             timeperiod == null ? this.timeperiod = 'permanent' : this.timeperiod = timeperiod;
         }
