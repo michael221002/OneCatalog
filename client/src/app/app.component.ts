@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   ngOnInit(): void {
 
-    this.http.get('http://127.0.0.1:8000/getIndex').subscribe(data => {
+    this.http.get('http://192.168.202.100:8000/getIndex').subscribe(data => {
       this.addProduct.patchValue({
         index: data
       });
@@ -104,7 +104,7 @@ export class AppComponent implements OnInit {
     this.export.licenseLevel = String(this.addProduct.value.licenseLevel);
     
 
-    this.http.post('http://127.0.0.1:8000/addProduct', this.export || JSON).subscribe(res => {
+    this.http.post('http://192.168.202.100:8000/addProduct', this.export || JSON).subscribe(res => {
       console.log(res);
     });
 
