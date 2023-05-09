@@ -1,0 +1,169 @@
+<div class="main">
+  <form [formGroup]="addProduct" (ngSubmit)="onSubmit()">
+    <div class="secOne">
+        <h1>Important for Application</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>index</mat-label>
+            <input matInput formControlName="index" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>businessReason</mat-label>
+            <input matInput formControlName="businessReason">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>productName</mat-label>
+            <input matInput formControlName="productName">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>publisher</mat-label>
+            <input matInput formControlName="publisher">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>version</mat-label>
+            <input matInput formControlName="version">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>edition</mat-label>
+            <input matInput formControlName="edition">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>releaseDate</mat-label>
+            <input matInput formControlName="releaseDate">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Standard</mat-label>
+            <mat-select formControlName="standard">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>costs (Number)</mat-label>
+            <input matInput formControlName="costs">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>price (Number)</mat-label>
+            <input matInput formControlName="price">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>timeperiod</mat-label>
+            <input matInput formControlName="timeperiod">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>link to logo</mat-label>
+            <input matInput formControlName="logo">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>requirements</mat-label>
+            <input matInput formControlName="requirements">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>location</mat-label>
+            <input matInput formControlName="location">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Link to Website</mat-label>
+            <input matInput formControlName="linkToWebsite">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>externalID (Number)</mat-label>
+            <input matInput formControlName="externalID">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>prereqireties</mat-label>
+            <input matInput formControlName="prereqireties">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>functionality</mat-label>
+            <input matInput formControlName="functionality">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>departement</mat-label>
+            <input matInput formControlName="departement">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>role</mat-label>
+            <input matInput formControlName="role">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>category</mat-label>
+            <input matInput formControlName="category">
+        </mat-form-field>
+        <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
+            <mat-form-field appearance="fill">
+                <mat-label>tags</mat-label>
+                <input matInput formControlName="tags">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="button" (click)="addTag()">Add</button>
+            <h2>Tags: <span *ngFor="let i of tags" style="border: blue 1px solid; padding:5px; margin: 5px;"> {{i}} </span></h2>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>name</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>descripton</mat-label>
+            <input matInput formControlName="descripton">
+        </mat-form-field>
+    </div>
+    <div class="secTwo">
+        <h1>Important for Backend</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>technicalOwner</mat-label>
+            <input matInput formControlName="technicalOwner">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>businessOwner</mat-label>
+            <input matInput formControlName="businessOwner">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>contractOwner</mat-label>
+            <input matInput formControlName="contractOwner">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>OLA</mat-label>
+            <input matInput formControlName="OLA">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>appClassification</mat-label>
+            <mat-select formControlName="appClassification">
+                <mat-option value="true">non-managed</mat-option>
+                <mat-option value="false">managed</mat-option>
+                <mat-option value="false">global</mat-option>
+                <mat-option value="false">universal</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>lifecycleState</mat-label>
+            <input matInput formControlName="lifecycleState">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>SWOApproved</mat-label>
+            <input matInput formControlName="SWOApproved">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>approvalType</mat-label>
+            <input matInput formControlName="approvalType">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>internalID (Number)</mat-label>
+            <input matInput formControlName="internalID">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>licenseModel</mat-label>
+            <mat-select formControlName="licenseModel">
+                <mat-option value="true">TLP</mat-option>
+                <mat-option value="false">CLP</mat-option>
+                <mat-option value="false">VLP</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>licenseModel</mat-label>
+            <mat-select formControlName="licenseModel">
+                <mat-option value="true">discount level</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!addProduct.valid">Submit</button>
+    </div>
+  </form>
+</div>
