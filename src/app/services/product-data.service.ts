@@ -42,5 +42,8 @@ export class ProductDataService {
   }
   
   constructor(private products: Products) {
+    for (var i = 0; i < 20; i++){
+      this.products.Products.push(this.products.Products[0]);
+    }
   }
 }
