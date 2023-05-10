@@ -75,7 +75,18 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>functionality</mat-label>
-            <input matInput formControlName="functionality">
+            <mat-select formControlName="functionality">
+                <mat-option value="true">text verarbeiten</mat-option>
+                <mat-option value="false">kalkulieren</mat-option>
+                <mat-option value="true">email schreiben</mat-option>
+                <mat-option value="false">administrieren</mat-option>
+                <mat-option value="true">managen</mat-option>
+                <mat-option value="false">entwickeln</mat-option>
+                <mat-option value="true">editieren von medien</mat-option>
+                <mat-option value="false">versionen verwalten</mat-option>
+                <mat-option value="true">testen von Software</mat-option>
+                <mat-option value="false">lesen von pdfs</mat-option>
+            </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>departement</mat-label>
@@ -87,7 +98,18 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>category</mat-label>
-            <input matInput formControlName="category">
+            <mat-select formControlName="category">
+                <mat-option value="true">Textverarbeitung</mat-option>
+                <mat-option value="false">Tabellenkalkulation</mat-option>
+                <mat-option value="true">Präsentation</mat-option>
+                <mat-option value="false">E-Mail-Programme</mat-option>
+                <mat-option value="true">Kalender</mat-option>
+                <mat-option value="false">Integrierte Entwicklungsumgebung (IDE)</mat-option>
+                <mat-option value="true">Versionskontrollsysteme</mat-option>
+                <mat-option value="false">Debugging-Tool</mat-option>
+                <mat-option value="true">Collaboration-Tools</mat-option>
+                <mat-option value="false">Build- und Deployment-Tools</mat-option>
+            </mat-select>
         </mat-form-field>
         <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
             <mat-form-field appearance="fill">
