@@ -11,14 +11,14 @@ export interface Product {
     price: number
     timeperiod: string
     logo: string
-    requirements: string
+    requirements: string[]
     location: string
     linkToWebsite: string
     externalID: number
-    prereqireties: string
+    prereqireties: string[]
     functionality: string
-    departement: string
-    role: string
+    departement: string[]
+    role: string[]
     category: string
     tags: string[]
     name: string

@@ -53,10 +53,14 @@
             <mat-label>link to logo</mat-label>
             <input matInput formControlName="logo">
         </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>requirements</mat-label>
-            <input matInput formControlName="requirements">
-        </mat-form-field>
+        <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
+            <mat-form-field appearance="fill">
+                <mat-label>requirements</mat-label>
+                <input matInput formControlName="requirements">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="button" (click)="addReq()">Add</button>
+            <h2>Requirements: <span *ngFor="let r of Req" style="border: blue 1px solid; padding:5px; margin: 5px;"> {{r}} </span></h2>
+        </div>
         <mat-form-field appearance="fill">
             <mat-label>location</mat-label>
             <input matInput formControlName="location">
@@ -69,10 +73,14 @@
             <mat-label>externalID (Number)</mat-label>
             <input matInput formControlName="externalID">
         </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>prereqireties</mat-label>
-            <input matInput formControlName="prereqireties">
-        </mat-form-field>
+        <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
+            <mat-form-field appearance="fill">
+                <mat-label>prereqireties</mat-label>
+                <input matInput formControlName="prereqireties">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="button" (click)="addPreReq()">Add</button>
+            <h2>Prerequireties: <span *ngFor="let p of PreReq" style="border: blue 1px solid; padding:5px; margin: 5px;"> {{p}} </span></h2>
+        </div>
         <mat-form-field appearance="fill">
             <mat-label>functionality</mat-label>
             <mat-select formControlName="functionality">
@@ -88,14 +96,22 @@
                 <mat-option value="false">lesen von pdfs</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>departement</mat-label>
-            <input matInput formControlName="departement">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>role</mat-label>
-            <input matInput formControlName="role">
-        </mat-form-field>
+        <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
+            <mat-form-field appearance="fill">
+                <mat-label>departement</mat-label>
+                <input matInput formControlName="departement">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="button" (click)="addDepartement()">Add</button>
+            <h2>Departement: <span *ngFor="let d of Departement" style="border: blue 1px solid; padding:5px; margin: 5px;"> {{d}} </span></h2>
+        </div>
+        <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
+            <mat-form-field appearance="fill">
+                <mat-label>role</mat-label>
+                <input matInput formControlName="role">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="button" (click)="addRole()">Add</button>
+            <h2>Role: <span *ngFor="let x of Role" style="border: blue 1px solid; padding:5px; margin: 5px;"> {{x}} </span></h2>
+        </div>
         <mat-form-field appearance="fill">
             <mat-label>category</mat-label>
             <mat-select formControlName="category">
@@ -185,7 +201,7 @@
                 <mat-option value="true">discount level</mat-option>
             </mat-select>
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit" [disabled]="!addProduct.valid">Submit</button>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
         <br>
         <div *ngIf="state" style="width:auto; padding: 20px; border-radius: 20px; background-color: green; display: flex; justify-content: center; align-items: center;">
             <h1 style="margin: 0px;">{{message}}</h1>

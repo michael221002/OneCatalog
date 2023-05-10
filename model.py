@@ -34,14 +34,14 @@ class ProductModel(BaseModel):
     price: int
     timeperiod: str
     logo: str
-    requirements: str
+    requirements: list  #
     location: str
     linkToWebsite: str
     externalID: int
-    prereqireties: str
+    prereqireties: list #
     functionality: str
-    departement: str
-    role: str
+    departement: list #
+    role: list #
     category: str
     tags: list
     name: str

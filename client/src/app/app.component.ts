@@ -24,8 +24,6 @@ export class AppComponent implements OnInit {
   }
   title = 'client';
 
-  tags: string[] = [];
-
   export:Product = {
     index: 0,
     businessReason: '',
@@ -39,14 +37,14 @@ export class AppComponent implements OnInit {
     price: 0,
     timeperiod: '',
     logo: '',
-    requirements: '',
+    requirements: [],
     location: '',
     linkToWebsite: '',
     externalID: 0,
-    prereqireties: '',
+    prereqireties: [],
     functionality: '',
-    departement: '',
-    role: '',
+    departement: [],
+    role: [],
     category: '',
     tags: [],
     name: '',
@@ -64,12 +62,47 @@ export class AppComponent implements OnInit {
     licenseLevel: ''
   };
 
+
+  tags: string[] = [];
   addTag(){
     this.tags.push(String(this.addProduct.value.tags));
     this.addProduct.patchValue({
       tags: '',
     });
   }
+
+  Req: string[] = [];
+  addReq(){
+    this.Req.push(String(this.addProduct.value.requirements));
+    this.addProduct.patchValue({
+      requirements: '',
+    });
+  }
+
+  PreReq: string[] = [];
+  addPreReq(){
+    this.PreReq.push(String(this.addProduct.value.prereqireties));
+    this.addProduct.patchValue({
+      prereqireties: '',
+    });
+  }
+
+  Departement: string[] = [];
+  addDepartement(){
+    this.Departement.push(String(this.addProduct.value.departement));
+    this.addProduct.patchValue({
+      departement: '',
+    });
+  }
+
+  Role: string[] = [];
+  addRole(){
+    this.Role.push(String(this.addProduct.value.role));
+    this.addProduct.patchValue({
+      role: '',
+    });
+  }
+
 
   onSubmit(){
     this.export.index = Number(this.addProduct.value.index);
@@ -84,14 +117,14 @@ export class AppComponent implements OnInit {
     this.export.price = Number(this.addProduct.value.price);
     this.export.timeperiod = String(this.addProduct.value.timeperiod);
     this.export.logo = String(this.addProduct.value.logo);
-    this.export.requirements = String(this.addProduct.value.requirements);
+    this.export.requirements = this.Req;    // TODO
     this.export.location = String(this.addProduct.value.location);
     this.export.linkToWebsite = String(this.addProduct.value.linkToWebsite);
     this.export.externalID = Number(this.addProduct.value.externalID);
-    this.export.prereqireties = String(this.addProduct.value.prereqireties);
+    this.export.prereqireties = this.PreReq;    // TODO
     this.export.functionality = String(this.addProduct.value.functionality);
-    this.export.departement = String(this.addProduct.value.departement);
-    this.export.role = String(this.addProduct.value.role);
+    this.export.departement = this.Departement;    // TODO
+    this.export.role = this.Role;    // TODO
     this.export.category = String(this.addProduct.value.category);
     this.export.tags = this.tags;
     this.export.name = String(this.addProduct.value.name);
@@ -150,16 +183,16 @@ export class AppComponent implements OnInit {
     price: new FormControl('',Validators.required),
     timeperiod: new FormControl('',Validators.required),
     logo: new FormControl('',Validators.required),
-    requirements: new FormControl('',Validators.required),
+    requirements: new FormControl(''),
     location: new FormControl('',Validators.required),
     linkToWebsite: new FormControl('',Validators.required),
     externalID: new FormControl('',Validators.required),
-    prereqireties: new FormControl('',Validators.required),
+    prereqireties: new FormControl(''),
     functionality: new FormControl('',Validators.required),
-    departement: new FormControl('',Validators.required),
-    role: new FormControl('',Validators.required),
+    departement: new FormControl(''),
+    role: new FormControl(''),
     category: new FormControl('',Validators.required),
-    tags: new FormControl('',Validators.required),
+    tags: new FormControl(''),
     name: new FormControl('',Validators.required),
     descripton: new FormControl('',Validators.required),
 
