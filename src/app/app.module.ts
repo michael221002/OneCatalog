@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ProductDataService } from './services/product-data.service';
 
-import { Products } from './data/data';
 import { ProductCardComponent } from './objects/product-card/product-card.component';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -34,7 +33,7 @@ import { SidebarComponent } from './objects/sidebar/sidebar.component';
     MatChipsModule,
     MatIconModule
   ],
-  providers: [Products],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

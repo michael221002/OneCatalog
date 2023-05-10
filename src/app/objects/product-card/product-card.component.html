@@ -26,10 +26,9 @@
         </div>
         <div class="line"></div>
         <div class="TagContainer" style="margin-top: 10px;">
-            <div *ngFor="let i of CardData.tags | slice:0:2">
+            <div *ngFor="let i of CardData.tags | slice:0:4">
                 <app-tags [content] = "i"></app-tags>
             </div>
-            <button mat-button color="primary"><span style="color:white">...</span></button>
         </div>
     </div>
 </div>

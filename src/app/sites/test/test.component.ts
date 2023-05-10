@@ -10,16 +10,17 @@ export class TestComponent implements OnInit {
   cardData = this.productDataService.getAllProductsCard()
   title = 'OneCatalog';
 
-  //to test functions in service
-  testDetailProduct = this.productDataService.getSingleProductDetail(1234)
-  testCardProducts = this.productDataService.getAllProductsCard()
-  testDetailProducts = this.productDataService.getAllProductsDetail()
+
+  //testing functions
+  detailedData = this.productDataService.getAllProductsDetail()
+  singleProduct = this.productDataService.getSingleProductDetail(5)
+
 
 
   constructor(private productDataService: ProductDataService){}
   ngOnInit() {
-    console.log(this.testDetailProduct)
-    console.log(this.testCardProducts)
-    console.log(this.testDetailProducts)
+    console.log(this.cardData)
+    console.log(this.detailedData)
+    console.log(this.singleProduct)
   }
 }

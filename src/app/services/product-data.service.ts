@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Card } from '../models/CardModel';
-import { Products } from '../data/data'
 import { Product } from '../models/ProductModel';
+import Data from '../data/data.json';
 
 @Injectable({
   providedIn: 'root'
@@ -15,22 +15,23 @@ export class ProductDataService {
   }
 
 
+  products: Product[] = Data;
 
   //hier werden die Daten aus der Daten Klasse(Data.ts) ausgelese und an die jeweilige Komponente zurück gegeben
   getAllProductsDetail() {
     //this function is useless for us at the moment
-    return this.products.Products;
+    return this.products;
   }
 
   getAllProductsCard() {
-    const cards: Card[] = this.products.Products.map(this.transformToCard);
+    const cards: Card[] = this.products.map(this.transformToCard);
     return cards;
   }
 
   getSingleProductDetail(id: number):Product | string{
-    for (let i = 0; i < this.products.Products.length; i++) {
-      if ( this.products.Products[i].index == id ) {
-        return this.products.Products[i]
+    for (let i = 0; i < this.products.length; i++) {
+      if ( this.products[i].index == id ) {
+        return this.products[i]
       }
     }
 
@@ -38,12 +39,9 @@ export class ProductDataService {
   }
 
   getSingleProductCard(id: number) {
-    //this funtion is important fir filter and search
+    //this funtion is important for filter and search
   }
   
-  constructor(private products: Products) {
-    for (var i = 0; i < 20; i++){
-      this.products.Products.push(this.products.Products[0]);
-    }
+  constructor() {
   }
 }
