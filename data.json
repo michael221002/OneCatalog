@@ -15,12 +15,17 @@
         "requirements": [
             "employeeID",
             "productName",
-            "edition",
             "costcenter",
             "CDG",
+            "upn",
             "contact",
             "reason",
-            "internalID"
+            "internalID",
+            "externalID",
+            "name",
+            "email",
+            "manager",
+            "departement"
         ],
         "location": "worldwide",
         "linkToWebsite": "https://code.visualstudio.com/",
