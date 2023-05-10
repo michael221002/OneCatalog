@@ -2,10 +2,10 @@
     {
         "index": 0,
         "businessReason": "Improve code quality and productivity",
-        "productName": " Visual Studio Code",
+        "productName": "Visual Studio Code",
         "publisher": "Microsoft Corporation",
         "version": "1.56.2",
-        "edition": " Visual Studio Code",
+        "edition": "Visual Studio Code",
         "releaseDate": "April 2021",
         "standard": true,
         "costs": 0,
