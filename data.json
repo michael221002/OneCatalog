@@ -1,6 +1,6 @@
 [
     {
-        "index": 0,
+        "index": 1,
         "businessReason": "Improve code quality and productivity",
         "productName": "Visual Studio Code",
         "publisher": "Microsoft Corporation",
@@ -30,7 +30,7 @@
             "linux",
             "macOS"
         ],
-        "functionality": "false",
+        "functionality": "develope",
         "departement": [
             "BIT",
             "BA",
@@ -40,7 +40,7 @@
             "developer",
             "software engeneer"
         ],
-        "category": "true",
+        "category": "Word processing",
         "tags": [
             "VS Code",
             "developer",
@@ -60,7 +60,7 @@
         "businessOwner": "Max Mustermann",
         "contractOwner": "Max Mustermann",
         "OLA": "Contract with Microsoft",
-        "appClassification": "false",
+        "appClassification": "global",
         "lifecycleState": "active",
         "SWOApproved": "yes, most used code editor",
         "approvalType": "manager, but free to use",
