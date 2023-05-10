@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   ngOnInit(): void {
 
-    this.http.get('http://192.168.202.100:8000/getIndex').subscribe(data => {
+    this.http.get('http://localhost:8000/getIndex').subscribe(data => {
       this.addProduct.patchValue({
         index: data
       });
@@ -104,50 +104,71 @@ export class AppComponent implements OnInit {
     this.export.licenseLevel = String(this.addProduct.value.licenseLevel);
     
 
-    this.http.post('http://192.168.202.100:8000/addProduct', this.export || JSON).subscribe(res => {
+    this.http.post('http://localhost:8000/addProduct', this.export || JSON).subscribe(res => {
       console.log(res);
+
+      if (res == '"succesfull"') {
+        this.state = true;
+        this.message = "succesfull";
+        console.log(this.message);
+        setTimeout(() => {
+          this.state = false;
+        },  2000);
+        this.addProduct.reset();
+      }
+      else {
+        this.state = true;
+        this.message = "Product already exists";
+
+        setTimeout(() => {
+          this.state = false;
+        },  2000);
+      }
     });
 
     this.ngOnInit();
   }
 
+  message: string = '';
+  state: boolean = false;
+
   addProduct = new FormGroup({
     index: new FormControl(),
-    businessReason: new FormControl(''),
-    productName: new FormControl(''),
-    publisher: new FormControl(''),
-    version: new FormControl(''),
-    edition: new FormControl(''),
-    releaseDate: new FormControl(''),
-    standard: new FormControl(''),
-    costs: new FormControl(''),
-    price: new FormControl(''),
-    timeperiod: new FormControl(''),
-    logo: new FormControl(''),
-    requirements: new FormControl(''),
-    location: new FormControl(''),
-    linkToWebsite: new FormControl(''),
-    externalID: new FormControl(''),
-    prereqireties: new FormControl(''),
-    functionality: new FormControl(''),
-    departement: new FormControl(''),
-    role: new FormControl(''),
-    category: new FormControl(''),
-    tags: new FormControl(''),
-    name: new FormControl(''),
-    descripton: new FormControl(''),
+    businessReason: new FormControl('', Validators.required),
+    productName: new FormControl('', Validators.required),
+    publisher: new FormControl('',Validators.required),
+    version: new FormControl('',Validators.required),
+    edition: new FormControl('',Validators.required),
+    releaseDate: new FormControl('',Validators.required),
+    standard: new FormControl('',Validators.required),
+    costs: new FormControl('',Validators.required),
+    price: new FormControl('',Validators.required),
+    timeperiod: new FormControl('',Validators.required),
+    logo: new FormControl('',Validators.required),
+    requirements: new FormControl('',Validators.required),
+    location: new FormControl('',Validators.required),
+    linkToWebsite: new FormControl('',Validators.required),
+    externalID: new FormControl('',Validators.required),
+    prereqireties: new FormControl('',Validators.required),
+    functionality: new FormControl('',Validators.required),
+    departement: new FormControl('',Validators.required),
+    role: new FormControl('',Validators.required),
+    category: new FormControl('',Validators.required),
+    tags: new FormControl('',Validators.required),
+    name: new FormControl('',Validators.required),
+    descripton: new FormControl('',Validators.required),
 
-    technicalOwner: new FormControl(''),
-    businessOwner: new FormControl(''),
-    contractOwner: new FormControl(''),
-    OLA: new FormControl(''),
-    appClassification: new FormControl(''),
-    lifecycleState: new FormControl(''),
-    SWOApproved: new FormControl(''),
-    approvalType: new FormControl(''),
-    internalID: new FormControl(''),
-    licenseModel: new FormControl(''),
-    licenseLevel: new FormControl('')
+    technicalOwner: new FormControl('',Validators.required),
+    businessOwner: new FormControl('',Validators.required),
+    contractOwner: new FormControl('',Validators.required),
+    OLA: new FormControl('',Validators.required),
+    appClassification: new FormControl('',Validators.required),
+    lifecycleState: new FormControl('',Validators.required),
+    SWOApproved: new FormControl('',Validators.required),
+    approvalType: new FormControl('',Validators.required),
+    internalID: new FormControl('',Validators.required),
+    licenseModel: new FormControl('',Validators.required),
+    licenseLevel: new FormControl('',Validators.required)
   });
 
 

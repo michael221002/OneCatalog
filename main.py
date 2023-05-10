@@ -77,7 +77,7 @@ async def AddNewProduct(data: model.ProductModel):
     
     if var == FALSE:
         writetoJsonArray("data.json", "products", data)
-        return json.dumps('Product was been added successfully')
+        return json.dumps('succesfull')
     else:
         return json.dumps('product already exists')
 

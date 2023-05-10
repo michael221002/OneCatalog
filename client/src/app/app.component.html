@@ -164,6 +164,10 @@
             </mat-select>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit" [disabled]="!addProduct.valid">Submit</button>
+        <br>
+        <div *ngIf="state" style="width:auto; padding: 20px; border-radius: 20px; background-color: green; display: flex; justify-content: center; align-items: center;">
+            <h1 style="margin: 0px;">{{message}}</h1>
+        </div>
     </div>
   </form>
 </div>
