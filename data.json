@@ -1,3 +1,71 @@
 [
-    
+    {
+        "index": 0,
+        "businessReason": "Improve code quality and productivity",
+        "productName": " Visual Studio Code",
+        "publisher": "Microsoft Corporation",
+        "version": "1.56.2",
+        "edition": " Visual Studio Code",
+        "releaseDate": "April 2021",
+        "standard": true,
+        "costs": 0,
+        "price": 0,
+        "timeperiod": "permanent",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1024px-Visual_Studio_Code_1.35_icon.svg.png",
+        "requirements": [
+            "employeeID",
+            "productName",
+            "edition",
+            "costcenter",
+            "CDG",
+            "contact",
+            "reason",
+            "internalID"
+        ],
+        "location": "worldwide",
+        "linkToWebsite": "https://code.visualstudio.com/",
+        "externalID": 11111,
+        "prereqireties": [
+            "windows",
+            "linux",
+            "macOS"
+        ],
+        "functionality": "false",
+        "departement": [
+            "BIT",
+            "BA",
+            "CIT"
+        ],
+        "role": [
+            "developer",
+            "software engeneer"
+        ],
+        "category": "true",
+        "tags": [
+            "VS Code",
+            "developer",
+            "webdevelopement",
+            "dev",
+            "VS",
+            "appdevelopement",
+            "software developement",
+            "microsoft",
+            "open source",
+            "code",
+            "code editor"
+        ],
+        "name": "Visual Studio Code",
+        "descripton": "Visual Studio Code is a free, open-source code editor for building and debugging modern web and cloud applications",
+        "technicalOwner": "Max Mustermann",
+        "businessOwner": "Max Mustermann",
+        "contractOwner": "Max Mustermann",
+        "OLA": "Contract with Microsoft",
+        "appClassification": "false",
+        "lifecycleState": "active",
+        "SWOApproved": "yes, most used code editor",
+        "approvalType": "manager, but free to use",
+        "internalID": 111111,
+        "licenseModel": "VLP",
+        "licenseLevel": "discount level"
+    }
 ]

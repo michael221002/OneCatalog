@@ -84,16 +84,16 @@
         <mat-form-field appearance="fill">
             <mat-label>functionality</mat-label>
             <mat-select formControlName="functionality">
-                <mat-option value="true">text verarbeiten</mat-option>
-                <mat-option value="false">kalkulieren</mat-option>
-                <mat-option value="true">email schreiben</mat-option>
-                <mat-option value="false">administrieren</mat-option>
-                <mat-option value="true">managen</mat-option>
-                <mat-option value="false">entwickeln</mat-option>
-                <mat-option value="true">editieren von medien</mat-option>
-                <mat-option value="false">versionen verwalten</mat-option>
-                <mat-option value="true">testen von Software</mat-option>
-                <mat-option value="false">lesen von pdfs</mat-option>
+                <mat-option value="process text">process text</mat-option>
+                <mat-option value="calculate">calculate</mat-option>
+                <mat-option value="write emails">write emails</mat-option>
+                <mat-option value="administrate">administrate</mat-option>
+                <mat-option value="manage">manage</mat-option>
+                <mat-option value="develope">develope</mat-option>
+                <mat-option value="edit media">edit media</mat-option>
+                <mat-option value="manage versions">manage versions</mat-option>
+                <mat-option value="test software">test software</mat-option>
+                <mat-option value="read">read</mat-option>
             </mat-select>
         </mat-form-field>
         <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
@@ -115,16 +115,16 @@
         <mat-form-field appearance="fill">
             <mat-label>category</mat-label>
             <mat-select formControlName="category">
-                <mat-option value="true">Textverarbeitung</mat-option>
-                <mat-option value="false">Tabellenkalkulation</mat-option>
-                <mat-option value="true">Präsentation</mat-option>
-                <mat-option value="false">E-Mail-Programme</mat-option>
-                <mat-option value="true">Kalender</mat-option>
-                <mat-option value="false">Integrierte Entwicklungsumgebung (IDE)</mat-option>
-                <mat-option value="true">Versionskontrollsysteme</mat-option>
-                <mat-option value="false">Debugging-Tool</mat-option>
-                <mat-option value="true">Collaboration-Tools</mat-option>
-                <mat-option value="false">Build- und Deployment-Tools</mat-option>
+                <mat-option value="Word processing">Word processing</mat-option>
+                <mat-option value="Spreadsheet">Spreadsheet</mat-option>
+                <mat-option value="Presentation">Presentation</mat-option>
+                <mat-option value="E-Mail Programm">E-Mail Programm</mat-option>
+                <mat-option value="Calender">Calender</mat-option>
+                <mat-option value="Integrated Development Environment (IDE)">Integrated Development Environment (IDE)</mat-option>
+                <mat-option value="tVersioncontrol-systemsrue">Versioncontrol-systems</mat-option>
+                <mat-option value="Debugging-Tool">Debugging-Tool</mat-option>
+                <mat-option value="Collaboration-Tools">Collaboration-Tools</mat-option>
+                <mat-option value="Build- and Deployment-Tools">Build- and Deployment-Tools</mat-option>
             </mat-select>
         </mat-form-field>
         <div style="display: flex; border:none; padding: 0px; gap: 5px; flex-wrap: auto;">
@@ -165,10 +165,10 @@
         <mat-form-field appearance="fill">
             <mat-label>appClassification</mat-label>
             <mat-select formControlName="appClassification">
-                <mat-option value="true">non-managed</mat-option>
-                <mat-option value="false">managed</mat-option>
-                <mat-option value="false">global</mat-option>
-                <mat-option value="false">universal</mat-option>
+                <mat-option value="non-managed">non-managed</mat-option>
+                <mat-option value="managed">managed</mat-option>
+                <mat-option value="global">global</mat-option>
+                <mat-option value="universal">universal</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
@@ -190,15 +190,15 @@
         <mat-form-field appearance="fill">
             <mat-label>licenseModel</mat-label>
             <mat-select formControlName="licenseModel">
-                <mat-option value="true">TLP</mat-option>
-                <mat-option value="false">CLP</mat-option>
-                <mat-option value="false">VLP</mat-option>
+                <mat-option value="TLP">TLP</mat-option>
+                <mat-option value="CLP">CLP</mat-option>
+                <mat-option value="VLP">VLP</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
-            <mat-label>licenseModel</mat-label>
-            <mat-select formControlName="licenseModel">
-                <mat-option value="true">discount level</mat-option>
+            <mat-label>licenseLevel</mat-label>
+            <mat-select formControlName="licenseLevel">
+                <mat-option value="discount level">discount level</mat-option>
             </mat-select>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit">Submit</button>
