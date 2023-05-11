@@ -41,11 +41,11 @@ import { DynamicFormComponent } from './dynmaic-form/dynamic-form.component';
     MatChipsModule,
     MatIconModule,
     MatTabsModule,
-    AceEditorModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AceEditorModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
