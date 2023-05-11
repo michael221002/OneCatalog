@@ -12,6 +12,17 @@ export class ProductCardComponent implements OnInit {
 
   @Input() CardData!: Card;
 
+  icon: string = 'add_circle_outline'
 
+  add(){
+
+    if (this.icon == 'add_circle_outline'){
+      this.icon = 'check_circle'
+    } else {
+      this.icon = 'add_circle_outline'
+    }
+  }
+
+  panelOpenState = false;
   
 }

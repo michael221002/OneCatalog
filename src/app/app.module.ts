@@ -15,6 +15,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { TestComponent } from './sites/test/test.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SidebarComponent } from './objects/sidebar/sidebar.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SidebarComponent } from './objects/sidebar/sidebar.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
