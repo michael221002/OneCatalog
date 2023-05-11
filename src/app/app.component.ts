@@ -154,11 +154,13 @@ export class AppComponent implements OnInit {
 
   isScrolled = false;
 
-  
+  request = new FormGroup({
+    token: new FormControl('', Validators.required)
+  })
 
   GetRes:any;
   GetRequest(){
-    this.GetRes = this.requestService.Get().subscribe( data => {
+    this.GetRes = this.requestService.Get(this.request.value.token).subscribe( data => {
       this.GetRes = data;
       console.log(data)
     });

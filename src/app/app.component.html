@@ -74,8 +74,7 @@
                         <span class="circle"></span> Requests
                     </h1>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>Important Knoledge to Understand</pre>
-                    <pre class="under"><span class="tab"></span><span class="circle"></span>How to open a Request</pre>
-                    <pre class="under"><span class="tab"></span><span class="circle"></span>How to implement Models</pre> 
+                    <pre class="under"><span class="tab"></span><span class="circle"></span>How to open a Request and implement Models</pre>
                 </div>
             </div>
         </div>
@@ -617,6 +616,10 @@
             <h3>Noch unten dran gehangen ist das html Dokument der Komponente bitte beachten. Ganz wichtig ist nicht zu vergessen das wir in unserer html Komponente
                 einen String der Variable Zahl brauchen. Wir wandeln also in der Funktion, welche uns den Wert zurückgibt diesen in einen String um damit wir ihn ausgeben können.
             </h3>
+            <h3 style="color: red">
+                Außerdem dürfen wir nicht vergessen im AppModule dem Provider zu sagen, dass er unseren Service bereitstellen soll. Importiert dazu den Service im AppModule
+                und fügt ihn dem Provider Array hinzu.
+            </h3>
             <h3>
                 Noch einmal zur Zusammenfassung. In dem Datenservice speichern wir unsere Variable und haben eine Funktion um die Variable zu verändern. In der Buttonkomponente
                 initialiseren wir ein Objekt aus der Klasse dataService sprich unserem Service und können auf die Variablen in diesem Objekt zugreifen und verändern diese um + und -1.
@@ -828,9 +831,14 @@
             
             <br>
             <div class="requestSection">
-                <h1>GET-Request</h1>
-                <form>
+                <h1>GET-Request (URL: https://graph.microsoft.com/v1.0/me)</h1>
+                <form [formGroup]="request">
+                    <mat-form-field>
+                        <mat-label for="first-name">Token: </mat-label>
+                        <input matInput id="first-name" type="text" formControlName="token">
+                    </mat-form-field>
                     <button mat-raised-button type="button" (click)="GetRequest()">Get</button>
+                    <br>
                     <p>{{GetRes | json}}</p>
                 </form>
             </div>

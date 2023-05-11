@@ -10,9 +10,8 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  Get(): Observable<GraphProfil>{
+  Get(token: string | undefined | null): Observable<GraphProfil>{
     const url = "https://graph.microsoft.com/v1.0/me";
-    const token = ""
     let data = this.http.get<GraphProfil>(url, { headers: new HttpHeaders({ 'Authorization': `Bearer ${token}` }), responseType: "json" });
     return data
   }
