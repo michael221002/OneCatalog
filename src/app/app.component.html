@@ -71,7 +71,7 @@
                 </div>
                 <div class="ThemeSection">
                     <h1>
-                        <span class="circle"></span> Requests
+                        <span class="circle"></span> Requests (In Bearbeitung)
                     </h1>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>Important Knoledge to Understand</pre>
                     <pre class="under"><span class="tab"></span><span class="circle"></span>How to open a Request and implement Models</pre>
@@ -810,9 +810,6 @@
                 Dieser listet alle in der API bestehenden Endpunkt auf und zeigt, wie eine Request dafür aussehen könnte.
             </h3>
             <h3>
-                Zuerst müssen wir uns ein Objekt aus der http-Modul-Klasse von Angular initialisieren.
-            </h3>
-            <h3>
                 Bevor wir Anfragen an die API stellen können, benötigen wir einen Access Token den wir bekommen wenn wir uns idendifizieren.
                 An dieser Stelle würde der Single Sign on stattfinden. Duch diesen erhalten wir dann auch den Token den wir für unsere App brauchen damit wir 
                 Anfragen an die API stellen können.
@@ -828,7 +825,41 @@
                 den Graph API Explorer auf dem ihr auch die Endpunkte festlegen könnt. Über den <a href="https://developer.microsoft.com/en-us/graph/graph-explorer">Link</a> gelangt
                 ihr zum Explorer. Meldet euch bitte dort an und führt die erste Request aus "my profile".
             </h3>
-            
+            <h3>
+                Da wir die Requests oft von mehreren Komponenten ausgühren wollen, beginnen wir damit uns einen Service zu erstellen. Dieser führt die Request aus und
+                gibt die Daten zurück. Außerdem initialisieren wir ein Objekt aus der httpClient Klasse. Damit wir diese Klasse nutzen können müssen wir noch im AppModule das
+                httpClientModule importieren.
+            </h3>
+            <ace-editor [(text)]="httpAppModule"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Schauen wir uns in Graph API die Request näher an so ergibt sich daraus folgendes Model
+            </h3>
+            <ace-editor [(text)]="httpModel"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Nun schauen wir uns den Service an, ihr findet wieder Kommentare im Code.
+            </h3>
+            <ace-editor [(text)]="service"
+            [mode]="'typescript'"
+            [theme]="'monokai'"
+            [options]="editorOptions "></ace-editor>
+            <br>
+            <h3>
+                Das Observable-Objekt in rxjs ist ein Designpattern aus der funktionalen Programmierung, das in JavaScript/TypeScript implementiert wurde. Es dient dazu, Datenströme (Streams) von Werten zu erstellen und zu verarbeiten, die sich im Laufe der Zeit ändern können. Es kann als ein Ereignis-Stream oder eine Sequenz von Ereignissen betrachtet werden.
+                <br>
+                Mit dem Observable-Objekt kann man Asynchronität und reaktive Programmierung in JavaScript/TypeScript implementieren. Es ermöglicht die Verarbeitung von Ereignissen und Daten in Echtzeit und bietet eine elegante Möglichkeit, asynchrone Vorgänge zu behandeln.
+                <br>
+                Die Observable-Klasse ist ein wichtiger Bestandteil von rxjs. Sie bietet eine Vielzahl von Methoden zum Erstellen, Transformieren und Verwalten von Datenströmen. Man kann einen Observable-Stream erstellen, indem man einen oder mehrere Datenquellen definiert und sie in einem Stream zusammenführt. Dann kann man die Datenströme durch eine Kette von Operatoren transformieren und manipulieren, um das gewünschte Ergebnis zu erzielen.
+                <br>
+                Im Gegensatz zu Promises, die nur einmalig ein Ergebnis zurückliefern, kann ein Observable mehrere Ergebnisse im Laufe der Zeit zurückliefern. Dadurch eignet es sich besonders für kontinuierliche Datenströme wie z.B. Benutzereingaben, Sensorwerte, Netzwerkantworten oder andere Streaming-Datenquellen.
+            </h3>
             <br>
             <div class="requestSection">
                 <h1>GET-Request (URL: https://graph.microsoft.com/v1.0/me)</h1>
@@ -840,6 +871,8 @@
                     <button mat-raised-button type="button" (click)="GetRequest()">Get</button>
                     <br>
                     <p>{{GetRes | json}}</p>
+                    <h1>GET-Request (URL: https://graph.microsoft.com/v1.0/me/photo/$value)</h1>
+                    <button mat-raised-button type="button" (click)="GetImage()">Get</button>
                 </form>
             </div>
             <br>

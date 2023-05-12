@@ -1,0 +1,55 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; //wir importieren das ClientModule
+import { GraphProfil } from './models/profile'; //sowie das Model
+import { Observable, map } from 'rxjs'; //eine genauere Erklärung dazu findet ihr unten
+
+//wir erstellen uns für die Übersicht ein interface für die reine Response der Graph API
+interface GraphProfilResponse { 
+  '@odata.context': string;
+  businessPhones: any[];
+  displayName: string;
+  givenName: string;
+  jobTitle: string;
+  mail: string;
+  mobilePhone: null;
+  officeLocation: string;
+  preferredLanguage: any;
+  surname: string | undefined;
+  userPrincipalName: string;
+  id: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RequestService {
+
+  constructor(private http: HttpClient) { } //wir initialiseren uns das Objekt aus der http Klasse
+
+
+  //Das ist die eigentliche Funktion und erwartet den Token mit welchen ihr Authorisiert seid, sagen wir, dass der Rückgabewert vom Typ Graphprofile als Observable übergeben
+  //werden soll weil sich dieser mit der Zeit ändert
+  Get(token: string): Observable<GraphProfil>{
+    const url = "https://graph.microsoft.com/v1.0/me"; //wir definieren die Route
+    let request = this.http.get<GraphProfilResponse>(url, { headers: new HttpHeaders({ 'Authorization': `Bearer ${token}` }), responseType: "json" }) //und erstellen die Request mit dem Token im Header
+      .pipe( //diese Funktion wendet man auch Observables an. Normalerweise ist Typescript asyncron, das heißt es führt Komandos parallel aus, das wollen wir aber an der Stelle nicht deswegen verwenden wir die .pipe Funktion
+        map((response) => { //der Map befehl transformiert die Anfrage in das passende Model, das @odata sieht nicht schön aus und gibt die passenden Daten zurück
+          return new GraphProfil(
+            response['@odata.context'],
+            response.businessPhones,
+            response.displayName,
+            response.givenName,
+            response.jobTitle,
+            response.mail,
+            response.mobilePhone,
+            response.officeLocation,
+            response.preferredLanguage,
+            response.surname,
+            response.userPrincipalName,
+            response.id
+          )
+      }));
+    return request; //abschließend geben wir unsere Daten vollstädig und basierend auf dem GraphProfile Model zurück
+  }
+  
+}

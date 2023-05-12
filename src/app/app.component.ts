@@ -94,6 +94,9 @@ export class AppComponent implements OnInit {
   dynamicFormModel: any;
   dynamicFormTs: any;
   dynamicFormHtml: any;
+  httpAppModule: any;
+  httpModel: any;
+  service: any;
 
   ngOnInit() {
     this.http.get('./assets/importMatButton.txt', { responseType: 'text' }).subscribe((data: any) => {
@@ -150,6 +153,15 @@ export class AppComponent implements OnInit {
     this.http.get('./assets/dynamicForm/html.txt', { responseType: 'text' }).subscribe((data: any) => {
       this.dynamicFormHtml = data;
     });
+    this.http.get('./assets/http/app.module.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.httpAppModule = data;
+    });
+    this.http.get('./assets/http/profile.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.httpModel = data;
+    });
+    this.http.get('./assets/http/service.txt', { responseType: 'text' }).subscribe((data: any) => {
+      this.service = data;
+    });
   }
 
   isScrolled = false;
@@ -164,6 +176,11 @@ export class AppComponent implements OnInit {
       this.GetRes = data;
       console.log(data)
     });
+  }
+
+  img:any;
+  GetImage(){
+    this.img = this.requestService.GetImage(this.request.value.token)
   }
 
   getVar(): string {
