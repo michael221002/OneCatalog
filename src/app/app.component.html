@@ -672,7 +672,7 @@
                 Außerdem benötigen wir noch das ReactiveFormsModule von Angular. Damit sieht unsere app.module.ts dann
                 wie folgt aus.
             </h3>
-            <ace-editor [(text)]="FormModule"
+            <ace-editor [(text)]="FormModule" id="forms"
             [mode]="'typescript'"
             [theme]="'monokai'"
             [options]="editorOptions "></ace-editor>
@@ -726,7 +726,7 @@
                 Wir beginnen damit uns unser Model zu erstellen. Es handelt sich dabei um ein Model für ein Benutzerprofil. Einfacher Weise lassen wir an der Stelle alle
                 Elemente optional.
             </h3>
-            <ace-editor [(text)]="dynamicFormModel"
+            <ace-editor [(text)]="dynamicFormModel" id="dyform"
             [mode]="'typescript'"
             [theme]="'monokai'"
             [options]="editorOptions "></ace-editor>
@@ -830,7 +830,7 @@
                 gibt die Daten zurück. Außerdem initialisieren wir ein Objekt aus der httpClient Klasse. Damit wir diese Klasse nutzen können müssen wir noch im AppModule das
                 httpClientModule importieren.
             </h3>
-            <ace-editor [(text)]="httpAppModule"
+            <ace-editor [(text)]="httpAppModule" id="request"
             [mode]="'typescript'"
             [theme]="'monokai'"
             [options]="editorOptions "></ace-editor>
@@ -904,12 +904,10 @@
             <h4>Concepts in Angular</h4>
             <h5 (click)="scrollToSection('DepInj')">Implement Dependency Injections</h5>
             <h4>Forms</h4>
-            <h5>Build a simple Form</h5>
-            <h5>Build a dynamical Form based on Models</h5>
+            <h5 (click)="scrollToSection('forms')">Build a simple Form</h5>
+            <h5 (click)="scrollToSection('dyform')">Build a dynamical Form based on Models</h5>
             <h4>Requests</h4>
-            <h5>Important Knoledge to Understand</h5>
-            <h5>How to open a Request</h5>
-            <h5>How to implement Models</h5>
+            <h5 (click)="scrollToSection('request')">open Request</h5>
         </div>
     </div>
 </div>
