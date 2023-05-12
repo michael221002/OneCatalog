@@ -14,6 +14,7 @@ das ist nicht best practice aber das ist auch nur ein Tutorial für euch da ist 
 nun könnt ihr da tutorial starten mit 
 ## ng serve
 
-Ich hatte nicht so viel Zeit deswegen sind viele Rechtschreibfehler mit drinnen und ganz fertig bei den Requests bin ich auch noch nicht, nur halb.
+Ich hatte nicht so viel Zeit deswegen sind viele Rechtschreibfehler mit drinnen und ganz fertig bei den Requests bin ich auch noch nicht, nur halb. Auch ist es nicht responsible
+nutzt es also nur in Full HD auf einem vollen Bildschirm.
 Ich habe aber versucht mich an die Angular Dokumentation zu halten und wichtige Grundlagen zu erklären. Ihr könnt ja mal die Gliederung durchgehen und vielleicht ist etwas interessantes dabei.
 Auch Codesnippets findet ihr gleich dazu.
