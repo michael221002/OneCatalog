@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ProductDataService } from './services/product-data.service';
-
 import { ProductCardComponent } from './objects/product-card/product-card.component';
 
 import { MatButtonModule } from '@angular/material/button';
