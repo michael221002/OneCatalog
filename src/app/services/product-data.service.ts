@@ -41,7 +41,7 @@ export class ProductDataService {
   getSingleProductCard(id: number) {
     //this funtion is important for filter and search
   }
-  
+
   constructor() {
   }
 }
