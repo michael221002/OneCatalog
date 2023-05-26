@@ -1,0 +1,12 @@
+<form [formGroup]="requirementListForm">
+
+  <div formArrayName="requirementList">
+    <ng-container *ngFor="let requirementControl of productRequirementList.controls, let i = index">
+      <label>
+        <input type="text" [formControlName]="i"> {{product.requirements[i]}}
+      </label>
+    </ng-container>
+  </div>
+
+  <button type="submit" [disabled]="isDisabled()">Send Request</button>
+</form>

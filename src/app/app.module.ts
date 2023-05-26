@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { SidebarComponent } from './objects/sidebar/sidebar.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DetailsComponent } from './sites/details/details.component';
+import { RequestFormComponent } from './sites/request-form/request-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { DetailsComponent } from './sites/details/details.component';
     TagsComponent,
     TestComponent,
     SidebarComponent,
-    DetailsComponent
+    DetailsComponent,
+    RequestFormComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { DetailsComponent } from './sites/details/details.component';
     MatIconModule,
     MatExpansionModule,
     MatGridListModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
