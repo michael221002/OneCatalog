@@ -11,20 +11,23 @@ import { ActivatedRoute } from '@angular/router';
 export class RequestFormComponent implements OnInit {
   product: any;
   productId: any;
+  requirementLabels: any;
 
-  public requirementListForm: FormGroup = this._createForm();
-  // erstellt eine Variable die die Liste mit den Requirements als FormGroup enthält
+  public requirementListForm: FormGroup = this.createForm();
+  // erstellt eine Variable die eine FormGroup enthält
 
-  private _createForm(): FormGroup {
-    return this._formBuilder.group({
-      requirementList: this._formBuilder.array([])
+  private createForm(): FormGroup {
+    return this.formBuilder.group({
+      requirementList: this.formBuilder.array([])
     })
   }
+  // füllt die FormGroup requirementListForm mit einem zunächst leeren Array
+  // von FormControls, der FormControl Array wird requirementList genannt
 
   constructor(
     private productDataService: ProductDataService,
     private activatedRoute: ActivatedRoute,
-    private _formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder) {
 
   }
 
@@ -35,22 +38,32 @@ export class RequestFormComponent implements OnInit {
     this.product = this.productDataService.getSingleProductDetail(this.productId);
     // gets product according to id
 
-    const requirements = this.product.requirements as string[];
-    // gets the requirements array and sets it to the temporary variable requirements
+    const requirements = this.product.requirements;
+    // gets the requirements array of strings and sets it to the temporary variable requirements
+
+    this.requirementLabels = this.product.requirements.map((requirement: string) => {
+      const capitalizedRequirement = requirement.charAt(0).toUpperCase() + requirement.slice(1);
+      return capitalizedRequirement.replace(/ID/g, ' ID')
+    });
+    // transforms the labels
 
     const requirementControls = requirements.map((requirement: string) => {
-      return this._formBuilder.control('');})
+      return this.formBuilder.control('');})
       // creates an array of FormControl instances using the map method: For each
       // requirement, a new FormControl is created with an empty Value ''
 
     this.requirementListForm.setControl('requirementList',
-    this._formBuilder.array(requirementControls))
-      // sets the requirementList form Control in the requirementListForm FormGroup
-      // to an array of FormControl instances, the requirementControls from before
+    this.formBuilder.array(requirementControls))
+      // fills the requirementList form Control in the requirementListForm FormGroup
+      // with an array of FormControl instances, the requirementControls from before
       // is passed as an argument to create the array for the formbuilder
 
-    console.log(this.productId);
+
     console.log(requirements);
+    console.log(requirementControls);
+    console.log(this.requirementListForm);
+    console.log(this.productRequirementList);
+    console.log(this.requirementLabels)
 
   }
 
