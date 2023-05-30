@@ -1,0 +1,14 @@
+[
+    {
+        "upn": "max.mustermann@softwareone.com",
+        "image": "https://pbs.twimg.com/profile_images/747517697034952704/gHvVahDG_400x400.jpg",
+        "mail": "max.mustermann@softwareone.com",
+        "name": "Mustermann, Max",
+        "employeID": 123456,
+        "role": "Softwaredeveloper",
+        "departement": "BIT",
+        "reportsTo": "Mustermann, Chef",
+        "location": "Leipzig, Germany",
+        "costcenter": "14.61, Academy"
+    }
+]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductDataService } from './services/product-data.service';
+import { AccountDataService } from './services/account-data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,10 @@ import { ProductDataService } from './services/product-data.service';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-  }
+    console.log(this.accounts.getSingleAccounts(123456))
+  } 
+
+  constructor(private accounts:AccountDataService) {}
 
 
 }
