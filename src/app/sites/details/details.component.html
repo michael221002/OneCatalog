@@ -15,28 +15,47 @@
       </div>
         <div class="application-details">
           <div class="price-container">
-          <h6 class="price">${{product.costs}} monthly</h6>
+          <h6 class="price">${{product.costs}} {{product.timeperiod}}</h6>
           <button mat-raised-button color="primary" routerLink = "../../request/{{product.index}}"><mat-icon>add</mat-icon>Add</button>
           </div>
-    </div>
+        </div>
   </div>
 
   <div class="description-container">
-  <mat-tab-group [backgroundColor]="'primary'">
-    <mat-tab label="Product Information" style="color:white;">
-      <ng-template matTabContent >
-        <b style="color:white;">Description: </b>
-        <p style="color:white;">
-          {{product.descripton}}
-        </p>
-        <b style="color:white;">Business Reason: </b>
-        <p style="color:white;">{{product.category}}</p>
+  <mat-tab-group [backgroundColor]="'primary'" style="height: 100%;">
+    <mat-tab label="Product Information" style="height:100%;">
+      <ng-template matTabContent style="height: 100%;">
+        <div style="margin: 20px; display: flex;">
+          <div style="width: 70%;">
+            <b style="color:white;">Description: </b>
+            <p style="color:white;">
+              {{product.descripton}}
+            </p>
+            <b style="color:white;">Business Reason: </b>
+            <p style="color:white;">{{product.category}}</p>
+          </div>
+          <div style="width: 30%; display: flex; justify-content: space-between; flex-direction: column; margin-left: 10px; padding-left:10px; border-left: solid 1px white;">
+            <div>
+              <p style="margin:0;">{{product.timeperiod}}</p>
+              <p style="margin:0;">{{product.costs}}  $</p>
+            </div>
+            <div>
+              <p style="margin:0;">{{product.SWOApproved}}</p>
+              <p style="margin:0;">{{product.publisher}}</p>
+              <p style="margin:0;">{{product.version}}</p>
+              <p style="margin:0;">{{product.version}}</p>
+              <p style="margin:0;">{{product.externalID}}</p>
+            </div>
+          </div>
+        </div>
       </ng-template>
     </mat-tab>
     <mat-tab label="Requirements" style="color:white;">
       <ng-template matTabContent>
-        <b style="color:white;">System Prerequisites:</b>
-        <p style="color:white;" *ngFor = "let p of product.prereqireties">{{p}}</p>
+        <div style="margin: 20px;">
+          <b style="color:white;">System Prerequisites:</b>
+          <p style="color:white;" *ngFor = "let p of product.prereqireties">{{p}}</p>
+        </div>
       </ng-template>
     </mat-tab>
   </mat-tab-group>
