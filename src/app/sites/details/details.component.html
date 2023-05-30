@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="grid-container">
+    <div class="logo"><img src="{{product.logo}}" width="100%"/></div>
+      <div class="info-header">
+        <div class="tags">
+          <mat-chip-set *ngFor="let i of product.tags">
+            <app-tags class="tag" [content] = "i"></app-tags>
+          </mat-chip-set>
+        </div>
+        <div class="head-details">
+          <h1 class="product-title">{{product.productName}}</h1>
+          <h4>Edition: {{product.edition}}</h4>
+          <p class="publisher">by {{product.publisher}}</p>
+        </div>
+      </div>
+        <div class="application-details">
+          <div class="price-container">
+          <h6 class="price">${{product.costs}} monthly</h6>
+          <button mat-raised-button color="primary"><mat-icon>add</mat-icon>Add</button>
+          </div>
+    </div>
+  </div>
+
+  <div class="description-container">
+  <mat-tab-group [backgroundColor]="'primary'">
+    <mat-tab label="Product Information" style="color:white;">
+      <ng-template matTabContent >
+        <b style="color:white;">Description: </b>
+        <p style="color:white;">
+          {{product.descripton}}
+        </p>
+        <b style="color:white;">Business Reason: </b>
+        <p style="color:white;">{{product.category}}</p>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Requirements" style="color:white;">
+      <ng-template matTabContent>
+        <b style="color:white;">System Prerequisites:</b>
+        <p style="color:white;" *ngFor = "let p of product.prereqireties">{{p}}</p>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+  </div>
+</div>
+
+

@@ -4,7 +4,8 @@ import { ProductDataService } from 'src/app/services/product-data.service';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  styleUrls: ['./test.component.scss'],
+  providers: []
 })
 export class TestComponent implements OnInit {
   cardData = this.productDataService.getAllProductsCard()
@@ -13,7 +14,7 @@ export class TestComponent implements OnInit {
 
   //testing functions
   detailedData = this.productDataService.getAllProductsDetail()
-  singleProduct = this.productDataService.getSingleProductDetail(5)
+  singleProduct = this.productDataService.getSingleProductDetail(1)
 
 
 
