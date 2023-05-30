@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Card } from '../models/CardModel';
 import { Product } from '../models/ProductModel';
+import { RequestForm } from '../models/RequestFormModel';
 import Data from '../data/data.json';
 
 @Injectable({
@@ -13,7 +14,6 @@ export class ProductDataService {
     const { index,logo,standard,publisher,costs,price,timeperiod,name,tags,category, edition } = data;
     return { index,logo,standard,publisher,costs,price,timeperiod,name,tags,category, edition }
   }
-
 
   products: Product[] = Data;
 
