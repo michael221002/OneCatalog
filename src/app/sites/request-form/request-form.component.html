@@ -1,37 +1,64 @@
-<div class="back-container">
-  <button mat-raised-button color="primary" routerLink = "../../details/{{product.index}}">
-    <mat-icon>keyboard_arrow_left</mat-icon>
-    Back to product
-  </button>
-</div>
-
 <div class="container">
-  <h2>Request: {{product.name}}, {{product.edition}} Edition </h2>
+  <div class="back-container">
+    <button mat-raised-button color="primary" routerLink = "../../details/{{product.index}}">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+      Back to product
+    </button>
+  </div>
+
+  <div class="title-container">
+    <h2>Request: {{product.name}}</h2>
+    <h3>{{product.edition}} Edition</h3>
+  </div>
+
+  <form [formGroup]="nestedForm">
+    <mat-form-field>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+  </form>
 
   <form [formGroup]="requirementListForm"> <!--associates the form element with the
-  FormGroup instance requirementListForm using property binding-->
-
-    <div formArrayName="requirementList" class="array-container"> <!--associates the FormArray Instance with the
-    div. This doesn't require property Binding with [] because it expects a string value
-    representing the name of the array-->
-
+    FormGroup instance requirementListForm using property binding-->
+    <div formArrayName="requirementList"> <!--associates the FormArray Instance with the
+      div. This doesn't require property Binding with [] because it expects a string value
+      representing the name of the array-->
       <ng-container *ngFor="let requirementControl of productRequirementList.controls,
       let i = index"> <!--Loops through the controls array of productRequirementList-->
-        <div  class="field-container">
-          <label>
-            <div>{{requirementLabels[i]}}: </div>
-            <input type="text" [formControlName]="i">
-            <!--each requirementControl has a Key corresponding to the index of the array
-              of requirements (see console.log(productRequirementList)). Here we declare input
-              fields corresponding to the requirementControls we're looping through and
-              give them a label of product.requirements according to index.
-            -->
-          </label>
-        </div>
+        <mat-form-field>
+          <mat-label>{{requirementLabels[i]}}</mat-label>
+          <input matInput [formControlName]="i"> <!--each requirementControl has a Key corresponding to the index of the array
+            of requirements (see console.log(productRequirementList)). Here we declare input
+            fields corresponding to the requirementControls we're looping through and
+            give them a label of product.requirements according to index.
+          -->
+        </mat-form-field>
       </ng-container>
     </div>
-
     <button type="submit" mat-raised-button color="primary" [disabled]="isDisabled()"><mat-icon>send</mat-icon>Send Request</button>
   </form>
-</div>
 
+</div>
+  <!--<div class="container">
+    <h2>Request: {{product.name}}, {{product.edition}} Edition </h2>
+
+    <form [formGroup]="requirementListForm">
+
+      <div formArrayName="requirementList" class="array-container">
+
+        <ng-container *ngFor="let requirementControl of productRequirementList.controls,
+        let i = index">
+          <div  class="field-container">
+            <label>
+              <div>{{requirementLabels[i]}}: </div>
+              <input type="text" [formControlName]="i">
+
+            </label>
+          </div>
+        </ng-container>
+      </div>
+
+      <button type="submit" mat-raised-button color="primary" [disabled]="isDisabled()"><mat-icon>send</mat-icon>Send Request</button>
+    </form>
+  </div>>
+  -->

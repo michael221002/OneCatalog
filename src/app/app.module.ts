@@ -19,6 +19,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DetailsComponent } from './sites/details/details.component';
 import { RequestFormComponent } from './sites/request-form/request-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatExpansionModule,
     MatGridListModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

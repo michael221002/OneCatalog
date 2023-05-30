@@ -13,6 +13,8 @@ export class RequestFormComponent implements OnInit {
   productId: any;
   requirementLabels: any;
 
+  nestedForm!: FormGroup;
+  // zweites Form mit Trennung nach Requirement Array und User data
   public requirementListForm: FormGroup = this.createForm();
   // erstellt eine Variable die eine FormGroup enthält
 
@@ -32,6 +34,16 @@ export class RequestFormComponent implements OnInit {
   }
 
   ngOnInit():void {
+    this.nestedForm = this.formBuilder.group({
+      name: 'default Value',
+      employeeId: 'default Value',
+      manager: 'default Value',
+      department: 'default Value',
+      costCenter: 'default Value'
+    });
+    this.nestedForm.valueChanges.subscribe(console.log);
+    // baut ein form mit Userdaten und subscribed
+
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
     // reads id of active route and assigns it to productId
 
