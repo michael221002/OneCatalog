@@ -11,11 +11,28 @@
     <h3>{{product.edition}} Edition</h3>
   </div>
 
-  <form [formGroup]="nestedForm">
-    <mat-form-field>
-      <input matInput formControlName="name">
-    </mat-form-field>
-
+  <form [formGroup] ="nestedForm">
+    <div formGroupName = "userForm" class="nested-container">
+      Value: {{ userForm.value | json}}
+      <ng-container *ngFor="let req of reqUserData, let i = index">
+        <mat-form-field>
+          <input matInput [formControlName]="reqUserData[i]">
+        </mat-form-field>
+      </ng-container>
+    </div>
+    <div formArrayName="productForm">
+      <ng-container *ngFor="let requirementControl of productRequirementList.controls,
+      let i = index"> <!--Loops through the controls array of productRequirementList-->
+        <mat-form-field>
+          <mat-label>{{requirementLabels[i]}}</mat-label>
+          <input matInput [formControlName]="i"> <!--each requirementControl has a Key corresponding to the index of the array
+            of requirements (see console.log(productRequirementList)). Here we declare input
+            fields corresponding to the requirementControls we're looping through and
+            give them a label of product.requirements according to index.
+          -->
+        </mat-form-field>
+      </ng-container>
+    </div>
   </form>
 
   <form [formGroup]="requirementListForm"> <!--associates the form element with the

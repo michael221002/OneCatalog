@@ -27,7 +27,6 @@ form {
   width: 50%;
   margin: auto;
 
-
   div {
     display: flex;
     flex-direction: column;
@@ -36,5 +35,11 @@ form {
   button {
     width: 100%;
   }
+
+}
+
+.nested-container{
+  display: flex;
+  flex-direction: column;
 
 }
