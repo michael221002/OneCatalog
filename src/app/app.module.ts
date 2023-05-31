@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BasketComponent } from './sites/basket/basket.component';
+import { OutputComponent } from './sites/output/output.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BasketComponent } from './sites/basket/basket.component';
     SidebarComponent,
     DetailsComponent,
     RequestFormComponent,
-    BasketComponent
+    BasketComponent,
+    OutputComponent
   ],
   imports: [
     BrowserModule,

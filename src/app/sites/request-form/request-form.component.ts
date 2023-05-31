@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule, F
 import { ProductDataService } from 'src/app/services/product-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { AccountDataService } from 'src/app/services/account-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-request-form',
@@ -27,7 +28,8 @@ export class RequestFormComponent implements OnInit {
   constructor(
     private productDataService: ProductDataService,
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder, private accountService: AccountDataService) {
+    private formBuilder: FormBuilder, private accountService: AccountDataService,
+    private router: Router) {
 
   }
 
@@ -51,7 +53,7 @@ export class RequestFormComponent implements OnInit {
     this.nestedForm = this.formBuilder.group({
       userForm: this.userForm,
       productForm: this.productForm,
-      reason: this.formBuilder.control('', [Validators.required, Validators.minLength(50)])
+      reason: this.formBuilder.control('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem', [Validators.required, Validators.minLength(50)])
     })
 
 
@@ -82,12 +84,23 @@ export class RequestFormComponent implements OnInit {
       return capitalizedRequirement.replace(/ID/g, ' ID').replace(/Name/g, ' Name')
     });
     // transforms the labels
+    console.log(this.nestedForm)
   }
 
 
   public isDisabled():boolean {
     return !(this.nestedForm.valid &&
       (this.nestedForm.touched || this.nestedForm.dirty))
+  }
+
+  send(){
+
+    for (let item in this.nestedForm.controls){
+      this.nestedForm.controls[item].enable();
+    }
+
+    this.productDataService.sendRequest(this.nestedForm.value);
+    this.router.navigate(['../../output']);
   }
 
 }

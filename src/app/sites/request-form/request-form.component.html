@@ -1,8 +1,8 @@
 <div class="container">
   <div class="back-container">
-    <button mat-raised-button color="primary" routerLink = "../../details/{{product.index}}">
+    <button mat-raised-button color="primary" routerLink = "../../basket">
       <mat-icon>keyboard_arrow_left</mat-icon>
-      Back to product
+      Back to basket
     </button>
   </div>
 
@@ -12,7 +12,7 @@
   </div>
 
 
-  <form [formGroup] ="nestedForm">
+  <form [formGroup] ="nestedForm" (ngSubmit)="send()">
     <div formGroupName = "userForm" class="nested-container">
       <h2>User Data</h2>
       <ng-container *ngFor="let req of reqUserData, let i = index">

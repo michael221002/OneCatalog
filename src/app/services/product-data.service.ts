@@ -60,6 +60,12 @@ export class ProductDataService {
     return new Basket(-1, 'product not found', 'product not found', 'product not found')
   }
 
+  requestData: any = {}
+
+  sendRequest(data: any){
+    this.requestData = data;
+  }
+
   constructor() {
   }
 }

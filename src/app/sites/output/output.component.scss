@@ -1,0 +1,45 @@
+.main {
+    width: auto;
+    padding: 20px;
+    height: calc(100vh - 40px);
+
+    color: white;
+
+    .content {
+        color: white;
+        margin: 50px;
+        h1 {
+            margin: 0;
+        }
+
+        .line {
+            width: 100%;
+        
+            background-color: rgb(116, 116, 116);
+            height: 2px;
+    
+            border-radius: 20px;
+        }
+
+        .userData {
+            display: flex;
+            width: 100%;
+            gap:20px;
+        }
+
+        .productData {
+            display: flex;
+            width: 100%;
+            gap:20px;
+        }
+
+        .left {
+            width: 20%;
+        }
+
+        .right {
+            width: 80%;
+        }
+    }
+
+}
