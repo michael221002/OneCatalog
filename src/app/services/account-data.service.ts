@@ -14,9 +14,9 @@ export class AccountDataService {
     return this.Accounts
   }
 
-  getSingleAccounts(employeID: number){
+  getSingleAccounts(employeeId: number){
     for (let i of this.Accounts){
-      if (employeID === i.employeID) {
+      if (employeeId === i.employeeId) {
         return i;
       }
     }
