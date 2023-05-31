@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="top">
+        <h1>Basket</h1>
+        <div class="line"></div>
+        <div class="list">
+            <div class="product" *ngFor="let i of data">
+                <div class="left">
+                    <img src="{{i.logo}}">
+                    <div class="text">
+                        <h2>{{i.productName}}</h2>
+                        <h4>{{i.publisher}}</h4>
+                    </div>
+                </div>
+                <div class="right">
+                    <button mat-fab color="warn" (click)="delete(i.index)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="line"></div>
+        <br>
+        <div style="width:15%; align-self: flex-end; align-items: flex-end; display: flex; justify-content: flex-end;">
+            <button mat-raised-button color="primary" routerLink="" (click)="submit()">next</button>
+        </div>
+    </div>
+</div>

@@ -19,6 +19,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DetailsComponent } from './sites/details/details.component';
 import { RequestFormComponent } from './sites/request-form/request-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BasketComponent } from './sites/basket/basket.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TestComponent,
     SidebarComponent,
     DetailsComponent,
-    RequestFormComponent
+    RequestFormComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

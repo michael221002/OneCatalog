@@ -1,8 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Card } from '../models/CardModel';
 import { Product } from '../models/ProductModel';
+import { Basket } from '../models/BasketModel'; 
 import { RequestForm } from '../models/RequestFormModel';
 import Data from '../data/data.json';
+import { NonNullAssert } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,11 @@ export class ProductDataService {
   transformToCard(data: Product): Card {
     const { index,logo,standard,publisher,costs,price,timeperiod,name,tags,category, edition } = data;
     return { index,logo,standard,publisher,costs,price,timeperiod,name,tags,category, edition }
+  }
+
+  transformToBasket(data: Product): Basket {
+    const {index, logo, publisher, productName } = data;
+    return {index, logo, publisher, productName}
   }
 
   products: Product[] = Data;
@@ -40,6 +47,17 @@ export class ProductDataService {
 
   getSingleProductCard(id: number) {
     //this funtion is important for filter and search
+  }
+
+  getSingleProductBasket(index: number):Basket {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].index === index){
+        const basket: Basket = this.transformToBasket(this.products[i]);
+        return basket
+      }
+    }
+
+    return new Basket(-1, 'product not found', 'product not found', 'product not found')
   }
 
   constructor() {
