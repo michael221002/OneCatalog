@@ -9,7 +9,14 @@ import { AppDataService } from 'src/app/services/app-data.service';
 })
 export class ProductCardComponent implements OnInit {
   ngOnInit() {
-    this.disabled = this.appData.checkProduct(this.CardData.index)
+    this.disabled = this.appData.checkProduct(this.CardData.index);
+    if (this.disabled == true) {
+      this.icon = 'check';
+      this.value = 'added';
+    } else {
+      this.icon = 'add_circle_outline';
+      this.value = 'add';
+    }
   }
 
   @Input() CardData!: Card;
@@ -17,10 +24,11 @@ export class ProductCardComponent implements OnInit {
   disabled:boolean=false;
 
   icon: string = 'add_circle_outline'
+  value: string = 'add';
 
   add(){
     this.appData.addProduct(this.CardData.index);
-    this.disabled = this.appData.checkProduct(this.CardData.index)
+    this.ngOnInit();
   }
 
   panelOpenState = false;

@@ -25,9 +25,13 @@ export class DetailsComponent implements OnInit {
 
   disabled:boolean=false;
 
+  icon: string = 'add_circle_outline'
+  value: string = 'add';
+
   add(){
     this.appData.addProduct(this.product.index);
     this.disabled = this.appData.checkProduct(this.product.index)
+    this.ngOnInit();
   }
 
   ngOnInit(): void {
@@ -58,6 +62,13 @@ export class DetailsComponent implements OnInit {
 */
 
 
-    this.disabled = this.appData.checkProduct(this.product.index)
+    this.disabled = this.appData.checkProduct(this.product.index);
+    if (this.disabled == true) {
+      this.icon = 'check';
+      this.value = 'added';
+    } else {
+      this.icon = 'add_circle_outline';
+      this.value = 'add';
+    }
   }
 }

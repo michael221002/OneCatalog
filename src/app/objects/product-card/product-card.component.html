@@ -23,7 +23,7 @@
         <div class="line"></div>
         <br>
         <div class="buttonContainer" style="margin-bottom: 10px;">
-            <button mat-raised-button color="primary" (click)="add()" [disabled]="disabled" [ngClass]="{'mat-button-disabled': disabled}"><mat-icon>{{icon}}</mat-icon>Add</button>
+            <button mat-raised-button color="primary" (click)="add()" [disabled]="disabled" [ngClass]="{'mat-button-disabled': disabled}"><mat-icon>{{icon}}</mat-icon>{{value}}</button>
             <button mat-button color="accent" routerLink="details/{{CardData.index}}" >See more..</button>
         </div>
         <!--Wie im Mokup die tags jedoch siehts scheiße aus-->

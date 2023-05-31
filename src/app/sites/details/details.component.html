@@ -17,7 +17,7 @@
           <div class="price-container">
           <h6 class="price">${{product.costs}} {{product.timeperiod}}</h6>
           <!--<button mat-raised-button color="primary" routerLink = "../../request/{{product.index}}"><mat-icon>add</mat-icon>Add</button>-->
-          <button mat-raised-button color="primary" routerLink="" [disabled]="disabled" (click)="add()" [ngClass]="{'mat-button-disabled': disabled}"><mat-icon>add</mat-icon>Add</button>
+          <button mat-raised-button color="primary" routerLink="" [disabled]="disabled" (click)="add()" [ngClass]="{'mat-button-disabled': disabled}"><mat-icon>{{icon}}</mat-icon>{{value}}</button>
           </div>
         </div>
   </div>
