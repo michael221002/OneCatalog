@@ -20,6 +20,7 @@
             gap: 10px;
 
             .product {
+                margin: 0 5px 0 5px;
                 height: 70px;
                 border-radius: 10px;
                 padding: 5px;
@@ -60,6 +61,22 @@
                     align-items: center;
                 }
             }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px; /* Breite der Scrollbar */
+        }
+        
+        ::-webkit-scrollbar-track {
+          background-color: #ede3ff; /* Hintergrundfarbe des Scrollbar-Tracks */
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background-color: #673AB7; /* Farbe des Scrollbar-Thumb */
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background-color: #555; /* Farbe des Scrollbar-Thumb bei Hover */
         }
     }
 
