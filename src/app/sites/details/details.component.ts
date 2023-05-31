@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Card } from 'src/app/models/CardModel';
 import { Product } from 'src/app/models/ProductModel';
+import { AppDataService } from 'src/app/services/app-data.service';
 import { ProductDataService } from 'src/app/services/product-data.service';
 
 @Component({
@@ -17,8 +18,20 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productDataService: ProductDataService) {
+    private productDataService: ProductDataService,
+    private appData: AppDataService) {
 
+  }
+
+  disabled:boolean=false;
+
+  icon: string = 'add_circle_outline'
+  value: string = 'add';
+
+  add(){
+    this.appData.addProduct(this.product.index);
+    this.disabled = this.appData.checkProduct(this.product.index)
+    this.ngOnInit();
   }
 
   ngOnInit(): void {
@@ -47,5 +60,15 @@ export class DetailsComponent implements OnInit {
     console.log(this.productId);
     console.log(this.products);
 */
+
+
+    this.disabled = this.appData.checkProduct(this.product.index);
+    if (this.disabled == true) {
+      this.icon = 'check';
+      this.value = 'added';
+    } else {
+      this.icon = 'add_circle_outline';
+      this.value = 'add';
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Card } from 'src/app/models/CardModel';
+import { AppDataService } from 'src/app/services/app-data.service';
 
 @Component({
   selector: 'app-product-card',
@@ -8,21 +9,30 @@ import { Card } from 'src/app/models/CardModel';
 })
 export class ProductCardComponent implements OnInit {
   ngOnInit() {
+    this.disabled = this.appData.checkProduct(this.CardData.index);
+    if (this.disabled == true) {
+      this.icon = 'check';
+      this.value = 'added';
+    } else {
+      this.icon = 'add_circle_outline';
+      this.value = 'add';
+    }
   }
 
   @Input() CardData!: Card;
 
+  disabled:boolean=false;
+
   icon: string = 'add_circle_outline'
+  value: string = 'add';
 
   add(){
-
-    if (this.icon == 'add_circle_outline'){
-      this.icon = 'check_circle'
-    } else {
-      this.icon = 'add_circle_outline'
-    }
+    this.appData.addProduct(this.CardData.index);
+    this.ngOnInit();
   }
 
   panelOpenState = false;
+
+  constructor(private appData: AppDataService) {}
   
 }
