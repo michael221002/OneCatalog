@@ -12,11 +12,18 @@ export class BasketComponent implements OnInit {
 
   basket = this.appData.basket;
   data:Basket[] = [];
+  disabled:boolean = false;
 
   constructor(private appData: AppDataService, private productData: ProductDataService){}
   ngOnInit() {
     for (let i of this.basket) {
       this.data.push(this.productData.getSingleProductBasket(Number(i)));
+    }
+
+    if(this.basket.length == 0) {
+      this.disabled = true;
+    } else {
+      this.disabled = false;
     }
   }
 
@@ -29,6 +36,12 @@ export class BasketComponent implements OnInit {
     this.data.splice(indexToDelete, 1);
 
     this.appData.deleteProduct(index);
+
+    if(this.basket.length == 0) {
+      this.disabled = true;
+    } else {
+      this.disabled = false;
+    }
   }
 
 
