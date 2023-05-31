@@ -23,6 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BasketComponent } from './sites/basket/basket.component';
 import { OutputComponent } from './sites/output/output.component';
+import { HeaderComponent } from './objects/header/header.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { OutputComponent } from './sites/output/output.component';
     DetailsComponent,
     RequestFormComponent,
     BasketComponent,
-    OutputComponent
+    OutputComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { OutputComponent } from './sites/output/output.component';
     MatTabsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,10 @@
-<br><br><br>
-<div class="CatalogContainer">
-    <div *ngFor="let i of cardData">
-        <app-product-card [CardData]="i"></app-product-card>
+<div class="main">
+
+    <app-header></app-header>
+    <div class="CatalogContainer">
+        <div *ngFor="let i of cardData">
+            <app-product-card [CardData]="i"></app-product-card>
+        </div>
     </div>
+
 </div>
