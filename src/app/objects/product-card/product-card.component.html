@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="header">
+        <img src="{{CardData.logo}}">
+
+    </div>
+    <div class="standard" *ngIf="CardData.standard">Approved</div>
+    <div class="standardNot" *ngIf="!CardData.standard">Not Approved</div>
+    <div class="body">
+        <h4 style="margin-bottom: 5px;">{{CardData.name}}</h4>
+        <div class="line"></div>
+        <div class="main"style="margin-top: 5px;">
+            <div class="left">
+                <h5>by {{CardData.publisher}}</h5>
+                <h5>· {{CardData.edition}}</h5>
+                <h5>· {{CardData.category}}</h5>
+            </div>
+            <div class="right">
+                <h4>{{CardData.costs}} $</h4>
+                <h5>{{CardData.timeperiod}}</h5>
+            </div>
+        </div>
+        <br>
+        <div class="line"></div>
+        <br>
+        <div class="buttonContainer" style="margin-bottom: 10px;">
+            <button mat-raised-button color="primary" (click)="add()" [disabled]="disabled" [ngClass]="{'mat-button-disabled': disabled}"><mat-icon>{{icon}}</mat-icon>Add</button>
+            <button mat-button color="accent" routerLink="details/{{CardData.index}}" >See more..</button>
+        </div>
+        <!--Wie im Mokup die tags jedoch siehts scheiße aus-->
+        <!--<div class="TagContainer" style="margin-top: 10px;">
+            <div *ngFor="let i of CardData.tags | slice:0:4">
+                <app-tags [content] = "i"></app-tags>
+            </div>
+        </div>-->
+        <!--<div class="line"></div>
+        <br>
+        <mat-accordion>
+            <mat-expansion-panel  (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false"
+                                 style="position: relative;">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Tags
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="TagContainer" style="margin-top: 10px;">
+                <div *ngFor="let i of CardData.tags | slice:0:4">
+                    <app-tags [content] = "i"></app-tags>
+                </div>
+                </div>
+            </mat-expansion-panel>
+          </mat-accordion>-->
+    </div>
+</div>
