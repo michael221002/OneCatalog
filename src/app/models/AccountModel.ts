@@ -1,16 +1,16 @@
 export class Account {
-    upn: string;
-    image: string;
-    mail: string;
-    name: string;
-    employeeId: number;
-    role: string;
-    department: string;
-    reportsTo: string
-    location: string;
-    costCenter: string;
+    upn: string | undefined;
+    image: string | undefined;
+    mail: string | undefined;
+    name: string | undefined;
+    employeeId: number | undefined;
+    role: string | undefined;
+    department: string | undefined;
+    reportsTo: string | undefined;
+    location: string | undefined;
+    costCenter: string | undefined;
 
-    constructor(upn: string, image: string, mail: string, name: string, employeeID: number, role: string, departement: string, reportsTo: string, location: string, costcenter: string){
+    constructor(upn?: string, image?: string, mail?: string, name?: string, employeeID?: number, role?: string, departement?: string, reportsTo?: string, location?: string, costcenter?: string){
         this.upn = upn;
         this.image = image;
         this.mail = mail;

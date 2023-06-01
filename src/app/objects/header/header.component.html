@@ -1,4 +1,37 @@
 <div  class="main">
+    <div class="accountWindow" [style.display]="display">
+        <div class="card" [style.display]="display">
+            <div class="header">
+                <h1>{{account.name}}</h1>
+                <button (click)="close()" color="primary" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <br>
+            <div class="line"></div>
+            <br>
+            <div class="bottom">
+                <img src="{{account.image}}">
+                <br>
+                <div class="text">
+                    <div>
+                        <h2>upn / upn: {{account.upn}}</h2>
+                        <h2>Employee ID:{{account.employeeId}}</h2>
+                        <h2>Role: {{account.role}}</h2>
+                        <h2>Departement: {{account.department}}</h2>
+                        <h2>Reports To: {{account.reportsTo}}</h2>
+                        <h2>Location: {{account.location}}</h2>
+                        <h2>Costcenter: {{account.costCenter}}</h2>
+                    </div>
+                    <div class="footer">
+                        <button color="primary" mat-raised-button>
+                            logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="left">
         <h1>Catalog</h1>
     </div>
@@ -6,7 +39,7 @@
         <div class="searchbar"></div>
     </div>
     <div class="right">
-        <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+        <button mat-fab color="primary" (click)="show()">
             <mat-icon>person</mat-icon>
         </button>
         <button mat-fab color="primary" aria-label="Example icon button with a delete icon">

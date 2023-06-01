@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
 import { AppDataService } from './services/app-data.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AccountOverviewComponent } from './objects/account-overview/account-overview.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     RequestFormComponent,
     BasketComponent,
     OutputComponent,
-    HeaderComponent
+    HeaderComponent,
+    AccountOverviewComponent
   ],
   imports: [
     BrowserModule,

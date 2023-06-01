@@ -20,7 +20,7 @@ export class AccountDataService {
         return i;
       }
     }
-    return "Account not found";
+    return new Account();
   }
 
   constructor() { }
