@@ -25,6 +25,9 @@ import { BasketComponent } from './sites/basket/basket.component';
 import { OutputComponent } from './sites/output/output.component';
 import { HeaderComponent } from './objects/header/header.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatBadgeModule} from '@angular/material/badge';
+import { AppDataService } from './services/app-data.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -53,9 +56,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [AppDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

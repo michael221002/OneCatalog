@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Card } from 'src/app/models/CardModel';
 import { AppDataService } from 'src/app/services/app-data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-card',
@@ -29,10 +30,14 @@ export class ProductCardComponent implements OnInit {
   add(){
     this.appData.addProduct(this.CardData.index);
     this.ngOnInit();
+
+    this.snackBar.open('Product has been added', 'okay', {
+      duration: 2000,
+    });
   }
 
   panelOpenState = false;
 
-  constructor(private appData: AppDataService) {}
+  constructor(private appData: AppDataService, public snackBar: MatSnackBar) {}
   
 }

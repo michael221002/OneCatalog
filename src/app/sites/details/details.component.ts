@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Card } from 'src/app/models/CardModel';
 import { Product } from 'src/app/models/ProductModel';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { ProductDataService } from 'src/app/services/product-data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-details',
@@ -19,7 +19,8 @@ export class DetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productDataService: ProductDataService,
-    private appData: AppDataService) {
+    private appData: AppDataService,
+    public snackBar: MatSnackBar) {
 
   }
 
@@ -32,6 +33,10 @@ export class DetailsComponent implements OnInit {
     this.appData.addProduct(this.product.index);
     this.disabled = this.appData.checkProduct(this.product.index)
     this.ngOnInit();
+
+    this.snackBar.open('Product has been added', 'okay', {
+      duration: 2000,
+    });
   }
 
   ngOnInit(): void {

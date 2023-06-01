@@ -1,7 +1,7 @@
 .main {
 
     padding: 20px 20px 0px 20px;
-    height: calc(100vh - 138px);
+    height: calc(100vh - 170px);
     width: auto;
 
 
@@ -15,7 +15,8 @@
         transition: flex-wrap 0.4s linear;
         height: 100%;
         overflow: auto;
-        margin:10px;
+        padding: 20px;
+        margin: 5px;
     }
 
     ::-webkit-scrollbar {
