@@ -3,7 +3,9 @@ import { FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule, F
 import { ProductDataService } from 'src/app/services/product-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { AccountDataService } from 'src/app/services/account-data.service';
+import { AppDataService } from 'src/app/services/app-data.service';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/ProductModel';
 
 @Component({
   selector: 'app-request-form',
@@ -13,6 +15,7 @@ import { Router } from '@angular/router';
 export class RequestFormComponent implements OnInit {
   product: any;
   productId: any;
+
   requirementLabels: any;
   userLabels: any;
   account: any;
@@ -24,18 +27,23 @@ export class RequestFormComponent implements OnInit {
   // zweite FormGroup, die die Userdaten enthalten wird
   productForm: FormGroup = this.formBuilder.group({ });
   // erstellt eine Variable die eine FormGroup enthält
+  basketRequestForm: FormGroup;
 
   constructor(
     private productDataService: ProductDataService,
+    private appDataService: AppDataService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder, private accountService: AccountDataService,
     private router: Router) {
-
+      this.basketRequestForm = this.formBuilder.group({
+        products: this.formBuilder.array([])
+      })
   }
 
   ngOnInit():void {
     // 1. Get the account data, product and the requirement data
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
+
     // reads id of active route and assigns it to productId
 
     this.product = this.productDataService.getSingleProductDetail(this.productId);
@@ -44,7 +52,6 @@ export class RequestFormComponent implements OnInit {
     this.requirements = this.product.requirements;
     // gets the requirements array of strings and sets it to the temporary variable requirements
 
-    console.log(this.requirements)
     this.account = this.accountService.getSingleAccounts(123456);
     //gets the account
 
@@ -55,7 +62,6 @@ export class RequestFormComponent implements OnInit {
       productForm: this.productForm,
       reason: this.formBuilder.control('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem', [Validators.required, Validators.minLength(50)])
     })
-
 
 
 
@@ -71,7 +77,8 @@ export class RequestFormComponent implements OnInit {
         item, this.formBuilder.control({value: this.product[item], disabled: true})
       )
     }
-    console.log(this.requirements)
+
+
 
     this.userLabels = this.reqUserData.map((requirement: string) => {
       const capitalizedRequirement = requirement.charAt(0).toUpperCase() + requirement.slice(1);
@@ -83,10 +90,8 @@ export class RequestFormComponent implements OnInit {
       const capitalizedRequirement = requirement.charAt(0).toUpperCase() + requirement.slice(1);
       return capitalizedRequirement.replace(/ID/g, ' ID').replace(/Name/g, ' Name')
     });
-    // transforms the labels
-    console.log(this.nestedForm)
-  }
 
+  }
 
   public isDisabled():boolean {
     return !(this.nestedForm.valid &&
@@ -102,5 +107,9 @@ export class RequestFormComponent implements OnInit {
     this.productDataService.sendRequest(this.nestedForm.value);
     this.router.navigate(['../../output']);
   }
+
+
+
+
 
 }

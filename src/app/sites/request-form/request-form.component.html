@@ -25,7 +25,7 @@
     <div formGroupName="productForm">
       <h2>Product Data</h2>
       <ng-container *ngFor="let req of requirements,
-      let i = index"> 
+      let i = index">
         <mat-form-field>
           <mat-label>{{requirementLabels[i]}}</mat-label>
           <input matInput [formControlName]="requirements[i]">
@@ -37,7 +37,8 @@
       <mat-label>Reason</mat-label>
       <textarea matInput formControlName="reason"></textarea>
     </mat-form-field>
+
     <button type="submit" mat-raised-button color="primary" [disabled]="isDisabled()"><mat-icon>send</mat-icon>Send Request</button>
   </form>
-</div>
 
+</div>

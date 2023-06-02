@@ -1,0 +1,20 @@
+<form [formGroup]="basketRequestForm" (ngSubmit)="send()">
+  <ng-container formArrayName="products">
+    <div *ngFor="let productGroup of getBasketControls('products'); let i = index">
+      <h3>Product {{i + 1}}</h3>
+      <ng-container [formGroupName]="i">
+        <ng-container formGroupName = "requirements">
+          <div *ngIf="productGroup.get('requirements')">
+            <div *ngFor="let requirement of productGroup.get('requirements')?.value; let j = index"
+          [formGroupName] = "j">
+            <label>{{requirement}}</label>
+            <input type="text" [formControlName]="requirement">
+          </div>
+          </div>
+
+        </ng-container>
+      </ng-container>
+
+    </div>
+  </ng-container>
+</form>

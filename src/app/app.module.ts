@@ -25,6 +25,7 @@ import { BasketComponent } from './sites/basket/basket.component';
 import { OutputComponent } from './sites/output/output.component';
 import { HeaderComponent } from './objects/header/header.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { BasketRequestComponent } from './sites/basket-request/basket-request.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     RequestFormComponent,
     BasketComponent,
     OutputComponent,
-    HeaderComponent
+    HeaderComponent,
+    BasketRequestComponent
   ],
   imports: [
     BrowserModule,

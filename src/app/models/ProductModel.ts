@@ -1,4 +1,5 @@
 export class Product {
+    [key: string]: any,
     index: number;
     businessReason: string;
     productName: string;

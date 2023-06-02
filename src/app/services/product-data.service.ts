@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Card } from '../models/CardModel';
 import { Product } from '../models/ProductModel';
-import { Basket } from '../models/BasketModel'; 
+import { Basket } from '../models/BasketModel';
 import { RequestForm } from '../models/RequestFormModel';
 import Data from '../data/data.json';
 import { NonNullAssert } from '@angular/compiler';
@@ -43,6 +43,16 @@ export class ProductDataService {
     }
 
     return 'Product not found'
+  }
+
+
+  // get multiple Products by ID
+  getMultipleProducts(ids: number[]): any[] {
+    const productArr: any[] = [];
+    for (let id of ids) {
+      productArr.push(this.getSingleProductDetail(id));
+    }
+    return productArr;
   }
 
   getSingleProductCard(id: number) {
