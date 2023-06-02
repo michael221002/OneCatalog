@@ -1,8 +1,8 @@
 <div class="main">
 
-    <app-header></app-header>
+    <app-header (searchTextChanged)="onSearchTextEntered($event)"></app-header>
     <div class="CatalogContainer">
-        <div *ngFor="let i of cardData">
+        <div *ngFor="let i of getCardData()">
             <app-product-card [CardData]="i"></app-product-card>
         </div>
     </div>

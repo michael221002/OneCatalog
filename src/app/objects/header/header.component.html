@@ -36,14 +36,16 @@
         <h1>Catalog</h1>
     </div>
     <div class="mid">
-        <div class="searchbar"></div>
+        <div class="searchbar">
+            <input placeholder="search" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()" value="search">
+        </div>
     </div>
     <div class="right">
         <button mat-fab color="primary" (click)="show()">
-            <mat-icon>person</mat-icon>
+            <img src="{{account.image}}" style="height: 56px; width: auto; border-radius: 100%;">
         </button>
         <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
             <mat-icon>filter_list</mat-icon>
-          </button>
+        </button>
     </div>
 </div>
