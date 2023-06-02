@@ -82,7 +82,7 @@ export class ProductDataService {
     console.log(ValueArray)
  
     for (let searchValue of ValueArray){
-      if (searchValue == 'search') {
+      if (searchValue == '') {
         for (let i of all){
           filteredCatalog.push(this.transformToCard(i))
         }
