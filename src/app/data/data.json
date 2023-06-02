@@ -193,71 +193,6 @@
         "licenseLevel": "discount level"
     },
     {
-        "index": 3,
-        "businessReason": "Provides developers with advanced tools and features to develop complex software applications",
-        "productName": "Visual Studio Enterprise",
-        "publisher": "Microsoft ",
-        "version": "16.11.0",
-        "edition": "Enterprise",
-        "releaseDate": "August 10, 2021",
-        "standard": true,
-        "costs": 6000,
-        "price": 6000,
-        "timeperiod": "monthly to yearly",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/1024px-Visual_Studio_Icon_2022.svg.png",
-        "requirements": [
-            "productName",
-            "edition",
-            "internalID",
-            "externalID"
-        ],
-        "location": "Global",
-        "linkToWebsite": "https://code.visualstudio.com",
-        "externalID": 44444,
-        "prereqireties": [
-            "windows",
-            "linux",
-            "macOS"
-        ],
-        "functionality": "develope",
-        "departement": [
-            "BIT",
-            "CIT",
-            "BA"
-        ],
-        "role": [
-            "software engeneer",
-            "software Developer"
-        ],
-        "category": "Integrated Development Environment (IDE)",
-        "tags": [
-            "software developement",
-            "VS",
-            "VS Enterprise",
-            "enterprise",
-            "IDE",
-            "microsoft",
-            "ASP",
-            ".NET",
-            "dotnet",
-            "VS",
-            "C#"
-        ],
-        "name": "Visual Studio",
-        "descripton": " Visual Studio Enterprise is an integrated development environment (IDE) that provides developers with advanced tools and features to develop complex software applications.",
-        "technicalOwner": "Max Mustermann",
-        "businessOwner": "Max Mustermann",
-        "contractOwner": "Max Mustermann",
-        "OLA": "contract with Microsoft",
-        "appClassification": "global",
-        "lifecycleState": "active",
-        "SWOApproved": "globally used",
-        "approvalType": "manager and licence manager",
-        "internalID": 444444,
-        "licenseModel": "VLP",
-        "licenseLevel": "discount level"
-    },
-    {
         "index": 4,
         "businessReason": "Office 365 is a cloud-based suite of productivity applications and services that allows businesses to collaborate and work more efficiently",
         "productName": "Office 365 Standard",
@@ -362,7 +297,9 @@
             "visualization",
             "mindmapping",
             "planning",
-            "brainstorming"
+            "brainstorming",
+            "project",
+            "project management"
         ],
         "name": "Miro",
         "descripton": "Miro is a cloud-based collaboration and visual communication platform that enables teams to work together and share ideas visually in real time.",

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AccountDataService } from 'src/app/services/account-data.service';
 import { Account } from '../../models/AccountModel';
 
@@ -27,4 +27,13 @@ export class HeaderComponent implements OnInit {
   }
 
   account: Account = this.accountData.getSingleAccounts(123456);
+
+  enteredSearchValue: string = '';
+
+  @Output()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  onSearchTextChanged(){
+    this.searchTextChanged.emit(this.enteredSearchValue);
+  }
 }

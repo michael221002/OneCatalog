@@ -29,6 +29,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { AppDataService } from './services/app-data.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AccountOverviewComponent } from './objects/account-overview/account-overview.component';
+import { FormsModule } from '@angular/forms';
+import { ProductDataService } from './services/product-data.service';
+
 
 
 @NgModule({
@@ -60,9 +63,10 @@ import { AccountOverviewComponent } from './objects/account-overview/account-ove
     MatInputModule,
     MatDialogModule,
     MatBadgeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
   ],
-  providers: [AppDataService],
+  providers: [AppDataService, ProductDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

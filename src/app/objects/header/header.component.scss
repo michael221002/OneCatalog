@@ -100,14 +100,35 @@
 
     .mid {
         .searchbar {
-            width: 450px;
-            height:40px;
-            background-color: white;
-            border-radius: 20px;
+            input {
+                width: 30vw;
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                height: 35px;
+                font-size: 25px;
+            }
         }
     }
 
     .right {
+        .button-with-image {
+            position: relative;
+          }
+          
+        .button-icon {
+          position: absolute;
+          left: 8px; /* Passen Sie den Abstand nach Bedarf an */
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1;
+        }
+        
+        .button-image {
+          position: relative;
+          z-index: 0;
+        }
         display: flex;
         gap: 10px;
     }
