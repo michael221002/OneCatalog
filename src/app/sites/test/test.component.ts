@@ -15,6 +15,16 @@ export class TestComponent implements OnInit {
     return this.productDataService.searchProduct(this.searchText)
   }
 
+  display: string = 'none';
+
+  show(){
+    this.display = 'flex';
+  }
+
+  close(){
+    this.display = 'none';
+  }
+
   //testing functions
   detailedData = this.productDataService.getAllProductsDetail()
   singleProduct = this.productDataService.getSingleProductDetail(1)

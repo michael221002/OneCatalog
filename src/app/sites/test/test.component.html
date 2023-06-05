@@ -1,9 +1,16 @@
 <div class="main">
 
     <app-header (searchTextChanged)="onSearchTextEntered($event)"></app-header>
-    <div class="CatalogContainer">
-        <div *ngFor="let i of getCardData()">
-            <app-product-card [CardData]="i"></app-product-card>
+    <div class="body">
+        <div class="CatalogContainer">
+            <div *ngFor="let i of getCardData()">
+                <app-product-card [CardData]="i"></app-product-card>
+            </div>
+        </div>
+        <div class="filter" [style.display]="display">
+            <button (click)="close()" color="primary" mat-icon-button>
+                <mat-icon>close</mat-icon>
+            </button>
         </div>
     </div>
 

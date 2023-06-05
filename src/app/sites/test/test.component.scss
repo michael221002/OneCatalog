@@ -5,6 +5,9 @@
     width: auto;
 
 
+  .body {
+    height: 100%;
+    display: flex;
     .CatalogContainer {
         justify-content: center;
         align-items: center;
@@ -17,6 +20,14 @@
         overflow: auto;
         padding: 20px;
         margin: 5px;
+    }
+
+    .filter {
+      width: 30vw;
+      background-color: green;
+      height: 100%;
+      padding: 20px;
+      margin: 5px;
     }
 
     ::-webkit-scrollbar {
@@ -34,4 +45,5 @@
     ::-webkit-scrollbar-thumb:hover {
       background-color: #555; /* Farbe des Scrollbar-Thumb bei Hover */
     }
+  }
 }
