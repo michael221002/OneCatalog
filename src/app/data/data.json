@@ -241,7 +241,8 @@
             "calender",
             "shairpoint",
             "forms",
-            "onedrive"
+            "onedrive",
+            "write"
         ],
         "name": "Office",
         "descripton": "Office 365 Standard is a cloud-based productivity suite that includes Word, Excel, PowerPoint, OneNote, Outlook, Publisher, and Access. It allows users to collaborate and communicate effectively while managing their tasks and projects",
