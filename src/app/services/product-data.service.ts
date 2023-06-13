@@ -274,6 +274,12 @@ export class ProductDataService {
     this.requestData = data;
   }
 
+  getSingleProductParam(index: number, param: string): any{
+    let product = this.products[index];
+    let res = product[param];
+    return res
+  }
+
   constructor() {
   }
 }

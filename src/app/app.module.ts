@@ -32,6 +32,8 @@ import { AccountOverviewComponent } from './objects/account-overview/account-ove
 import { FormsModule } from '@angular/forms';
 import { ProductDataService } from './services/product-data.service';
 
+import { DynamicRecComponent } from './sites/dynamic-rec/dynamic-rec.component';
+
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { ProductDataService } from './services/product-data.service';
     BasketComponent,
     OutputComponent,
     HeaderComponent,
-    AccountOverviewComponent
+    AccountOverviewComponent,
+    DynamicRecComponent
   ],
   imports: [
     BrowserModule,

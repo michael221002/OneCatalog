@@ -29,9 +29,10 @@
     
     ::-webkit-scrollbar-thumb {
       background-color: #673AB7; /* Farbe des Scrollbar-Thumb */
+      
+      &:hover {
+        background-color: #555; /* Farbe des Scrollbar-Thumb bei Hover */
+      }
     }
     
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: #555; /* Farbe des Scrollbar-Thumb bei Hover */
-    }
 }

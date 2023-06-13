@@ -1,4 +1,5 @@
 export class Account {
+    [key: string]: string | undefined | number;
     upn: string | undefined;
     image: string | undefined;
     mail: string | undefined;

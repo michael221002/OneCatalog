@@ -1,0 +1,16 @@
+<div class="page">
+    <button mat-raised-button color="primary" routerLink="../basket">back</button>
+
+    <div class="line"></div>
+
+    <div class="formContainer">
+        <form [formGroup] ="requestForm" (ngSubmit)="send()">
+            <ng-container *ngFor="let req of requirements">
+                <mat-form-field>
+                    <mat-label>{{req}}</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </ng-container>
+        </form>
+    </div>
+</div>

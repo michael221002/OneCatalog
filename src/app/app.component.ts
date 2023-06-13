@@ -9,8 +9,10 @@ import { AppDataService } from './services/app-data.service';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.accounts.getSingleAccounts(123456))
     //this.appData.addProduct(5) //for testing
+    this.appData.addProduct(0);
+    this.appData.addProduct(1);
+    this.appData.addProduct(2);
   } 
 
   constructor(private accounts:AccountDataService, private appData:AppDataService) {}

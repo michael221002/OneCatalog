@@ -1,4 +1,5 @@
 export class Product {
+    [key: string]: string | number | string[] | boolean;
     index: number;
     businessReason: string;
     productName: string;
