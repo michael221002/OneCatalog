@@ -6,22 +6,14 @@
         <br>
         <div class="userData">
             <div class="left">
-                <h3>Name:</h3>
-                <h3>upn:</h3>
-                <h3>Location:</h3>
-                <h3>Employe ID:</h3>
-                <h3>reports To:</h3>
-                <h3>Departement:</h3>
-                <h3>Cost Center:</h3>
+                <div *ngFor="let item of userData">
+                    <h3>{{ item[0] }}:</h3>
+                </div>
             </div>
             <div class="right">
-                <h3>{{data.userForm.name}}</h3>
-                <h3>{{data.userForm.upn}}</h3>
-                <h3>{{data.userForm.location}}</h3>
-                <h3>{{data.userForm.employeeId}}</h3>
-                <h3>{{data.userForm.reportsTo}}</h3>
-                <h3>{{data.userForm.department}}</h3>
-                <h3>{{data.userForm.costCenter}}</h3>
+                <div *ngFor="let item of userData">
+                    <h3>{{ item[1] }}</h3>
+                </div>
             </div>
         </div>
         <br>
@@ -35,17 +27,14 @@
                 <h3>Internal ID:</h3>
                 <h3>External ID:</h3>
             </div>
-            <div class="right">
-                <h3>{{data.productForm.productName}}</h3>
-                <h3>{{data.productForm.internalID}}</h3>
-                <h3>{{data.productForm.externalID}}</h3>
+            <div class="right" style="display: flex; gap: 50px; width: 100%; overflow-x: auto;">
+                <div *ngFor="let i of data[1]">
+                    <h3>{{i.productName}}</h3>
+                    <h3>{{i.internalID}}</h3>
+                    <h3>{{i.externalID}}</h3>
+                </div>
             </div>
         </div>
         <br>
-        <h1>Business Reason</h1>
-        <br>
-        <div class="line"></div>
-        <br>
-        <h3>Reason: {{data.reason}}</h3>
     </div>
 </div>

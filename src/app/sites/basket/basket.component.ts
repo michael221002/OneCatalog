@@ -28,9 +28,6 @@ export class BasketComponent implements OnInit {
     }
   }
 
-  submit(){
-    console.log(this.data);
-  }
 
   delete(index:number){
     const indexToDelete = this.data.findIndex(obj => obj.index === index);

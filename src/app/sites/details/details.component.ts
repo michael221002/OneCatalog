@@ -62,8 +62,6 @@ export class DetailsComponent implements OnInit {
         this.product = product
       }
     }
-    console.log(this.productId);
-    console.log(this.products);
 */
 
 

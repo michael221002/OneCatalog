@@ -44,7 +44,6 @@ export class RequestFormComponent implements OnInit {
     this.requirements = this.product.requirements;
     // gets the requirements array of strings and sets it to the temporary variable requirements
 
-    console.log(this.requirements)
     this.account = this.accountService.getSingleAccounts(123456);
     //gets the account
 
@@ -71,7 +70,6 @@ export class RequestFormComponent implements OnInit {
         item, this.formBuilder.control({value: this.product[item], disabled: true})
       )
     }
-    console.log(this.requirements)
 
     this.userLabels = this.reqUserData.map((requirement: string) => {
       const capitalizedRequirement = requirement.charAt(0).toUpperCase() + requirement.slice(1);
@@ -84,7 +82,6 @@ export class RequestFormComponent implements OnInit {
       return capitalizedRequirement.replace(/ID/g, ' ID').replace(/Name/g, ' Name')
     });
     // transforms the labels
-    console.log(this.nestedForm)
   }
 
 

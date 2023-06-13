@@ -32,6 +32,9 @@ import { AccountOverviewComponent } from './objects/account-overview/account-ove
 import { FormsModule } from '@angular/forms';
 import { ProductDataService } from './services/product-data.service';
 
+import { DynamicRecComponent } from './sites/dynamic-rec/dynamic-rec.component';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 @NgModule({
@@ -46,7 +49,8 @@ import { ProductDataService } from './services/product-data.service';
     BasketComponent,
     OutputComponent,
     HeaderComponent,
-    AccountOverviewComponent
+    AccountOverviewComponent,
+    DynamicRecComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,8 @@ import { ProductDataService } from './services/product-data.service';
     MatDialogModule,
     MatBadgeModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [AppDataService, ProductDataService],
   bootstrap: [AppComponent]

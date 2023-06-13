@@ -16,7 +16,23 @@ export class OutputComponent implements OnInit {
   data: any;
   ngOnInit() {
     this.data = this.productDataService.requestData
-    console.log(this.data);
+
+    const firstObject = this.data[0];
+
+    for (const key in firstObject) {
+      if (Object.prototype.hasOwnProperty.call(firstObject, key)) {
+        const value = firstObject[key];
+        this.userData.push([key, value]);
+      }
+    }
+
+    for (let i of this.data[1]){
+      for(let y of i){
+      }
+    }
   }
+
+  userData: any[] = [];
+  products: any[] = [];
 
 }

@@ -1,4 +1,5 @@
 export class Product {
+    [key: string]: string | number | string[] | boolean;
     index: number;
     businessReason: string;
     productName: string;
@@ -11,6 +12,7 @@ export class Product {
     price: number;
     timeperiod: string;
     logo: string;
+    technicalRequirements: string[];
     requirements: string[];
     location: string;
     linkToWebsite: string;
@@ -49,6 +51,7 @@ export class Product {
         timeperiod: string,
         logo: string,
         requirements: string[],
+        technicalRequirements: string[],
         location: string,
         linkToWebsite: string,
         externalID: number,
@@ -84,6 +87,7 @@ export class Product {
         this.price = price
         this.timeperiod = timeperiod
         this.logo = logo
+        this.technicalRequirements = technicalRequirements
         this.requirements = requirements
         this.location = location
         this.linkToWebsite = linkToWebsite

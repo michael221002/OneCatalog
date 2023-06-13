@@ -12,10 +12,20 @@
         "price": 0,
         "timeperiod": "permanent",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1024px-Visual_Studio_Code_1.35_icon.svg.png",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"            
         ],
         "location": "worldwide",
         "linkToWebsite": "https://code.visualstudio.com/",
@@ -76,11 +86,20 @@
         "price": 0,
         "timeperiod": "permanent",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/1024px-Visual_Studio_Icon_2022.svg.png",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
-            "edition",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"
         ],
         "location": "worldwide",
         "linkToWebsite": "https://visualstudio.microsoft.com/",
@@ -139,11 +158,20 @@
         "price": 900,
         "timeperiod": "monthly to 3 years",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/1024px-Visual_Studio_Icon_2022.svg.png",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
-            "edition",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"
         ],
         "location": "global",
         "linkToWebsite": "https://code.visualstudio.com/",
@@ -205,11 +233,20 @@
         "price": 12,
         "timeperiod": "monthly",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_365_%282022%29.svg/800px-Microsoft_365_%282022%29.svg.png",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
-            "edition",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"
         ],
         "location": "Global",
         "linkToWebsite": "https://www.microsoft.com/microsoft-365",
@@ -270,10 +307,20 @@
         "price": 120,
         "timeperiod": "yearly",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Mir_company_logo_with_text.tiff/lossless-page1-304px-Mir_company_logo_with_text.tiff.png",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"
         ],
         "location": "Global",
         "linkToWebsite": "https://miro.com/",
@@ -328,11 +375,21 @@
         "price": 0,
         "timeperiod": "permanent",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1024px-Adobe_Photoshop_CC_icon.svg.png",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
-            "edition",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter",
+            "location"
         ],
         "location": "based on country",
         "linkToWebsite": "https://www.adobe.com/de/products/photoshop-express.html",
@@ -383,8 +440,20 @@
         "price": 0,
         "timeperiod": "permanent",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1920px-Node.js_logo.svg.png",
+        "technicalRequirements": [
+            "productName",
+            "internalID",
+            "externalID"
+        ],
         "requirements": [
-            "productName"
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"
         ],
         "location": "Global",
         "linkToWebsite": "https://nodejs.org/en",
@@ -440,11 +509,20 @@
         "price": 12,
         "timeperiod": "monthly",
         "logo": "https://media.licdn.com/dms/image/C4E0BAQFK973lLr__tA/company-logo_200_200/0/1613494872987?e=2147483647&v=beta&t=RZGgrbYtFcv92KAZe_ry3QByYB9h74UACZEp4vFirkA",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
-            "edition",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"
         ],
         "location": "Global",
         "linkToWebsite": "https://trello.com/pricing",
@@ -492,11 +570,21 @@
         "price": 15,
         "timeperiod": "monthly",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Adobe_Acrobat_Reader_icon_%282020%29.svg/1024px-Adobe_Acrobat_Reader_icon_%282020%29.svg.png",
-        "requirements": [
+        "technicalRequirements": [
             "productName",
-            "edition",
             "internalID",
             "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
+            "name",
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter",
+            "location"
         ],
         "location": "Based on country.",
         "linkToWebsite": "https://www.adobe.com/de/acrobat/pricing.html",
@@ -547,22 +635,20 @@
         "price": 6000,
         "timeperiod": "monthly to yearly",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/1024px-Visual_Studio_Icon_2022.svg.png",
-        "requirements": [
-            "employeeID",
+        "technicalRequirements": [
             "productName",
-            "edition",
-            "costcenter",
-            "UPN",
-            "CDG",
-            "contact",
-            "reason",
             "internalID",
-            "externalID",
-            "location",
+            "externalID"
+        ],
+        "requirements": [
+            "upn",
+            "mail",
             "name",
-            "email",
-            "manager",
-            "departement"
+            "employeeId",
+            "role",
+            "department",
+            "reportsTo",
+            "costCenter"
         ],
         "location": "Global",
         "linkToWebsite": "https://code.visualstudio.com",

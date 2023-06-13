@@ -2,9 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Card } from '../models/CardModel';
 import { Product } from '../models/ProductModel';
 import { Basket } from '../models/BasketModel'; 
-import { RequestForm } from '../models/RequestFormModel';
 import Data from '../data/data.json';
-import { NonNullAssert } from '@angular/compiler';
 
 interface Hits {
   index: number;
@@ -77,9 +75,6 @@ export class ProductDataService {
     let hits: Hits[] = [];
 
     let ValueArray: string[] = value.trim().toLowerCase().split(" ");
-
-
-    console.log(ValueArray)
  
     for (let searchValue of ValueArray){
       if (searchValue == '') {
@@ -268,10 +263,21 @@ export class ProductDataService {
     return new Basket(-1, 'product not found', 'product not found', 'product not found')
   }
 
-  requestData: any = {}
+  requestData: any = []
 
   sendRequest(data: any){
     this.requestData = data;
+  }
+
+  getSingleProductParam(index: number, param: string): any{
+    let product = this.getSingleProductDetail(index);
+
+    if (typeof product === 'object') {
+      let res = product[param];
+      return res;
+    }
+
+    return null;
   }
 
   constructor() {
